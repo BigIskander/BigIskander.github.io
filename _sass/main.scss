@@ -1,0 +1,43 @@
+body {
+	background-color: #CCCCFF;
+	font-size: 1.1em;
+}
+.content {
+	background-color: #FFFFFF;
+	border-color: #000000;
+	border: outset;
+	border-width: 2px;
+	width: 80%;
+	margin: auto;
+}
+.menu {
+	margin-top: 2%;
+	margin-left: 2%;
+	margin-right: 2%;
+	font-weight: bold;
+	background-color: #FFFFCC;
+}
+.menu_link, .menu_link_selected {
+	margin-left: 5px;
+	text-decoration: underline;
+	font-size: 1.2em;
+	color: #990000;
+}
+.menu_link:hover, .menu_link_selected:hover {
+	color: #9900CC;
+}
+/* Комментарий */
+.menu_link_selected {
+	background-color: #CCFF00;
+}
+/* Комментарий */
+H1 {
+	font-size: 1.5em;
+}
+H1, P {
+	text-align: justify;
+	margin-top: 2%;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-bottom: 2%;
+}
