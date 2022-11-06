@@ -1,7 +1,7 @@
 @charset "UTF-8";
 body { background-color: #CCCCFF; font-size: 1.1em; }
 
-.content { background-color: #FFFFFF; border-color: #000000; border: outset; border-width: 2px; width: 80%; margin: auto; }
+.content { background-color: #FFFFFF; border-color: #000000; border: outset; border-width: 2px; width: 80%; margin: auto; border-radius: 20px; }
 
 .menu { margin-top: 2%; margin-left: 2%; margin-right: 2%; font-weight: bold; background-color: #FFFFCC; }
 
