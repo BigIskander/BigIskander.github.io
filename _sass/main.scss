@@ -40,3 +40,19 @@ H1, P, IMG, LI {
 	margin-left: 2%;
 	margin-right: 2%;
 }
+
+@media (min-width: 800px)
+{
+	.qr_block
+	{
+		display: flex;
+	}
+}
+
+@media (max-width: 800px)
+{
+	.qr_block
+	{
+		display: inline;
+	}
+}

@@ -17,4 +17,8 @@ H1 { font-size: 1.5em; }
 
 H1, P, IMG, LI { text-align: justify; margin-left: 2%; margin-right: 2%; }
 
+@media (min-width: 800px) { .qr_block { display: flex; } }
+
+@media (max-width: 800px) { .qr_block { display: inline; } }
+
 /*# sourceMappingURL=styles.css.map */
