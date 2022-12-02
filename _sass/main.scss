@@ -58,7 +58,12 @@ H1, P, IMG, LI {
 	}
 }
 
-PRE {
+img
+{
+	max-width: 100%
+}
+
+PRE, code {
 	max-height: 300px;
 }
 

@@ -21,7 +21,9 @@ H1, P, IMG, LI { text-align: justify; margin-left: 2%; margin-right: 2%; line-he
 
 @media (max-width: 800px) { .qr_block { display: inline; } }
 
-PRE { max-height: 300px; }
+img { max-width: 100%; }
+
+PRE, code { max-height: 300px; }
 
 .code { margin-left: 2%; margin-right: 2%; border-radius: 5px; background-color: #666666; }
 
