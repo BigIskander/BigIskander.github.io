@@ -19,15 +19,17 @@
   </head>
   <body>
 	<div class="content">
+    <div class="header">
+    </div>
 	<div class="menu">
 
-	<a href="/" class="menu_link">Главная</a>;
+<a href="/" class="menu_link">Главная</a>
 
-	<a href="/xuexihanzi_mobile.html" class="menu_link">Учить китайские слова мобильная версия</a>;
+<a href="/xuexihanzi_mobile.html" class="menu_link">Учить китайские слова</a>
 
 </div>
 
-    <h1>Реализация алгоритма Metropolis-Hastings MCMC в R для случая нескольких переменных.</h1>
+  <h1>Реализация алгоритма Metropolis-Hastings MCMC в R для случая нескольких переменных.</h1>
 <p>Это реализация алгоритма Metropolis-Hastings MCMC, которую я применял в своих расчетах.</p>
 <p>В виде формул я уже описывал этот алгоритм в своей статье: <b><i>Султанов И.Р. Прогнозирование спредов доходности на первичном рынке российских рублевых корпоративных облигаций // Горизонты экономики. - 2019. - Vol. 1 (47). - P. 62–73.</i></b> (<a href="https://elibrary.ru/item.asp?id=37106647" target="_blank">ссылка на публикацию</a>)
 <br>Здесь приводится непосредственно реализация алгоритма (исходный код в R).
@@ -407,7 +409,7 @@ aposterior <- function(b, sig_sq, b_TH, alpha, beta, stdp, Y, pY)
 <div class="code_header">
 Код в R:
 </div>
-<pre data-src="/assets/to_download/MCMC_algorithm.R" data-download-link><code  class="language-R line-numbers">#Metropolis-Hastings MCMC algorithm implementation
+<pre data-src="https://github.com/BigIskander/mcmc" data-download-link><code  class="language-R line-numbers">#Metropolis-Hastings MCMC algorithm implementation
 #author: Sultanov Iskander
 # BigIskander@gmail.com
 

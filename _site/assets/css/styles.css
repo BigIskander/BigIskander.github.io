@@ -3,11 +3,13 @@ body { background-color: #CCCCFF; font-size: 1.1em; }
 
 .content { background-color: #FFFFFF; border-color: #000000; border: outset; border-width: 2px; width: 80%; margin: auto; border-radius: 20px; }
 
-.menu { margin-top: 2%; margin-left: 2%; margin-right: 2%; font-weight: bold; background-color: #FFFFCC; }
+.header { height: 200px; margin-top: 0%; margin-left: 0%; margin-right: 0%; border-top-left-radius: 20px; border-top-right-radius: 20px; background-color: #FFFFFF; }
 
-.menu_link, .menu_link_selected { margin-left: 5px; text-decoration: underline; font-size: 1.2em; color: #990000; }
+.menu { margin-left: 2%; margin-right: 2%; font-weight: bold; padding-left: 5px; padding-right: 5px; border-radius: 5px; background-color: #CCCCFF; }
 
-.menu_link:hover, .menu_link_selected:hover { color: #9900CC; }
+.menu_link, .menu_link_selected { display: inline-block; margin-left: 0px; margin-right: 0px; height: 30px; padding: 5px; text-decoration: none; font-size: 1.2em; background-color: #CCCCFF; color: #003333; }
+
+.menu_link:hover, .menu_link_selected:hover { text-decoration: underline; }
 
 /* Комментарий */
 .menu_link_selected { background-color: #CCFF00; }
@@ -27,6 +29,6 @@ PRE, code { max-height: 300px; }
 
 .code { margin-left: 2%; margin-right: 2%; border-radius: 5px; background-color: #666666; }
 
-.code_header { margin-bottom: -1%; font-weight: bold; padding: 10px; }
+.code_header { margin-bottom: -0.5%; font-weight: bold; padding: 10px; }
 
 /*# sourceMappingURL=styles.css.map */
