@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Реализация алгоритма Metropolis-Hastings MCMC в R для случая нескольких переменных.</title>
+	<link rel="stylesheet" href="/assets/css/styles.css">
+  
+  <link href="/assets/css/prism.css" rel="stylesheet" />
+  <script src="/assets/js/prism.js"></script>
+  </style>
+  
+  
+  <!-- scripts for formulas demonstration -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+
+  </head>
+  <body>
+	<div class="content">
+	<div class="menu">
+
+	<a href="/" class="menu_link">Главная</a>;
+
+	<a href="/xuexihanzi_mobile.html" class="menu_link">Учить китайские слова мобильная версия</a>;
+
+	<a href="/mcmc.html" class="menu_link_selected">MCMC algorithm</a>;
+
+</div>
+
+    <h1>Реализация алгоритма Metropolis-Hastings MCMC в R для случая нескольких переменных.</h1>
+<p>Это реализация алгоритма Metropolis-Hastings MCMC, которую я применял в своих расчетах.</p>
+<p>В виде формул я уже описывал этот алгоритм в своей статье: <b><i>Султанов И.Р. Прогнозирование спредов доходности на первичном рынке российских рублевых корпоративных облигаций // Горизонты экономики. - 2019. - Vol. 1 (47). - P. 62–73.</i></b> (<a href="https://elibrary.ru/item.asp?id=37106647" target="_blank">ссылка на публикацию</a>)
+<br>Здесь приводится непосредственно реализация алгоритма (исходный код в R).
+<br>Надеюсь кому ни будь пригодится. Удачи в ваших исследованиях. </p>
+<p>Для написания собственной реализации алгоритма за основу взял:
+<ol>
+<li>
+пример реализации алгоритма для случая одной переменной: <b><i>Wiecki T. MCMC sampling for dummies. Available at: <a href="http://twiecki.github.io/blog/2015/11/10/mcmc-sampling/" target="_blank">http://twiecki.github.io/blog/2015/11/10/mcmc-sampling/ </a>(accessed 20.06.2017).</i></b>
+</li><li>
+формулы для расчетов из статьи: <b><i>Айвазян С.А. Байесовский подход в эконометрическом анализе // Прикладная эконометрика. - 2008. - Vol. 9. - Is. 1. - P. 93–130.</i></b></li>
+</ol>
+</p>
+<p>
+В общем виде оцениваемая эконометрическая модель может быть записана как:
+\[y={{\theta }_{0}}+{{\theta }_{1}}*{{x}^{(1)}}+{{\theta }_{2}}*{{x}^{(2)}}+...+{{\theta }_{k}}*{{x}^{(k)}}+\varepsilon \]
+</p><p>
+В матричной записи формула принимает вид:
+$$Y=X\theta +\varepsilon $$
+где \(Y={{\left( {{y}_{1}},{{y}_{2}},\ldots ,{{y}_{n}} \right)}^{T}}\)
+– значения зависимой переменной,
+\(n\)
+– число наблюдений;
+\(X=\left[ \begin{matrix}
+   1 & x_{1}^{\left( 1 \right)} & \ldots  & x_{1}^{\left( k \right)}  \\
+   1 & x_{2}^{\left( 1 \right)} & \ldots  & x_{2}^{\left( k \right)}  \\
+   \ldots  & \ldots  & \ldots  & \ldots   \\
+   1 & x_{n}^{\left( 1 \right)} & \ldots  & x_{n}^{\left( k \right)}  \\
+\end{matrix} \right]\)
+– значения независимых переменных (верхний индекс – номер переменной, нижний индекс – номер наблюдения);
+\(\theta ={{\left( {{\theta }_{0}},{{\theta }_{1}},\ldots ,{{\theta }_{k}} \right)}^{T}}\)
+– значения параметров модели,
+\(k\)
+– число переменных;
+\(\varepsilon ={{\left( {{\varepsilon }_{1}},{{\varepsilon }_{2}},\ldots ,{{\varepsilon }_{n}} \right)}^{T}}\)
+– значения остатков модели (регрессии);
+\(\varepsilon \in {{N}_{n}}\left( 0;\frac{1}{h}{{I}_{n}} \right)\)
+– распределение остатков,
+где \(h=\frac{1}{D\varepsilon }\),
+\(D\varepsilon =var\left( \varepsilon  \right)\),
+\({{I}_{n}}\) – единичная матрица размерности \(n\).</p>
+
+<p>
+Для определения первоначальных значений параметров, cначала рассчитывались оценки коэффициентов модели и остатки регрессии обычным методом МНК (метод наименьших квадратов) на данных за предыдущие периоды (годы).</p>
+<div class="code">
+<div class="code_header">
+Код в R:
+</div>
+<pre><code class="language-R line-numbers">#estimate linear regressions
+m1 <- lm(f, mydata, year==2007)
+m2 <- lm(f, mydata, year==2008)
+m3 <- lm(f, mydata, year==2009)
+m4 <- lm(f, mydata, year==2010)
+m5 <- lm(f, mydata, year==2011)
+m6 <- lm(f, mydata, year==2012)
+m7 <- lm(f, mydata, year==2013)
+m8 <- lm(f, mydata, year==2014)
+
+#get thetas from coefficients
+cf1 <- coef(m1)
+cf2 <- coef(m2)
+cf3 <- coef(m3)
+cf4 <- coef(m4)
+cf5 <- coef(m5)
+cf6 <- coef(m6)
+cf7 <- coef(m7)
+cf8 <- coef(m8)</code></pre>
+</div>
+<!-- Продолжение -->
+<p>
+Затем, начальные значения параметров брались, как
+\({{\theta }_{i}}=\frac{\sum\limits_{j=1}^{s}{\theta _{i}^{t-j}}}{s}\)
+– начальное значение коэффициента \(i\)
+(верхний индекс обозначает номер года, \(\theta _{i}^{t-j}\)
+- параметр \(i\) оцененный на данных за год \(t - j)\);
+\(h=\frac{\sum\limits_{j=1}^{s}{{{h}^{t-j}}}}{s}\)
+– (верхний индекс обозначает номер года);
+\({{\sigma }_{i}}=\sqrt{D{{\theta }_{i}}}\)
+\({{\sigma }_{h}}=\sqrt{Dh}\)
+(\(h=\frac{1}{D\varepsilon }\).
+\(D\varepsilon =var\left( \varepsilon  \right)\)).
+</p>
+<div class="code">
+<div class="code_header">
+Код в R:
+</div>
+<pre><code class="language-R line-numbers">#primary estimations
+hh <- 1/c(var(residuals(m1)),var(residuals(m2)),
+          var(residuals(m3)),var(residuals(m4)),
+          var(residuals(m5)),var(residuals(m6)),
+          var(residuals(m7)),var(residuals(m8)))
+h <- mean(hh)
+st_h <- sqrt(var(hh))</code></pre>
+</div>
+<!-- Продолжение -->
+<p>Параметры модели (т.е. переменные \(\theta \) и \(h\)) рассматривались, как показатели,
+подчиняющиеся многомерному гамма-нормальному распределению
+\(E\theta =Et(2a|\theta ;\frac{\alpha }{\beta }\Lambda )\),
+где \(t(…,…)\) – многомерное обобщенное распределение Стьюдента.
+Параметры распределения рассчитывались как
+\(\alpha =\frac{{{h}^{2}}}{{{\sigma }_{h}}^{2}}\);
+\(\beta =\frac{h}{{{\sigma }_{h}}^{2}}\);
+\(\Lambda =\left[ \begin{matrix}
+   {{\lambda }^{\left( 0 \right)}} & 0 & \ldots  & 0  \\
+   0 & {{\lambda }^{\left( 1 \right)}} & \ldots  & 0  \\
+   \ldots  & \ldots  & \ldots  & \ldots   \\
+   0 & 0 & \ldots  & {{\lambda }^{\left( k \right)}}  \\
+\end{matrix} \right]\) (25).
+Где \({{\lambda }^{\left( j \right)}}=\left| \frac{1}{{{\sigma }_{j}}^{2}}\cdot \frac{\beta }{\alpha -1} \right|\)
+</p>
+<div class="code">
+<div class="code_header">
+Код в R:
+</div>
+<pre><code class="language-R line-numbers">#calc the distribution params
+alpha <- (h^2)/(st_h^2)
+beta <- h/(st_h^2)
+
+ll <- length(cf1)
+
+cfl <- matrix(0, ll, 8)
+th <- matrix(0, ll, 1)
+st_th <- matrix(0, ll, 1)
+#L matrix calculation
+L <- matrix(0, ll, ll)
+for(i in 1:ll)
+{
+  cfl[i,] <- c(cf1[i],cf2[i],cf3[i],cf4[i],cf5[i],
+               cf6[i],cf7[i],cf8[i])
+  th[i] <- mean(cfl[i,])
+  st_th[i] <- sqrt(var(cfl[i,]))
+  L[i,i] <- (1/(st_th[i]^2))*(beta/(alpha-1))
+}</code></pre>
+</div>
+<!-- Продолжение -->
+<p>
+Далее параметры модели оценивались на новых данных. Для расчетов методом Metropolis-Hastings MCMC применялась функция с названием mcmc речь о которой пойдет далее.
+</p>
+<div class="code">
+<div class="code_header">
+Код в R:
+</div>
+<pre><code class="language-R line-numbers">#get X and Y
+ndata <- subset(mydata, year==2015)
+M <- as.matrix(model.frame(formula=f, data=ndata))
+Y <- M[,1]
+X <- cbind(1,M[,-1])
+n <- length(Y)
+
+iter <- 10000
+data <- mcmc(iter, X, Y, th, alpha, beta, h, L)
+
+#get model parameters from MCMC estimation
+th_sim <- matrix(0,ncol(data)-1,1)
+for(i in 2:ncol(data)) th_sim[i-1] <- rbind(mean(data[,i]))</code></pre>
+</div>
+<!-- Продолжение -->
+<p>
+<b>Содержимое функции mcmc.</b>
+Первоначальные значения параметров перед запуском алгоритма Metropolis-Hastings MCMC рассчитывались, как:
+\(S=\left( {{S}_{1}},\ldots ,{{S}_{i}} \right)\);
+\({{S}_{i}}=\frac{1}{\sqrt{{{c}_{i}}}}\) (30);
+\({{c}_{i}}={{b}_{ii}}-{{B}_{i.}}B{{\left( i \right)}^{-1}}{{B}_{.i}}\) (31);
+\(B=\left[ \begin{matrix}
+     {{b}_{ii}} & {{B}_{i.}}  \\
+     {{B}_{.i}} & B\left( i \right)  \\
+  \end{matrix} \right]\) (32);
+  \(B=\frac{\alpha }{\beta }\Lambda \) (33)
+</p><p>
+<div class="code">
+<div class="code_header">
+Код в R:
+</div>
+<pre><code class="language-R line-numbers">#preliminary estimation 1
+B <- h*L
+C <- matrix(0, length(b), 1)
+for(i in 1:length(b))
+{
+  C[i] <- B[i,i]-B[i,-i]%*%solve(B[-i,-i],B[-i,i])
+}
+stdp <- 1/sqrt(C)</code></pre>
+</div>
+</p>
+<!-- Продолжение -->
+<p>
+Первоначальные значения элементов цепи (до запуска алгоритма) рассчитывались следующим образом:
+\(~M=\left( {{M}_{1}},\ldots ,{{M}_{q}} \right)\);
+\({{Y}_{p}}=X\theta \);
+\({{\vartheta }_{pr}}=var\left( Y-{{Y}_{p}} \right)\);
+\({{M}_{1}}=\left( {{\vartheta }_{pr}};\theta  \right)\);
+\({{P}_{pr}}=apost\left( {{Y}_{p}};{{\vartheta }_{pr}};\theta  \right)\);
+\({{\theta }_{pv}}=\theta \).
+Где \(M\) – марковская цепь; \(q\) – длина цепи;
+\(apost(…;…;…)\)
+– функция расчета апостериорной вероятности (в программе названа как aposterior).
+</p>
+<p>
+<div class="code">
+<div class="code_header">
+Код в R:
+</div>
+<pre><code  class="language-R line-numbers">#preliminary estimation 2
+iter &lt;- iter*1.1
+b <- b_TH
+pY <- X%*%b
+resid <- Y-pY
+sig_sq <- as.numeric(var(resid))
+output=matrix(0,ncol=ncol(X)+1,nrow=iter)
+output[1,]=c(sig_sq,b)</code></pre>
+</div>
+<p>Статья не дописана...</p>
+
+	</div>
+  </body>
+</html>

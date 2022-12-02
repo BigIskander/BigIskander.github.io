@@ -15,10 +15,16 @@ body { background-color: #CCCCFF; font-size: 1.1em; }
 /* Комментарий */
 H1 { font-size: 1.5em; }
 
-H1, P, IMG, LI { text-align: justify; margin-left: 2%; margin-right: 2%; }
+H1, P, IMG, LI { text-align: justify; margin-left: 2%; margin-right: 2%; line-height: 1.25; }
 
 @media (min-width: 800px) { .qr_block { display: flex; } }
 
 @media (max-width: 800px) { .qr_block { display: inline; } }
+
+PRE { background-color: #CCCCFF; color: #000000; font-weight: bold; text-align: justify; font-size: 1.1em; margin-left: 2%; margin-right: 2%; margin-top: 0%; padding: 20px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
+
+.code { margin-left: 2%; margin-right: 2%; border-radius: 5px; background-color: #666666; }
+
+.code_header { margin-bottom: -1%; font-weight: bold; padding: 10px; }
 
 /*# sourceMappingURL=styles.css.map */

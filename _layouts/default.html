@@ -6,6 +6,17 @@
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
 	<link rel="stylesheet" href="/assets/css/styles.css">
+  {% if page.code=="Y" %}
+  <link href="/assets/css/prism.css" rel="stylesheet" />
+  <script src="/assets/js/prism.js"></script>
+  </style>
+  {% endif %}
+  {% if page.formula=="Y" %}
+  <!-- scripts for formulas demonstration -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  {% endif %}
+
   </head>
   <body>
 	<div class="content">
