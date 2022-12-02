@@ -59,17 +59,7 @@ H1, P, IMG, LI {
 }
 
 PRE {
-	background-color: #CCCCFF;
-	color: #000000;
-	font-weight: bold;
-	text-align: justify;
-	font-size: 1.1em;
-	margin-left: 2%;
-	margin-right: 2%;
-	margin-top: 0%;
-	padding: 20px;
-	border-bottom-left-radius: 20px;
-	border-bottom-right-radius: 20px;
+	max-height: 300px;
 }
 
 .code {
