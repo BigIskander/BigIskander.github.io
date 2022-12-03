@@ -23,8 +23,8 @@ body {
 	margin-right: 0%;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
-	background-color: #FFFFFF;
-	background-image: url("/assets/images/500.jpg");
+	background-color: #000000;
+	background-image: url("/assets/images/200x1600.jpg");
 	background-size: cover;
 }
 
@@ -35,7 +35,7 @@ body {
 	padding-left: 5px;
 	padding-right: 5px;
 	border-radius: 5px;
-	background-color: #CCCCFF;
+	background-color: #CCCC99;
 }
 
 .menu_link, .menu_link_selected {
@@ -46,7 +46,7 @@ body {
 	padding: 5px;
 	text-decoration: none;
 	font-size: 1.2em;
-	background-color: #CCCCFF;
+	background-color: #CCCC99;
 	color: #003333;
 }
 .menu_link:hover, .menu_link_selected:hover {
@@ -54,7 +54,7 @@ body {
 }
 /* Комментарий */
 .menu_link_selected {
-	background-color: #CCFF00;
+	background-color: #CCFF99;
 }
 /* Комментарий */
 H1 {
