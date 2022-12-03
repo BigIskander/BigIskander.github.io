@@ -2,3 +2,5 @@
   link: /
 - name: Учить китайские слова
   link: /xuexihanzi_mobile.html
+- name: MCMC algorithm
+  link: /mcmc.html
