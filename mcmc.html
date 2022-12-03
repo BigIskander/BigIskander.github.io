@@ -12,7 +12,7 @@ code: "Y"
 <p>Для написания собственной реализации алгоритма за основу взял:
 <ol>
 <li>
-пример реализации алгоритма для случая одной переменной: <b><i>Wiecki T. MCMC sampling for dummies. Available at: <a href="http://twiecki.github.io/blog/2015/11/10/mcmc-sampling/" target="_blank">http://twiecki.github.io/blog/2015/11/10/mcmc-sampling/ </a>(accessed 20.06.2017).</i></b>
+пример реализации алгоритма MCMC для случая одной переменной: <b><i>Wiecki T. MCMC sampling for dummies. Available at: <a href="http://twiecki.github.io/blog/2015/11/10/mcmc-sampling/" target="_blank">http://twiecki.github.io/blog/2015/11/10/mcmc-sampling/ </a>(accessed 20.06.2017).</i></b>
 </li><li>
 формулы для расчетов из статьи: <b><i>Айвазян С.А. Байесовский подход в эконометрическом анализе // Прикладная эконометрика. - 2008. - Vol. 9. - Is. 1. - P. 93–130.</i></b></li>
 </ol>
@@ -85,9 +85,9 @@ cf8 <- coef(m8)</code></pre>
 - параметр {% raw %}\(i\){% endraw %} оцененный на данных за год {% raw %}\(t - j)\){% endraw %};
 {% raw %}\(h=\frac{\sum\limits_{j=1}^{s}{{{h}^{t-j}}}}{s}\){% endraw %}
 – (верхний индекс обозначает номер года);
-{% raw %}\({{\sigma }_{i}}=\sqrt{D{{\theta }_{i}}}\){% endraw %}
-{% raw %}\({{\sigma }_{h}}=\sqrt{Dh}\){% endraw %}
-({% raw %}\(h=\frac{1}{D\varepsilon }\){% endraw %}.
+{% raw %}\({{\sigma }_{i}}=\sqrt{D{{\theta }_{i}}}\){% endraw %};
+{% raw %}\({{\sigma }_{h}}=\sqrt{Dh}\){% endraw %};
+({% raw %}\(h=\frac{1}{D\varepsilon }\){% endraw %};
 {% raw %}\(D\varepsilon =var\left( \varepsilon  \right)\){% endraw %}).
 </p>
 <div class="code">
@@ -146,7 +146,9 @@ for(i in 1:ll)
 <!-- Продолжение -->
 <hr>
 <p>
-Далее параметры модели оценивались на новых данных. Для расчетов методом Metropolis-Hastings MCMC применялась функция с названием mcmc речь о которой пойдет далее.
+Далее параметры модели оценивались на новых данных.
+Для расчетов методом Metropolis-Hastings MCMC применялась функция с названием <b>mcmc</b>
+речь о которой пойдет далее.
 </p>
 <div class="code">
 <div class="code_header">
@@ -188,8 +190,8 @@ for(i in 2:ncol(data)) th_sim[i-1] <- rbind(mean(data[,i]))</code></pre>
 </div>
 <pre><code class="language-R line-numbers">#preliminary estimation 1
 B <- h*L
-C <- matrix(0, length(b), 1)
-for(i in 1:length(b))
+C <- matrix(0, length(b_TH), 1)
+for(i in 1:length(b_TH))
 {
   C[i] <- B[i,i]-B[i,-i]%*%solve(B[-i,-i],B[-i,i])
 }
@@ -215,13 +217,15 @@ stdp <- 1/sqrt(C)</code></pre>
 Код в R:
 </div>
 <pre><code  class="language-R line-numbers">#preliminary estimation 2
-iter &lt;- iter*1.1
+iter <- iter*1.1
 b <- b_TH
 pY <- X%*%b
 resid <- Y-pY
 sig_sq <- as.numeric(var(resid))
 output=matrix(0,ncol=ncol(X)+1,nrow=iter)
-output[1,]=c(sig_sq,b)</code></pre>
+output[1,]=c(sig_sq,b)
+
+prevp <- aposterior(b, sig_sq, b_TH, alpha, beta, stdp, Y, pY)</code></pre>
 </div>
 <!-- Продолжение --->
 <hr>
@@ -246,22 +250,22 @@ output[1,]=c(sig_sq,b)</code></pre>
 Код в R:
 </div>
 <pre><code  class="language-R line-numbers">#mcmc algorithm main cycle
-  i <- 2
-  while(i<=iter)
-  {
-    bn <- propose(b, stdp)
-    pY <- X%*%bn
-    residn <- Y-pY
-    sig_sqn <- as.numeric(var(residn))
-    ace <- aposterior(bn, sig_sqn, b_TH, alpha, beta, stdp, Y, pY)
-    if(log(runif(1))<(ace-prevp)) {
-      b <- bn
-      sig_sq <- sig_sqn
-      prevp <- ace
-    }
-    output[i,]=c(sig_sq,b)
-    i <- i+1
+i <- 2
+while(i<=iter)
+{
+  bn <- propose(b, stdp)
+  pY <- X%*%bn
+  residn <- Y-pY
+  sig_sqn <- as.numeric(var(residn))
+  ace <- aposterior(bn, sig_sqn, b_TH, alpha, beta, stdp, Y, pY)
+  if(log(runif(1))<(ace-prevp)) {
+    b <- bn
+    sig_sq <- sig_sqn
+    prevp <- ace
   }
+  output[i,]=c(sig_sq,b)
+  i <- i+1
+}
 </code></pre>
 </div>
 <hr>
@@ -278,6 +282,15 @@ output[1,]=c(sig_sq,b)</code></pre>
 #h, L - accuracy variables from previous data estimation
 mcmc <- function(iter, X, Y, b_TH, alpha, beta, h, L)
 {
+  #preliminary estimation 1
+  B <- h*L
+  C <- matrix(0, length(b_TH), 1)
+  for(i in 1:length(b_TH))
+  {
+    C[i] <- B[i,i]-B[i,-i]%*%solve(B[-i,-i],B[-i,i])
+  }
+  stdp <- 1/sqrt(C)
+
   #preliminary estimation 2
   iter <- iter*1.1
   b <- b_TH
@@ -286,15 +299,6 @@ mcmc <- function(iter, X, Y, b_TH, alpha, beta, h, L)
   sig_sq <- as.numeric(var(resid))
   output=matrix(0,ncol=ncol(X)+1,nrow=iter)
   output[1,]=c(sig_sq,b)
-
-  #preliminary estimation 1
-  B <- h*L
-  C <- matrix(0, length(b), 1)
-  for(i in 1:length(b))
-  {
-    C[i] <- B[i,i]-B[i,-i]%*%solve(B[-i,-i],B[-i,i])
-  }
-  stdp <- 1/sqrt(C)
 
   prevp <- aposterior(b, sig_sq, b_TH, alpha, beta, stdp, Y, pY)
 
@@ -379,12 +383,13 @@ aposterior <- function(b, sig_sq, b_TH, alpha, beta, stdp, Y, pY)
 </code></pre>
 </div>
 <hr>
-<p><b><i>Код программы полностью.</i></b></p>
+<p><b><i>Код программы полностью (<a href="https://github.com/BigIskander/mcmc" target="_blank">скачать</a>).</i></b></p>
 <div class="code">
 <div class="code_header">
 Код в R:
 </div>
 <pre data-src="https://github.com/BigIskander/mcmc" data-download-link><code  class="language-R line-numbers">#Metropolis-Hastings MCMC algorithm implementation
+#https://bigiskander.github.io/mcmc.html
 #author: Sultanov Iskander
 # BigIskander@gmail.com
 
@@ -424,6 +429,15 @@ propose <- function(b, st)
 #h, L - accuracy variables from previous data estimation
 mcmc <- function(iter, X, Y, b_TH, alpha, beta, h, L)
 {
+  #preliminary estimation 1
+  B <- h*L
+  C <- matrix(0, length(b_TH), 1)
+  for(i in 1:length(b_TH))
+  {
+    C[i] <- B[i,i]-B[i,-i]%*%solve(B[-i,-i],B[-i,i])
+  }
+  stdp <- 1/sqrt(C)
+
   #preliminary estimation 2
   iter <- iter*1.1
   b <- b_TH
@@ -432,15 +446,6 @@ mcmc <- function(iter, X, Y, b_TH, alpha, beta, h, L)
   sig_sq <- as.numeric(var(resid))
   output=matrix(0,ncol=ncol(X)+1,nrow=iter)
   output[1,]=c(sig_sq,b)
-
-  #preliminary estimation 1
-  B <- h*L
-  C <- matrix(0, length(b), 1)
-  for(i in 1:length(b))
-  {
-    C[i] <- B[i,i]-B[i,-i]%*%solve(B[-i,-i],B[-i,i])
-  }
-  stdp <- 1/sqrt(C)
 
   prevp <- aposterior(b, sig_sq, b_TH, alpha, beta, stdp, Y, pY)
 
