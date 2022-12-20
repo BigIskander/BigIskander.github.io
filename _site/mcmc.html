@@ -8,6 +8,7 @@
   <!-- for code highlight -->
   <link href="/assets/css/prism.css" rel="stylesheet" />
   <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/show_hide_code.js"></script>
   
   
   <!-- https://www.mathjax.org -->
@@ -80,28 +81,29 @@ $$Y=X\theta +\varepsilon $$
 предыдущие периоды (годы).</p>
 <div class="code">
 <div class="code_header">
-Код в R:
+  <a onclick="show_hide('code_1')" href="javascript:void(0);">Код в R (<em>показать</em>):</a>
 </div>
+<div id="code_1" class="code_lines_hide">
 <pre><code class="language-R line-numbers">#estimate linear regressions
-m1 <- lm(f, mydata, year==2007)
-m2 <- lm(f, mydata, year==2008)
-m3 <- lm(f, mydata, year==2009)
-m4 <- lm(f, mydata, year==2010)
-m5 <- lm(f, mydata, year==2011)
-m6 <- lm(f, mydata, year==2012)
-m7 <- lm(f, mydata, year==2013)
-m8 <- lm(f, mydata, year==2014)
+m1 &lt;- lm(f, mydata, year==2007)
+m2 &lt;- lm(f, mydata, year==2008)
+m3 &lt;- lm(f, mydata, year==2009)
+m4 &lt;- lm(f, mydata, year==2010)
+m5 &lt;- lm(f, mydata, year==2011)
+m6 &lt;- lm(f, mydata, year==2012)
+m7 &lt;- lm(f, mydata, year==2013)
+m8 &lt;- lm(f, mydata, year==2014)
 
 #get thetas from coefficients
-cf1 <- coef(m1)
-cf2 <- coef(m2)
-cf3 <- coef(m3)
-cf4 <- coef(m4)
-cf5 <- coef(m5)
-cf6 <- coef(m6)
-cf7 <- coef(m7)
-cf8 <- coef(m8)</code></pre>
-</div>
+cf1 &lt;- coef(m1)
+cf2 &lt;- coef(m2)
+cf3 &lt;- coef(m3)
+cf4 &lt;- coef(m4)
+cf5 &lt;- coef(m5)
+cf6 &lt;- coef(m6)
+cf7 &lt;- coef(m7)
+cf8 &lt;- coef(m8)</code></pre>
+</div></div>
 <!-- Продолжение -->
 <hr>
 <p>
@@ -118,17 +120,18 @@ cf8 <- coef(m8)</code></pre>
 \(D\varepsilon =var\left( \varepsilon  \right)\)).
 </p>
 <div class="code">
-<div class="code_header">
-Код в R:
-</div>
+  <div class="code_header">
+    <a onclick="show_hide('code_2')" href="javascript:void(0);">Код в R (<em>показать</em>):</a>
+  </div>
+  <div id="code_2" class="code_lines_hide">
 <pre><code class="language-R line-numbers">#primary estimations
-hh <- 1/c(var(residuals(m1)),var(residuals(m2)),
+hh &lt;- 1/c(var(residuals(m1)),var(residuals(m2)),
           var(residuals(m3)),var(residuals(m4)),
           var(residuals(m5)),var(residuals(m6)),
           var(residuals(m7)),var(residuals(m8)))
-h <- mean(hh)
-st_h <- sqrt(var(hh))</code></pre>
-</div>
+h &lt;- mean(hh)
+st_h &lt;- sqrt(var(hh))</code></pre>
+</div></div>
 <!-- Продолжение -->
 <hr>
 <p>Параметры модели (т.е. переменные \(\theta \) и \(h\)) рассматривались, как показатели,
@@ -147,29 +150,30 @@ st_h <- sqrt(var(hh))</code></pre>
 Где \({{\lambda }^{\left( j \right)}}=\left| \frac{1}{{{\sigma }_{j}}^{2}}\cdot \frac{\beta }{\alpha -1} \right|\)
 </p>
 <div class="code">
-<div class="code_header">
-Код в R:
-</div>
+  <div class="code_header">
+    <a onclick="show_hide('code_3')" href="javascript:void(0);">Код в R (<em>показать</em>):</a>
+  </div>
+<div id="code_3" class="code_lines_hide">
 <pre><code class="language-R line-numbers">#calc the distribution params
-alpha <- (h^2)/(st_h^2)
-beta <- h/(st_h^2)
+alpha &lt;- (h^2)/(st_h^2)
+beta &lt;- h/(st_h^2)
 
-ll <- length(cf1)
+ll &lt;- length(cf1)
 
-cfl <- matrix(0, ll, 8)
-th <- matrix(0, ll, 1)
-st_th <- matrix(0, ll, 1)
+cfl &lt;- matrix(0, ll, 8)
+th &lt;- matrix(0, ll, 1)
+st_th &lt;- matrix(0, ll, 1)
 #L matrix calculation
-L <- matrix(0, ll, ll)
+L &lt;- matrix(0, ll, ll)
 for(i in 1:ll)
 {
-  cfl[i,] <- c(cf1[i],cf2[i],cf3[i],cf4[i],cf5[i],
+  cfl[i,] &lt;- c(cf1[i],cf2[i],cf3[i],cf4[i],cf5[i],
                cf6[i],cf7[i],cf8[i])
-  th[i] <- mean(cfl[i,])
-  st_th[i] <- sqrt(var(cfl[i,]))
-  L[i,i] <- (1/(st_th[i]^2))*(beta/(alpha-1))
+  th[i] &lt;- mean(cfl[i,])
+  st_th[i] &lt;- sqrt(var(cfl[i,]))
+  L[i,i] &lt;- (1/(st_th[i]^2))*(beta/(alpha-1))
 }</code></pre>
-</div>
+</div></div>
 <!-- Продолжение -->
 <hr>
 <p>
@@ -178,23 +182,24 @@ for(i in 1:ll)
 речь о которой пойдет далее.
 </p>
 <div class="code">
-<div class="code_header">
-Код в R:
-</div>
+  <div class="code_header">
+    <a onclick="show_hide('code_4')" href="javascript:void(0);">Код в R (<em>показать</em>):</a>
+  </div>
+<div id="code_4" class="code_lines_hide">
 <pre><code class="language-R line-numbers">#get X and Y
-ndata <- subset(mydata, year==2015)
-M <- as.matrix(model.frame(formula=f, data=ndata))
-Y <- M[,1]
-X <- cbind(1,M[,-1])
-n <- length(Y)
+ndata &lt;- subset(mydata, year==2015)
+M &lt;- as.matrix(model.frame(formula=f, data=ndata))
+Y &lt;- M[,1]
+X &lt;- cbind(1,M[,-1])
+n &lt;- length(Y)
 
-iter <- 10000
-data <- mcmc(iter, X, Y, th, alpha, beta, h, L)
+iter &lt;- 10000
+data &lt;- mcmc(iter, X, Y, th, alpha, beta, h, L)
 
 #get model parameters from MCMC estimation
-th_sim <- matrix(0,ncol(data)-1,1)
-for(i in 2:ncol(data)) th_sim[i-1] <- rbind(mean(data[,i]))</code></pre>
-</div>
+th_sim &lt;- matrix(0,ncol(data)-1,1)
+for(i in 2:ncol(data)) th_sim[i-1] &lt;- rbind(mean(data[,i]))</code></pre>
+</div></div>
 <!-- Продолжение -->
 <hr>
 <p>
@@ -213,17 +218,18 @@ for(i in 2:ncol(data)) th_sim[i-1] <- rbind(mean(data[,i]))</code></pre>
 </p><p>
 <div class="code">
 <div class="code_header">
-Код в R:
-</div>
+    <a onclick="show_hide('code_5')" href="javascript:void(0);">Код в R (<em>показать</em>):</a>
+  </div>
+<div id="code_5" class="code_lines_hide">
 <pre><code class="language-R line-numbers">#preliminary estimation 1
-B <- h*L
-C <- matrix(0, length(b_TH), 1)
+B &lt;- h*L
+C &lt;- matrix(0, length(b_TH), 1)
 for(i in 1:length(b_TH))
 {
-  C[i] <- B[i,i]-B[i,-i]%*%solve(B[-i,-i],B[-i,i])
+  C[i] &lt;- B[i,i]-B[i,-i]%*%solve(B[-i,-i],B[-i,i])
 }
-stdp <- 1/sqrt(C)</code></pre>
-</div>
+stdp &lt;- 1/sqrt(C)</code></pre>
+</div></div>
 </p>
 <!-- Продолжение -->
 <hr>
@@ -241,19 +247,20 @@ stdp <- 1/sqrt(C)</code></pre>
 </p>
 <div class="code">
 <div class="code_header">
-Код в R:
+  <a onclick="show_hide('code_7')" href="javascript:void(0);">Код в R (<em>показать</em>):</a>
 </div>
+<div id="code_7" class="code_lines_hide">
 <pre><code  class="language-R line-numbers">#preliminary estimation 2
-iter <- iter*1.1
-b <- b_TH
-pY <- X%*%b
-resid <- Y-pY
-sig_sq <- as.numeric(var(resid))
+iter &lt;- iter*1.1
+b &lt;- b_TH
+pY &lt;- X%*%b
+resid &lt;- Y-pY
+sig_sq &lt;- as.numeric(var(resid))
 output=matrix(0,ncol=ncol(X)+1,nrow=iter)
 output[1,]=c(sig_sq,b)
 
-prevp <- aposterior(b, sig_sq, b_TH, alpha, beta, stdp, Y, pY)</code></pre>
-</div>
+prevp &lt;- aposterior(b, sig_sq, b_TH, alpha, beta, stdp, Y, pY)</code></pre>
+</div></div>
 <!-- Продолжение --->
 <hr>
 <p>
@@ -274,96 +281,99 @@ prevp <- aposterior(b, sig_sq, b_TH, alpha, beta, stdp, Y, pY)</code></pre>
 </p>
 <div class="code">
 <div class="code_header">
-Код в R:
+  <a onclick="show_hide('code_8')" href="javascript:void(0);">Код в R (<em>показать</em>):</a>
 </div>
+<div id="code_8" class="code_lines_hide">
 <pre><code  class="language-R line-numbers">#mcmc algorithm main cycle
-i <- 2
-while(i<=iter)
+i &lt;- 2
+while(i&lt;=iter)
 {
-  bn <- propose(b, stdp)
-  pY <- X%*%bn
-  residn <- Y-pY
-  sig_sqn <- as.numeric(var(residn))
-  ace <- aposterior(bn, sig_sqn, b_TH, alpha, beta, stdp, Y, pY)
-  if(log(runif(1))<(ace-prevp)) {
-    b <- bn
-    sig_sq <- sig_sqn
-    prevp <- ace
+  bn &lt;- propose(b, stdp)
+  pY &lt;- X%*%bn
+  residn &lt;- Y-pY
+  sig_sqn &lt;- as.numeric(var(residn))
+  ace &lt;- aposterior(bn, sig_sqn, b_TH, alpha, beta, stdp, Y, pY)
+  if(log(runif(1))&lt;(ace-prevp)) {
+    b &lt;- bn
+    sig_sq &lt;- sig_sqn
+    prevp &lt;- ace
   }
   output[i,]=c(sig_sq,b)
-  i <- i+1
+  i &lt;- i+1
 }
 </code></pre>
-</div>
+</div></div>
 <hr>
 <p><b>Функция mcmc, полностью:</b></p>
 <div class="code">
 <div class="code_header">
-Код в R:
+  <a onclick="show_hide('code_9')" href="javascript:void(0);">Код в R (<em>показать</em>):</a>
 </div>
+<div id="code_9" class="code_lines_hide">
 <pre><code  class="language-R line-numbers">#mcmc simulation
 #iter - number of iterations
 #X, Y - curent data
 #b_TH - vector of coeffients from previous data estimation
 #alpha, beta - gamma distribution parameters from previous data estimation
 #h, L - accuracy variables from previous data estimation
-mcmc <- function(iter, X, Y, b_TH, alpha, beta, h, L)
+mcmc &lt;- function(iter, X, Y, b_TH, alpha, beta, h, L)
 {
   #preliminary estimation 1
-  B <- h*L
-  C <- matrix(0, length(b_TH), 1)
+  B &lt;- h*L
+  C &lt;- matrix(0, length(b_TH), 1)
   for(i in 1:length(b_TH))
   {
-    C[i] <- B[i,i]-B[i,-i]%*%solve(B[-i,-i],B[-i,i])
+    C[i] &lt;- B[i,i]-B[i,-i]%*%solve(B[-i,-i],B[-i,i])
   }
-  stdp <- 1/sqrt(C)
+  stdp &lt;- 1/sqrt(C)
 
   #preliminary estimation 2
-  iter <- iter*1.1
-  b <- b_TH
-  pY <- X%*%b
-  resid <- Y-pY
-  sig_sq <- as.numeric(var(resid))
+  iter &lt;- iter*1.1
+  b &lt;- b_TH
+  pY &lt;- X%*%b
+  resid &lt;- Y-pY
+  sig_sq &lt;- as.numeric(var(resid))
   output=matrix(0,ncol=ncol(X)+1,nrow=iter)
   output[1,]=c(sig_sq,b)
 
-  prevp <- aposterior(b, sig_sq, b_TH, alpha, beta, stdp, Y, pY)
+  prevp &lt;- aposterior(b, sig_sq, b_TH, alpha, beta, stdp, Y, pY)
 
   #mcmc algorithm main cycle
-  i <- 2
-  while(i<=iter)
+  i &lt;- 2
+  while(i&lt;=iter)
   {
-    bn <- propose(b, stdp)
-    pY <- X%*%bn
-    residn <- Y-pY
-    sig_sqn <- as.numeric(var(residn))
-    ace <- aposterior(bn, sig_sqn, b_TH, alpha, beta, stdp, Y, pY)
-    if(log(runif(1))<(ace-prevp)) {
-      b <- bn
-      sig_sq <- sig_sqn
-      prevp <- ace
+    bn &lt;- propose(b, stdp)
+    pY &lt;- X%*%bn
+    residn &lt;- Y-pY
+    sig_sqn &lt;- as.numeric(var(residn))
+    ace &lt;- aposterior(bn, sig_sqn, b_TH, alpha, beta, stdp, Y, pY)
+    if(log(runif(1))&lt;(ace-prevp)) {
+      b &lt;- bn
+      sig_sq &lt;- sig_sqn
+      prevp &lt;- ace
     }
     output[i,]=c(sig_sq,b)
-    i <- i+1
+    i &lt;- i+1
   }
   return(output[-c(1:(iter/11)),])
 }
 </code></pre>
-</div>
+</div></div>
 <hr>
 <p>Функция \(prop(...,...)\) (в программе названа как propose) функция,
   случайным образом генерирующая вектор чисел из нормального распределения.</p>
 <div class="code">
 <div class="code_header">
-Код в R:
+  <a onclick="show_hide('code_10')" href="javascript:void(0);">Код в R (<em>показать</em>):</a>
 </div>
+<div id="code_10" class="code_lines_hide">
 <pre><code  class="language-R line-numbers">#generate new varibles
-propose <- function(b, st)
+propose &lt;- function(b, st)
 {
   return(rnorm(length(b),mean=b,sd=st))
 }
 </code></pre>
-</div>
+</div></div>
 <hr>
 <p>
 Функция \(apost(…;…;…)\), упоминавшаяся ранее, считается следующим образом:
@@ -384,66 +394,68 @@ propose <- function(b, st)
 </p>
 <div class="code">
 <div class="code_header">
-Код в R:
+  <a onclick="show_hide('code_11')" href="javascript:void(0);">Код в R (<em>показать</em>):</a>
 </div>
+<div id="code_11" class="code_lines_hide">
 <pre><code  class="language-R line-numbers">#aprior likelyhood
-prior <- function(b, sig_sq, b_TH, alpha, beta, stdp)
+prior &lt;- function(b, sig_sq, b_TH, alpha, beta, stdp)
 {
-  dn <- dnorm(b, mean=b_TH, sd=stdp, log=T)
-  dg <- dgamma(1/sig_sq, shape=alpha, scale=1/beta, log=T)
+  dn &lt;- dnorm(b, mean=b_TH, sd=stdp, log=T)
+  dg &lt;- dgamma(1/sig_sq, shape=alpha, scale=1/beta, log=T)
   return(sum(dn)+dg)
 }
 
 #likelyhood function
-likelyhood <- function(b, Y, pY)
+likelyhood &lt;- function(b, Y, pY)
 {
-  st <- sqrt(var(pY))
-  dn <- dnorm(Y, mean = pY, sd = st, log = T)
+  st &lt;- sqrt(var(pY))
+  dn &lt;- dnorm(Y, mean = pY, sd = st, log = T)
   return(sum(dn))
 }
 
 #aposterior likelyhood
-aposterior <- function(b, sig_sq, b_TH, alpha, beta, stdp, Y, pY)
+aposterior &lt;- function(b, sig_sq, b_TH, alpha, beta, stdp, Y, pY)
 {
   return(prior(b, sig_sq, b_TH, alpha, beta, stdp)+likelyhood(b, Y, pY))
 }
 </code></pre>
-</div>
+</div></div>
 <hr>
 <p><b><i>Код программы полностью (<a href="https://github.com/BigIskander/mcmc" target="_blank">скачать</a>).</i></b></p>
 <div class="code">
 <div class="code_header">
-Код в R:
+  <a onclick="show_hide('code_12')" href="javascript:void(0);">Код в R (<em>показать</em>):</a>
 </div>
+<div id="code_12" class="code_lines_hide">
 <pre data-src="https://github.com/BigIskander/mcmc" data-download-link><code  class="language-R line-numbers">#Metropolis-Hastings MCMC algorithm implementation
 #https://bigiskander.github.io/mcmc.html
 #author: Sultanov Iskander
 # BigIskander@gmail.com
 
 #aprior likelyhood
-prior <- function(b, sig_sq, b_TH, alpha, beta, stdp)
+prior &lt;- function(b, sig_sq, b_TH, alpha, beta, stdp)
 {
-  dn <- dnorm(b, mean=b_TH, sd=stdp, log=T)
-  dg <- dgamma(1/sig_sq, shape=alpha, scale=1/beta, log=T)
+  dn &lt;- dnorm(b, mean=b_TH, sd=stdp, log=T)
+  dg &lt;- dgamma(1/sig_sq, shape=alpha, scale=1/beta, log=T)
   return(sum(dn)+dg)
 }
 
 #likelyhood function
-likelyhood <- function(b, Y, pY)
+likelyhood &lt;- function(b, Y, pY)
 {
-  st <- sqrt(var(pY))
-  dn <- dnorm(Y, mean = pY, sd = st, log = T)
+  st &lt;- sqrt(var(pY))
+  dn &lt;- dnorm(Y, mean = pY, sd = st, log = T)
   return(sum(dn))
 }
 
 #aposterior likelyhood
-aposterior <- function(b, sig_sq, b_TH, alpha, beta, stdp, Y, pY)
+aposterior &lt;- function(b, sig_sq, b_TH, alpha, beta, stdp, Y, pY)
 {
   return(prior(b, sig_sq, b_TH, alpha, beta, stdp)+likelyhood(b, Y, pY))
 }
 
 #generate new varibles
-propose <- function(b, st)
+propose &lt;- function(b, st)
 {
   return(rnorm(length(b),mean=b,sd=st))
 }
@@ -454,56 +466,56 @@ propose <- function(b, st)
 #b_TH - vector of coeffients from previous data estimation
 #alpha, beta - gamma distribution parameters from previous data estimation
 #h, L - accuracy variables from previous data estimation
-mcmc <- function(iter, X, Y, b_TH, alpha, beta, h, L)
+mcmc &lt;- function(iter, X, Y, b_TH, alpha, beta, h, L)
 {
   #preliminary estimation 1
-  B <- h*L
-  C <- matrix(0, length(b_TH), 1)
+  B &lt;- h*L
+  C &lt;- matrix(0, length(b_TH), 1)
   for(i in 1:length(b_TH))
   {
-    C[i] <- B[i,i]-B[i,-i]%*%solve(B[-i,-i],B[-i,i])
+    C[i] &lt;- B[i,i]-B[i,-i]%*%solve(B[-i,-i],B[-i,i])
   }
-  stdp <- 1/sqrt(C)
+  stdp &lt;- 1/sqrt(C)
 
   #preliminary estimation 2
-  iter <- iter*1.1
-  b <- b_TH
-  pY <- X%*%b
-  resid <- Y-pY
-  sig_sq <- as.numeric(var(resid))
+  iter &lt;- iter*1.1
+  b &lt;- b_TH
+  pY &lt;- X%*%b
+  resid &lt;- Y-pY
+  sig_sq &lt;- as.numeric(var(resid))
   output=matrix(0,ncol=ncol(X)+1,nrow=iter)
   output[1,]=c(sig_sq,b)
 
-  prevp <- aposterior(b, sig_sq, b_TH, alpha, beta, stdp, Y, pY)
+  prevp &lt;- aposterior(b, sig_sq, b_TH, alpha, beta, stdp, Y, pY)
 
   #mcmc algorithm main cycle
-  i <- 2
-  while(i<=iter)
+  i &lt;- 2
+  while(i&lt;=iter)
   {
-    bn <- propose(b, stdp)
-    pY <- X%*%bn
-    residn <- Y-pY
-    sig_sqn <- as.numeric(var(residn))
-    ace <- aposterior(bn, sig_sqn, b_TH, alpha, beta, stdp, Y, pY)
-    if(log(runif(1))<(ace-prevp)) {
-      b <- bn
-      sig_sq <- sig_sqn
-      prevp <- ace
+    bn &lt;- propose(b, stdp)
+    pY &lt;- X%*%bn
+    residn &lt;- Y-pY
+    sig_sqn &lt;- as.numeric(var(residn))
+    ace &lt;- aposterior(bn, sig_sqn, b_TH, alpha, beta, stdp, Y, pY)
+    if(log(runif(1))&lt;(ace-prevp)) {
+      b &lt;- bn
+      sig_sq &lt;- sig_sqn
+      prevp &lt;- ace
     }
     output[i,]=c(sig_sq,b)
-    i <- i+1
+    i &lt;- i+1
   }
   return(output[-c(1:(iter/11)),])
 }
 
 #dencity plot
-dence <- function(data)
+dence &lt;- function(data)
 {
-  cc <- ncol(data)
-  if(cc>3)
+  cc &lt;- ncol(data)
+  if(cc&gt;3)
   {
-    mm <- round(cc/3,0)
-    if(mm&lt;cc/3) mm <- mm+1
+    mm &lt;- round(cc/3,0)
+    if(mm&lt;cc/3) mm &lt;- mm+1
     par(mfrow=c(mm,3))
   } else {
     par(mfrow=c(1,cc))
@@ -515,7 +527,7 @@ dence <- function(data)
     lines(density(data[,i],bw="nrd",
                   kernel="gaussian"),col="red",lwd=2)
   }
-  i <- 1
+  i &lt;- 1
   hist(data[,i],breaks=150,main="sig_sq",freq=FALSE)
   lines(density(data[,1],bw="nrd",kernel="gaussian"),col="red",lwd=2)
 }
@@ -527,79 +539,79 @@ dence <- function(data)
 #load the data
 library(foreign)
 #file with data saved in stata format (not provided)
-mydata <- read.dta("D:/Учеба/ВШЭ Аспирантура/Science/Calc in Stata/470.dta")
+mydata &lt;- read.dta("D:/Учеба/ВШЭ Аспирантура/Science/Calc in Stata/470.dta")
 #econometric model for estimation (for example only)
-f <- "YS~Leverage+LN_Maturity+LN_Issue"
+f &lt;- "YS~Leverage+LN_Maturity+LN_Issue"
 
 # 2014 excluded because of too smal number of observations
 #estimate linear regressions
-m1 <- lm(f, mydata, year==2007)
-m2 <- lm(f, mydata, year==2008)
-m3 <- lm(f, mydata, year==2009)
-m4 <- lm(f, mydata, year==2010)
-m5 <- lm(f, mydata, year==2011)
-m6 <- lm(f, mydata, year==2012)
-m7 <- lm(f, mydata, year==2013)
-#m8 <- lm(f, mydata, year==2014)
+m1 &lt;- lm(f, mydata, year==2007)
+m2 &lt;- lm(f, mydata, year==2008)
+m3 &lt;- lm(f, mydata, year==2009)
+m4 &lt;- lm(f, mydata, year==2010)
+m5 &lt;- lm(f, mydata, year==2011)
+m6 &lt;- lm(f, mydata, year==2012)
+m7 &lt;- lm(f, mydata, year==2013)
+#m8 &lt;- lm(f, mydata, year==2014)
 
 #get coefficients (theta)
-cf1 <- coef(m1)
-cf2 <- coef(m2)
-cf3 <- coef(m3)
-cf4 <- coef(m4)
-cf5 <- coef(m5)
-cf6 <- coef(m6)
-cf7 <- coef(m7)
-#cf8 <- coef(m8)
+cf1 &lt;- coef(m1)
+cf2 &lt;- coef(m2)
+cf3 &lt;- coef(m3)
+cf4 &lt;- coef(m4)
+cf5 &lt;- coef(m5)
+cf6 &lt;- coef(m6)
+cf7 &lt;- coef(m7)
+#cf8 &lt;- coef(m8)
 
 #primary estimations
-hh <- 1/c(var(residuals(m1)),var(residuals(m2)),
+hh &lt;- 1/c(var(residuals(m1)),var(residuals(m2)),
           var(residuals(m3)),var(residuals(m4)),
           var(residuals(m5)),var(residuals(m6)),
           var(residuals(m7)))#,var(residuals(m8)))
-h <- mean(hh)
-st_h <- sqrt(var(hh))
+h &lt;- mean(hh)
+st_h &lt;- sqrt(var(hh))
 
 #calc the distribution params
-alpha <- (h^2)/(st_h^2)
-beta <- h/(st_h^2)
+alpha &lt;- (h^2)/(st_h^2)
+beta &lt;- h/(st_h^2)
 
-ll <- length(cf1)
+ll &lt;- length(cf1)
 
-cfl <- matrix(0, ll, 7) #8
-th <- matrix(0, ll, 1)
-st_th <- matrix(0, ll, 1)
+cfl &lt;- matrix(0, ll, 7) #8
+th &lt;- matrix(0, ll, 1)
+st_th &lt;- matrix(0, ll, 1)
 #L matrix calculation
-L <- matrix(0, ll, ll)
+L &lt;- matrix(0, ll, ll)
 for(i in 1:ll)
 {
-  cfl[i,] <- c(cf1[i],cf2[i],cf3[i],cf4[i],cf5[i],
+  cfl[i,] &lt;- c(cf1[i],cf2[i],cf3[i],cf4[i],cf5[i],
                cf6[i],cf7[i])#,cf8[i])
-  th[i] <- mean(cfl[i,])
-  st_th[i] <- sqrt(var(cfl[i,]))
-  L[i,i] <- (1/(st_th[i]^2))*(beta/(alpha-1))
+  th[i] &lt;- mean(cfl[i,])
+  st_th[i] &lt;- sqrt(var(cfl[i,]))
+  L[i,i] &lt;- (1/(st_th[i]^2))*(beta/(alpha-1))
 }
 
 #get X and Y
-ndata <- subset(mydata, year==2015)
-M <- as.matrix(model.frame(formula=f, data=ndata))
-Y <- M[,1]
-X <- cbind(1,M[,-1])
-n <- length(Y)
+ndata &lt;- subset(mydata, year==2015)
+M &lt;- as.matrix(model.frame(formula=f, data=ndata))
+Y &lt;- M[,1]
+X &lt;- cbind(1,M[,-1])
+n &lt;- length(Y)
 
 #estimate using MCMC
-iter <- 1000000
-data <- mcmc(iter, X, Y, th, alpha, beta, h, L)
+iter &lt;- 1000000
+data &lt;- mcmc(iter, X, Y, th, alpha, beta, h, L)
 
 #get model parameters from MCMC estimation
-th_sim <- matrix(0,ncol(data)-1,1)
-for(i in 2:ncol(data)) th_sim[i-1] <- rbind(mean(data[,i]))
+th_sim &lt;- matrix(0,ncol(data)-1,1)
+for(i in 2:ncol(data)) th_sim[i-1] &lt;- rbind(mean(data[,i]))
 print(th_sim)
 
 #plot dencity graphs
 dence(data)
 </code></pre>
-</div>
+</div></div>
 <hr>
 <p>Результат вычислений на моих данных приведенным выше кодом (только для примера):</p>
 <p><img src="/assets/images/mcmc/values.PNG"></p>

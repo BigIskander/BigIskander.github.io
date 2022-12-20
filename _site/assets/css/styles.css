@@ -29,6 +29,16 @@ PRE, code { max-height: 300px; }
 
 .code { margin-left: 2%; margin-right: 2%; border-radius: 5px; background-color: #666666; }
 
+.code a:link { color: #000000; text-decoration: none; }
+
+.code a:visited { color: #000000; text-decoration: none; }
+
+.code a:hover { color: #000000; text-decoration: underline; }
+
 .code_header { margin-bottom: -0.5%; font-weight: bold; padding: 10px; }
+
+.code_lines_hide { visibility: hidden; height: 0px; }
+
+.code_lines_show { visibility: visible; }
 
 /*# sourceMappingURL=styles.css.map */
