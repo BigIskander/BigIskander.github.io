@@ -17,7 +17,9 @@ body { background-color: #000000; font-size: 1.1em; background-image: url("/asse
 /* Комментарий */
 H1 { font-size: 1.5em; }
 
-H1, P, IMG, LI { text-align: justify; margin-left: 2%; margin-right: 2%; line-height: 1.25; }
+H2 { font-size: 1.3em; }
+
+H1, H2, P, IMG, LI { text-align: justify; margin-left: 2%; margin-right: 2%; line-height: 1.25; }
 
 @media (min-width: 800px) { .qr_block { display: flex; } }
 

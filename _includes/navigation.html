@@ -1,5 +1,11 @@
 <div class="menu">
 {% for item in site.data.navigation %}
-<a href="{{ item.link }}" {% if page.url == item.link %}class="menu_link_selected"{% else %}class="menu_link"{% endif %}>{{ item.name }}</a>
+<a href="{{ item.link }}"
+{% if page.url == item.link or (page.layout == "post" and item.link == "/blog.html") %}
+class="menu_link_selected"
+{% else %}
+class="menu_link"
+{% endif %}>
+{{ item.name }}</a>
 {% endfor %}
 </div>

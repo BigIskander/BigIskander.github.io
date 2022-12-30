@@ -60,7 +60,10 @@ body {
 H1 {
 	font-size: 1.5em;
 }
-H1, P, IMG, LI {
+H2 {
+	font-size: 1.3em;
+}
+H1, H2, P, IMG, LI {
 	text-align: justify;
 	margin-left: 2%;
 	margin-right: 2%;
@@ -127,4 +130,8 @@ PRE, code {
 
 .code_lines_show {
 	visibility: visible;
+}
+
+.blog_img {
+
 }

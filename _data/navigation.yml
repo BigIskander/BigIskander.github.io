@@ -1,5 +1,7 @@
 - name: Главная
   link: /
+- name: Блог
+  link: /blog.html
 - name: Учить китайские слова
   link: /xuexihanzi_mobile.html
 - name: MCMC algorithm
