@@ -27,6 +27,8 @@ H1, H2, P, IMG, LI { text-align: justify; margin-left: 2%; margin-right: 2%; lin
 
 img { max-width: 100%; }
 
+.to_top { position: absolute; top: 0; left: 0; visibility: hidden; }
+
 PRE, code { max-height: 300px; }
 
 .code { margin-left: 2%; margin-right: 2%; border-radius: 5px; background-color: #666666; }

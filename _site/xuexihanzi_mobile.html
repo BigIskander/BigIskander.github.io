@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Учить китайские слова</title>
+  <script src="/assets/js/all.js"></script>
   
   
   <link rel="stylesheet" href="/assets/css/styles.css">
   </head>
-  <body>
+  <body onscroll="pageOnLoad()" onresize="pageOnResize()">
 	<div class="content">
     <div class="header">
     </div>
@@ -104,5 +105,10 @@ MCMC algorithm</a>
 </div>
 
 	</div>
+  <div class="to_top">
+    <a href="JavaScript:scroll(0,0);" >
+    <img src="/assets/images/top.png" width="50" alt="На верх!" onload="pageOnScrollDo()"  />
+    </a>
+  </div>
   </body>
 </html>
