@@ -64,6 +64,7 @@ function zoomInImage(image) {
     zoomedImage.style.top = topAdjust + "px";
     zoomedImage.style.left = leftAdjust + "px";
     zoomedImage.parentElement.style.top = pageYOffset + "px";
+    zoomedImage.parentElement.style.height=window.innerHeight + "px";
     zoomedImage.style.visibility = "visible";
     zoomedImage.parentElement.style.visibility = "visible";
     zoomed=true;
