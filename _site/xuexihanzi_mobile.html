@@ -8,7 +8,7 @@
   
   <link rel="stylesheet" href="/assets/css/styles.css">
   </head>
-  <body onscroll="pageOnLoad()" onresize="pageOnResize()">
+  <body onload="pageOnLoad()" onscroll="pageOnScrollDo()" onresize="pageOnResize()">
 	<div class="content">
     <div class="header">
     </div>
@@ -94,9 +94,8 @@ MCMC algorithm</a>
 <hr />
 <div class="qr_block">
 <div><p style="text-align: center;">
-<a href="https://appgallery.huawei.com/#/app/C107317769" target="_blank">
 <img src="/assets/images/xuexihanzi_mobile/program.png"></img>
-<br />Ссылка на программу</a>
+<br /><a href="https://appgallery.huawei.com/#/app/C107317769" target="_blank">Ссылка на программу</a>
 </p></div>
 <div><p style="text-align: center;">
 <img src="/assets/images/xuexihanzi_mobile/this_page.png"></img>
@@ -107,8 +106,11 @@ MCMC algorithm</a>
 	</div>
   <div class="to_top">
     <a href="JavaScript:scroll(0,0);" >
-    <img src="/assets/images/top.png" width="50" alt="На верх!" onload="pageOnScrollDo()"  />
+    <img src="/assets/images/top.png" width="50" alt="На верх!" />
     </a>
+  </div>
+  <div class="image_zoom_div">
+    <img class="image_zoom" />
   </div>
   </body>
 </html>

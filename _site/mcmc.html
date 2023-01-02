@@ -19,7 +19,7 @@
   
   <link rel="stylesheet" href="/assets/css/styles.css">
   </head>
-  <body onscroll="pageOnLoad()" onresize="pageOnResize()">
+  <body onload="pageOnLoad()" onscroll="pageOnScrollDo()" onresize="pageOnResize()">
 	<div class="content">
     <div class="header">
     </div>
@@ -639,8 +639,11 @@ dence(data)
 	</div>
   <div class="to_top">
     <a href="JavaScript:scroll(0,0);" >
-    <img src="/assets/images/top.png" width="50" alt="На верх!" onload="pageOnScrollDo()"  />
+    <img src="/assets/images/top.png" width="50" alt="На верх!" />
     </a>
+  </div>
+  <div class="image_zoom_div">
+    <img class="image_zoom" />
   </div>
   </body>
 </html>
