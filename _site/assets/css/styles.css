@@ -18,7 +18,7 @@ body { background-color: #000000; font-size: 1.1em; background-image: url("/asse
 
 .image_zoom { position: absolute; top: 0; left: 0; max-width: 90%; max-height: 90%; cursor: zoom-out; visibility: hidden; }
 
-.image_zoom_div { position: absolute; top: 0; left: 0; width: 100%; height: 120%; background-color: rgba(127, 127, 127, 0.5); visibility: hidden; }
+.image_zoom_div { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(127, 127, 127, 0.5); visibility: hidden; }
 
 H1 { font-size: 1.5em; }
 
