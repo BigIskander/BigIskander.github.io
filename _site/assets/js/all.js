@@ -31,6 +31,20 @@ function addZoomToImages() {
     images.forEach(image => {
       image.setAttribute("onclick", "zoomInImage(this)");
     });
+    try {
+      if(window.matchMedia("(hover: none)").matches) {
+        images.forEach(image => {
+          imgagePosition = image.getBoundingClientRect();
+          zoomTextDiv = document.createElement("div");
+          zoomTextDiv.innerHTML = "Нажмите на изображение чтобы увеличить."
+          zoomTextDiv.className = "zoom_me";
+          zoomTextDiv.style.width = image.offsetWidth + "px";
+          image.insertAdjacentElement('afterend', zoomTextDiv);
+        });
+      }
+    } catch (error) {
+      console.error(error);
+    }
 }
 
 function zoomInImage(image) {

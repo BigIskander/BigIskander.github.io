@@ -64,6 +64,25 @@ body {
 
 .content img {
   cursor: zoom-in;
+  text-align: center;
+}
+
+.zoom_me {
+  font-size: 0.8em;
+  text-align: center;
+  background-color: rgba(150, 150, 150, .5);
+  margin-left: 2%;
+	margin-right: 2%;
+  line-height: 1.25;
+}
+
+.zoom_me_out {
+  font-size: 0.8em;
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  line-height: 1.25;
+  font-size: 1em;
 }
 
 .image_zoom {
