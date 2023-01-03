@@ -25,21 +25,36 @@ function pageOnScrollDo() {
   }
 }
 
+function addTextUnderImage(image, text) {
+  imgagePosition = image.getBoundingClientRect();
+  zoomTextDiv = document.createElement("div");
+  zoomTextDiv.innerHTML = text;
+  zoomTextDiv.className = "zoom_me";
+  zoomTextDiv.style.width = image.offsetWidth + "px";
+  image.insertAdjacentElement('afterend', zoomTextDiv)
+}
+
 function addZoomToImages() {
     content = document.querySelector(".content");
     images = content.querySelectorAll("img");
     images.forEach(image => {
+      imageName = image.getAttribute("name");
+      if(imageName) {
+          addTextUnderImage(image, "<b>" + imageName + "</b>");
+      }
       image.setAttribute("onclick", "zoomInImage(this)");
     });
     try {
-      if(window.matchMedia("(hover: none)").matches) {
+      if(window.matchMedia("(hover: none)").matches) { 
         images.forEach(image => {
-          imgagePosition = image.getBoundingClientRect();
-          zoomTextDiv = document.createElement("div");
-          zoomTextDiv.innerHTML = "Нажмите на изображение чтобы увеличить."
-          zoomTextDiv.className = "zoom_me";
-          zoomTextDiv.style.width = image.offsetWidth + "px";
-          image.insertAdjacentElement('afterend', zoomTextDiv);
+          imageName = image.getAttribute("name");
+          if(imageName) {
+            nameElement = image.nextSibling;
+            nameElement.innerHTML = nameElement.innerHTML
+                            + "<br />Нажмите на изображение чтобы увеличить.";
+          } else {
+            addTextUnderImageimage(image, "Нажмите на изображение чтобы увеличить.");
+          }
         });
       }
     } catch (error) {
