@@ -83,7 +83,7 @@ function zoomInImage(image) {
     zoomedImage.parentElement.style.visibility = "visible";
     zoomed=true;
     setTimeout(() => {
-      body.addEventListener("click", zoomOutImage)
+      zoomedImage.addEventListener("click", zoomOutImage)
     }, 100);
 }
 
@@ -94,7 +94,6 @@ function zoomOutImage() {
       zoomedImage.style.visibility = "hidden";
       zoomedImage.parentElement.style.visibility = "hidden";
       zoomed=false;
-      body = document.querySelector("body");
-      body.removeEventListener("click", zoomOutImage);
+      zoomedImage.removeEventListener("click", zoomOutImage);
     }
 }
