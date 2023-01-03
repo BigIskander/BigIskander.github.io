@@ -53,7 +53,7 @@ function addZoomToImages() {
             nameElement.innerHTML = nameElement.innerHTML
                             + "<br />Нажмите на изображение чтобы увеличить.";
           } else {
-            addTextUnderImageimage(image, "Нажмите на изображение чтобы увеличить.");
+            addTextUnderImage(image, "Нажмите на изображение чтобы увеличить.");
           }
         });
       }
