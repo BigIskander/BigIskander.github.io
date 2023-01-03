@@ -33,6 +33,15 @@ body {
 	background-size: cover;
 }
 
+a {
+  color: #000099;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .menu {
 	margin-left: 2%;
 	margin-right: 2%;
@@ -54,6 +63,7 @@ body {
 	background-color: #CCCC99;
 	color: #003333;
 }
+
 .menu_link:hover, .menu_link_selected:hover {
 	text-decoration: underline;
 }
@@ -116,6 +126,11 @@ H1, H2, P, IMG, LI {
 	margin-left: 2%;
 	margin-right: 2%;
 	line-height: 1.25;
+}
+
+.blog H2, .blog  P {
+  margin-left: 0%;
+  margin-right: 0%;
 }
 
 @media (min-width: 800px)
