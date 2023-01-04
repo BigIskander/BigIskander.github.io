@@ -45,7 +45,7 @@ function addZoomToImages() {
       image.setAttribute("onclick", "zoomInImage(this)");
     });
     try {
-      if(window.matchMedia("(hover: none)").matches) { 
+      if(window.matchMedia("(hover: none)").matches) {
         images.forEach(image => {
           imageName = image.getAttribute("name");
           if(imageName) {
@@ -76,9 +76,17 @@ function zoomInImage(image) {
         } else if(image.naturalHeight > image.naturalWidth) {
             zoomedImageHeight = window.innerHeight * 0.9;
             zoomedImageWidth = image.naturalWidth * (zoomedImageHeight / image.naturalHeight);
+            if(zoomedImageWidth > (window.innerWidth * 0.9)) {
+              zoomedImageWidth = window.innerWidth * 0.9;
+              zoomedImageHeight = image.naturalHeight * (zoomedImageWidth / image.naturalWidth);
+            }
         } else {
             zoomedImageWidth = window.innerWidth * 0.9;
             zoomedImageHeight = image.naturalHeight * (zoomedImageWidth / image.naturalWidth);
+            if(zoomedImageHeight > (window.innerHeight * 0.9)) {
+              zoomedImageHeight = window.innerHeight * 0.9;
+              zoomedImageWidth = image.naturalWidth * (zoomedImageHeight / image.naturalHeight);
+            }
         }
     } else {
         zoomedImageHeight = image.naturalHeight;
@@ -88,12 +96,14 @@ function zoomInImage(image) {
         ? window.innerHeight * 0.05 : (window.innerHeight - zoomedImageHeight) / 2;
     leftAdjust = zoomedImageWidth >= (window.innerWidth * 0.9)
         ? window.innerWidth * 0.05 : (window.innerWidth - zoomedImageWidth) / 2;
+    console.log(window.innerWidth);
+    console.log(zoomedImageWidth);
     zoomedImage.style.height = zoomedImageHeight;
     zoomedImage.style.width = zoomedImageWidth;
     zoomedImage.style.top = topAdjust + "px";
     zoomedImage.style.left = leftAdjust + "px";
     zoomedImage.parentElement.style.top = pageYOffset + "px";
-    zoomedImage.parentElement.style.height=window.innerHeight + "px";
+    zoomedImage.parentElement.style.height = window.innerHeight + "px";
     zoomedImage.style.visibility = "visible";
     zoomedImage.parentElement.style.visibility = "visible";
     zoomed=true;
