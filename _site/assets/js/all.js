@@ -96,8 +96,6 @@ function zoomInImage(image) {
         ? window.innerHeight * 0.05 : (window.innerHeight - zoomedImageHeight) / 2;
     leftAdjust = zoomedImageWidth >= (window.innerWidth * 0.9)
         ? window.innerWidth * 0.05 : (window.innerWidth - zoomedImageWidth) / 2;
-    console.log(window.innerWidth);
-    console.log(zoomedImageWidth);
     zoomedImage.style.height = zoomedImageHeight;
     zoomedImage.style.width = zoomedImageWidth;
     zoomedImage.style.top = topAdjust + "px";
