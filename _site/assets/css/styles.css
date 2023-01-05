@@ -2,7 +2,7 @@ html { scroll-behavior: smooth; }
 
 body { background-color: #000000; font-size: 1.1em; background-image: url("/assets/images/background2.jpg"); }
 
-.content { background-color: #FFFFFF; border-color: #000000; border: outset; border-width: 2px; width: 80%; margin: auto; border-radius: 20px; max-width: 1600px; min-height: 700px; overflow: scroll; overflow-wrap: break-word; word-wrap: break-word; }
+.content { background-color: #FFFFFF; border-color: #000000; border: outset; border-width: 2px; width: 80%; margin: auto; border-radius: 20px; max-width: 1600px; min-height: 700px; overflow-wrap: break-word; word-wrap: break-word; }
 
 .header { height: 200px; margin-top: 0%; margin-left: 0%; margin-right: 0%; border-top-left-radius: 20px; border-top-right-radius: 20px; background-color: #000000; background-image: url("/assets/images/200x1600.jpg"); background-size: cover; }
 
@@ -20,7 +20,7 @@ a:hover { text-decoration: underline; }
 
 .content img.zoomable { cursor: zoom-in; text-align: center; }
 
-.zoom_me { font-size: 0.8em; text-align: center; background-color: rgba(150, 150, 150, 0.1); margin-left: 2%; margin-right: 2%; line-height: 1.25; }
+.zoom_me { font-size: 0.8em; text-align: center; background-color: rgba(150, 150, 150, 0.1); margin-left: 2%; margin-right: 2%; line-height: 1.25; max-width: 98%; }
 
 .zoom_me_out { font-size: 0.8em; text-align: center; background-color: black; color: white; line-height: 1.25; font-size: 1em; }
 
@@ -38,9 +38,9 @@ H1, H2, P, IMG, LI { text-align: justify; margin-left: 2%; margin-right: 2%; lin
 
 @media (min-width: 800px) { .qr_block { display: flex; } }
 
-@media (max-width: 800px) { .qr_block { display: inline; } }
+@media (max-width: 800px) { .content { overflow: scroll; } .qr_block { display: inline; } }
 
-img { max-width: 100%; }
+img { max-width: 98%; }
 
 .to_top { position: absolute; top: 0; left: 0; visibility: hidden; }
 
