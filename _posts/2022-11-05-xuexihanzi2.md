@@ -60,7 +60,7 @@ code: "Y"
   <a onclick="show_hide('code_1')" href="javascript:void(0);">Пример строки в файле со словами: (<em>показать</em>):</a>
 </div>
 <div id="code_1" class="code_lines_hide">
-<pre><code class="language-R line-numbers">汉字	китайские символы (hànzì)
+<pre><code class="language-R line-numbers">汉字&#9;китайские символы (hànzì)
 </code></pre>
 </div></div>
 
