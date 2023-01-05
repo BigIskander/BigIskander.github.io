@@ -35,6 +35,13 @@
   <script src="/assets/js/prism.js"></script>
   <script src="/assets/js/show_hide_code.js"></script>
   {% endif %}
+  {% if page.formula=="Y" %}
+  <!-- https://www.mathjax.org -->
+  <!-- scripts for formulas demonstration -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>.content{min-width: 400px;}</style>
+  {% endif %}
   <link rel="stylesheet" href="/assets/css/styles.css">
   </head>
   <body onload="pageOnLoad()" onscroll="pageOnScrollDo()" onresize="pageOnResize()">
@@ -54,10 +61,4 @@
     <div class="zoom_me_out">Нажмите на изображение чтобы уменьшить.</div>
   </div>
   </body>
-  {% if page.formula=="Y" %}
-  <!-- https://www.mathjax.org -->
-  <!-- scripts for formulas demonstration -->
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  {% endif %}
 </html>
