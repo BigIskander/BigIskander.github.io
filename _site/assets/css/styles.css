@@ -18,7 +18,7 @@ a:hover { text-decoration: underline; }
 
 .menu_link_selected { background-color: #CCFF99; }
 
-.content img { cursor: zoom-in; text-align: center; }
+.content img.zoomable { cursor: zoom-in; text-align: center; }
 
 .zoom_me { font-size: 0.8em; text-align: center; background-color: rgba(150, 150, 150, 0.1); margin-left: 2%; margin-right: 2%; line-height: 1.25; }
 
