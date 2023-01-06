@@ -1,5 +1,5 @@
 var zoomed = false;
-var over = false;
+var over = false; 
 
 function pageOnLoad() {
   document.addEventListener("scroll", pageOnScrollDo);
