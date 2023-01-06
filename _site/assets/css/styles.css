@@ -42,7 +42,7 @@ H1, H2, P, IMG, LI { text-align: justify; margin-left: 2%; margin-right: 2%; lin
 
 @media (min-width: 800px) { .qr_block { display: flex; } }
 
-@media (max-width: 800px) { .main_content { overflow: scroll; transform: rotateX(180deg); } .main_content_child { transform: rotateX(180deg); } .qr_block { display: inline; } }
+@media (max-width: 800px) { .main_content { overflow: scroll; overflow-y: auto; transform: rotateX(180deg); } .main_content_child { transform: rotateX(180deg); } .qr_block { display: inline; } }
 
 img { max-width: 98%; }
 

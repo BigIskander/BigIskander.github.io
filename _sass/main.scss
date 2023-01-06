@@ -161,6 +161,7 @@ H1, H2, P, IMG, LI {
 @media (max-width: 800px) {
   .main_content {
     overflow:scroll;
+    overflow-y: auto;
     transform: rotateX(180deg);
   }
   .main_content_child {
