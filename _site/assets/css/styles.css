@@ -6,6 +6,8 @@ body { background-color: #000000; font-size: 1.1em; background-image: url("/asse
 
 .header { height: 200px; margin-top: 0%; margin-left: 0%; margin-right: 0%; border-top-left-radius: 20px; border-top-right-radius: 20px; background-color: #000000; background-image: url("/assets/images/200x1600.jpg"); background-size: cover; }
 
+.footer { min-height: 20px; height: 20px; }
+
 a { color: #000099; text-decoration: none; }
 
 a:hover { text-decoration: underline; }
@@ -38,7 +40,7 @@ H1, H2, P, IMG, LI { text-align: justify; margin-left: 2%; margin-right: 2%; lin
 
 @media (min-width: 800px) { .qr_block { display: flex; } }
 
-@media (max-width: 800px) { .content { overflow: scroll; } .qr_block { display: inline; } }
+@media (max-width: 800px) { .main_content { overflow: scroll; } .qr_block { display: inline; } }
 
 img { max-width: 98%; }
 

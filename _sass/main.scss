@@ -34,6 +34,11 @@ body {
 	background-size: cover;
 }
 
+.footer {
+  min-height: 20px;
+  height: 20px;
+}
+
 a {
   color: #000099;
   text-decoration: none;
@@ -145,7 +150,7 @@ H1, H2, P, IMG, LI {
 
 @media (max-width: 800px)
 {
-  .content
+  .main_content
   {
     overflow:scroll;
   }
