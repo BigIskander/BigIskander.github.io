@@ -34,6 +34,16 @@ body {
 	background-size: cover;
 }
 
+.content_overflow {
+  margin-left: 2%;
+  margin-right: 2%;
+  font-size: 0.8em;
+  text-align: center;
+  background-color: rgba(150, 150, 150, .1);
+  line-height: 1.25;
+  max-width: 98%;
+}
+
 .footer {
   min-height: 20px;
   height: 20px;
@@ -89,6 +99,8 @@ a:hover {
   background-color: rgba(150, 150, 150, .1);
   margin-left: 2%;
 	margin-right: 2%;
+  margin-top: 0px;
+  margin-bottom: 0px;
   line-height: 1.25;
   max-width: 98%;
 }

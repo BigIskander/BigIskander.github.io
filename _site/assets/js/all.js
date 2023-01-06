@@ -8,20 +8,26 @@ function pageOnLoad() {
   contentOverflow();
 }
 
+function whilePageLoading() {
+  if(document.readyState != 'complete') {
+    overflowText = document.getElementById("content_overflow");
+    overflowText.style.visibility = "visible";
+    overflowText.style.height = "";
+  }
+}
+
+setTimeout(whilePageLoading, 100);
+
 function contentOverflow()
 {
   element = document.querySelector(".main_content");
   overflowText = document.getElementById("content_overflow");
   if(element.scrollWidth > element.clientWidth * 1.02) {
-    if(!over) {
-        overflowText.className = "zoom_me";
-        overflowText.innerHTML = "Часть содержимого не уместилась по ширине, потяните (прокрутите) страницу влево чтобы увидеть.";
-    }
+    overflowText.innerHTML = "Часть содержимого не уместилась по ширине, потяните (прокрутите) страницу влево чтобы увидеть.";
     overflowText.style.visibility = "visible";
-    overflowText.style.height = "";
   } else {
+    overflowText.innerHTML = "";
     overflowText.style.visibility = "hidden";
-    overflowText.style.height = "0px";
   }
 }
 
