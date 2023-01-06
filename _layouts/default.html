@@ -27,7 +27,7 @@
     gtag('config', 'G-1SRVHMPS1J');
   </script>
   <!-- Google tag END -->
-  <script src="/assets/js/all.js"></script>
+  <script src="/assets/js/all.js" defer></script>
   {% if page.code=="Y" %}
   <!-- https://prismjs.com -->
   <!-- for code highlight -->
@@ -43,12 +43,14 @@
   {% endif %}
   <link rel="stylesheet" href="/assets/css/styles.css">
   </head>
-  <body onload="pageOnLoad()" onscroll="pageOnScrollDo()" onresize="pageOnResize()">
+  <body onload="pageOnLoad()" >
 	<div class="content">
     <div class="header">
     </div>
 	{% include navigation.html %}
   <div class="main_content">
+  <noscript><p><b>JavaScript отключен или не поддерживается, страница может отображаться не правильно.</b></p></noscript>
+  <div id="content_overflow"></div>
   {{ content }}
   </div>
   <div class="footer">
