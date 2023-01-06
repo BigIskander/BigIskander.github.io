@@ -70,25 +70,22 @@ function addZoomToImages() {
       if(imageName) {
           addTextUnderImage(image, "<b>" + imageName + "</b>");
       }
-      imageClass = image.getAttribute('class')
-      if(imageClass!="no_zoom") {
-        image.setAttribute('class', 'zoomable');
-        image.setAttribute("onclick", "zoomInImage(this)");
-      }
+    });
+    images = content.querySelectorAll("img.zoomable");
+    images.forEach(image => {
+      image.setAttribute('class', 'zoomable');
+      image.setAttribute("onclick", "zoomInImage(this)");
     });
     try {
       if(window.matchMedia("(hover: none)").matches) {
         images.forEach(image => {
-          imageClass = image.getAttribute('class')
-          if(imageClass!="no_zoom") {
-            imageName = image.getAttribute("name");
-            if(imageName) {
-              nameElement = image.nextSibling;
-              nameElement.innerHTML = nameElement.innerHTML
-                              + "<br />Нажмите на изображение чтобы увеличить.";
-            } else {
-              addTextUnderImage(image, "Нажмите на изображение чтобы увеличить.");
-            }
+          imageName = image.getAttribute("name");
+          if(imageName) {
+            nameElement = image.nextSibling;
+            nameElement.innerHTML = nameElement.innerHTML
+                            + "<br />Нажмите на изображение чтобы увеличить.";
+          } else {
+            addTextUnderImage(image, "Нажмите на изображение чтобы увеличить.");
           }
         });
       }
