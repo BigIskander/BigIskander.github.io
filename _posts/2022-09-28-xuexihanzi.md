@@ -52,9 +52,9 @@ code: "Y"
 
 Файл с набором слов можно редактировать (добавлять и удалять слова), пока этот файл оформлен корректно программа будет работать. При необходимости слова можно экспортировать напрямую из <a href="https://quizlet.com/" target="_blank" >quizlet.com</a> (сразу в правильном формате) и добавлять в файл со словами (или просто заменить содержимое файла новым словами).
 
-<img src="/assets/images/posts/2022-09-28-xuexihanzi/1.webp" height=200 class="zoomable" />
+<img src="/assets/images/posts/2022-09-28-xuexihanzi/1.webp" height=200 class="zoomable" alt="Снимок с экрана компьютера." />
 
-<img src="/assets/images/posts/2022-09-28-xuexihanzi/2.webp" height=500 class="zoomable" />
+<img src="/assets/images/posts/2022-09-28-xuexihanzi/2.webp" height=500 class="zoomable" alt="Снимок с экрана компьютера." />
 
 Сама программа это файл <b>learn.py</b> написанный на языке программирования <b>Python 3</b>.
 
@@ -66,41 +66,41 @@ code: "Y"
 
 Далее идет объяснение, как работать с программой на примере ос Windows, в ос Linux действия будут аналогичными.
 
-<img src="/assets/images/posts/2022-09-28-xuexihanzi/3.webp" width=800 class="zoomable" />
+<img src="/assets/images/posts/2022-09-28-xuexihanzi/3.webp" width=800 class="zoomable" alt="Снимок с экрана компьютера." />
 
 Сразу после запуска программа предлагает три опции на выбор. Нужно набрать в консоли номер опции (1 - 3) и нажать Enter.
 
-<img src="/assets/images/posts/2022-09-28-xuexihanzi/4.webp" width=800 class="zoomable" />
+<img src="/assets/images/posts/2022-09-28-xuexihanzi/4.webp" width=800 class="zoomable" alt="Снимок с экрана компьютера." />
 
 <b>Допустим вы выбрали опцию 1 (тест слово перевод CNY - > RUS) и нажали Enter.</b>
 
 Программа будет отображать слово написанное иероглифами и предлагать 4 варианта перевода, где только 1 из 4 вариантов ответа верный. Нужно набрать номер варианта (1 - 4) и нажать Enter. Если ответ неверный программа повторно отобразит тот же самый тест, если ответ верный программа отобразит следующий иероглиф с 4 вариантами перевода. И так, пока не будут просмотрены все слова. Порядок отображения иероглифов является случайным и меняется каждый раз при перезапуске программы. Все слова для работы программы хранятся в файле <b>words.txt</b> находящемся в папке с программой (подробнее об этом было написано <a href="#program_folder" >выше</a>).
 
-<img src="/assets/images/posts/2022-09-28-xuexihanzi/5.webp" width=800 class="zoomable" />
+<img src="/assets/images/posts/2022-09-28-xuexihanzi/5.webp" width=800 class="zoomable" alt="Снимок с экрана компьютера." />
 
 После того, как все слова были просмотрены, программа сообщит об этом, далее нажатие кнопки Enter приведет к завершению работы программы. Для повторного изучения, требуется снова перезапустить программу.
 
-<img src="/assets/images/posts/2022-09-28-xuexihanzi/6.webp" width=800 class="zoomable" />
+<img src="/assets/images/posts/2022-09-28-xuexihanzi/6.webp" width=800 class="zoomable" alt="Снимок с экрана компьютера." />
 
 <b>Теперь, предположим, что вы перезапустили программу и выбрали опцию 2 (тест слово перевод RUS -> CNY).</b>
 
-<img src="/assets/images/posts/2022-09-28-xuexihanzi/7.webp" width=800 class="zoomable" />
+<img src="/assets/images/posts/2022-09-28-xuexihanzi/7.webp" width=800 class="zoomable" alt="Снимок с экрана компьютера." />
 
 В этом случае программа будет показывать текст и предлагать 4 варианта перевода слова на китайский язык, только 1 из 4 вариантов ответа является верным. В остальном опция 2 работает аналогично опции 1.
 
-<img src="/assets/images/posts/2022-09-28-xuexihanzi/8.webp" width=800 class="zoomable" />
+<img src="/assets/images/posts/2022-09-28-xuexihanzi/8.webp" width=800 class="zoomable" alt="Снимок с экрана компьютера." />
 
 <b>Теперь, предположим, что вы перезапустили программу и выбрали опцию 3 (ввести ответ 汉字).</b>
 
-<img src="/assets/images/posts/2022-09-28-xuexihanzi/9.webp" width=800 class="zoomable" />
+<img src="/assets/images/posts/2022-09-28-xuexihanzi/9.webp" width=800 class="zoomable" alt="Снимок с экрана компьютера." />
 
 В этом случае программа будет показывать слово (текст) и нужно будет самому ввести иероглифами правильный перевод (на китайский) в консоли и нажать Enter. Если ответ неверный, то программа заново отобразит то же самое слово, если ответ верный то программа покажет следующее слово и так пока все слова не будут просмотрены.
 
-<img src="/assets/images/posts/2022-09-28-xuexihanzi/10.webp" width=800 class="zoomable" />
+<img src="/assets/images/posts/2022-09-28-xuexihanzi/10.webp" width=800 class="zoomable" alt="Снимок с экрана компьютера." />
 
 Последнюю опцию (опцию номер 3) можно хорошо сочетать с применением рукописного ввода встроенного <b>Windows 10</b> (о том как включить рукописный ввод в Windows 10 написал <a href="/2022/09/28/hanziwin10.html" target="_blank">здесь</a>).
 
-<img src="/assets/images/posts/2022-09-28-xuexihanzi/11.webp" width=800 class="zoomable" />
+<img src="/assets/images/posts/2022-09-28-xuexihanzi/11.webp" width=800 class="zoomable" alt="Снимок с экрана компьютера." />
 
 <b>О том откуда взялись лишние пробелы между буквами в русских словах.</b>
 
@@ -108,11 +108,11 @@ code: "Y"
 
 Для решения этой проблемы в Windows можно установить альтернативный терминал командной строки, с поддержкой <b>UTF-8</b>, например <b>Tabby</b> (скачать можно отсюда <a href="https://tabby.sh/" target="_blank" >https://tabby.sh</a>). И запускать программу в альтернативном терминале. Пример работы программы в альтернативном терминале:
 
-<img src="/assets/images/posts/2022-09-28-xuexihanzi/12.webp" width=800 class="zoomable" />
+<img src="/assets/images/posts/2022-09-28-xuexihanzi/12.webp" width=800 class="zoomable" alt="Снимок с экрана компьютера." />
 
 В операционной системе <b>Linux</b> такая проблема отсутствует. Ниже пример того как программа выглядит в операционной системе <b>Ubuntu 18</b>.
 
-<img src="/assets/images/posts/2022-09-28-xuexihanzi/13.webp" class="zoomable" />
+<img src="/assets/images/posts/2022-09-28-xuexihanzi/13.webp" class="zoomable" alt="Снимок с экрана компьютера." />
 
 <h2 id="cmd_run">Запуск выполнения программы с командной строки.</h2>
 
@@ -126,15 +126,15 @@ code: "Y"
 
 Для решения проблемы с кривым отображением русских слов в ос <b>Winsows</b> можно поставить альтернативный терминал командной строки <b>Tabby</b> (скачать можно отсюда <a href="https://tabby.sh/" target="_blank" >https://tabby.sh</a>) и в его настройках включить "Интеграцию в систему":
 
-<img src="/assets/images/posts/2022-09-28-xuexihanzi/14.webp" width=800 class="zoomable" />
+<img src="/assets/images/posts/2022-09-28-xuexihanzi/14.webp" width=800 class="zoomable" alt="Снимок с экрана компьютера." />
 
 Далее, для запуска программы, кликнуть правой кнопкой мыши (в пустом месте) в папке с программой и в появившемся меню выбрать пункт "Open Tabby here".
 
-<img src="/assets/images/posts/2022-09-28-xuexihanzi/15.webp" class="zoomable" />
+<img src="/assets/images/posts/2022-09-28-xuexihanzi/15.webp" class="zoomable" alt="Снимок с экрана компьютера." />
 
 Затем, в окне консоли набрать команду <code>.\run.bat</code> и нажать <b>Enter</b> для того, чтобы запустить выполнение программы в этом терминале.
 
-<img src="/assets/images/posts/2022-09-28-xuexihanzi/16.webp" width=800 class="zoomable" />
+<img src="/assets/images/posts/2022-09-28-xuexihanzi/16.webp" width=800 class="zoomable" alt="Снимок с экрана компьютера." />
 
 <h2 id="link">Ссылка на скачивание программы.</h2>
 
