@@ -11,6 +11,7 @@ function pageOnLoad() {
 function whilePageLoading() {
   if(document.readyState != 'complete') {
     overflowText = document.getElementById("content_overflow");
+    overflowText.innerHTML = "<b>Страница загружается...</b>";
     overflowText.style.visibility = "visible";
     overflowText.style.height = "";
   }
