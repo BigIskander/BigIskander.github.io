@@ -1,13 +1,34 @@
 var zoomed = false;
+var over = false;
 
 function pageOnLoad() {
-  pageOnScrollDo();
+  document.addEventListener("scroll", pageOnScrollDo);
+  window.addEventListener("resize", pageOnResize);
   addZoomToImages();
+  contentOverflow();
+}
+
+function contentOverflow()
+{
+  element = document.querySelector(".main_content");
+  overflowText = document.getElementById("content_overflow");
+  if(element.scrollWidth > element.clientWidth * 1.02) {
+    if(!over) {
+        overflowText.className = "zoom_me";
+        overflowText.innerHTML = "Часть содержимого не уместилась по ширине, потяните (прокрутите) страницу влево чтобы увидеть.";
+    }
+    overflowText.style.visibility = "visible";
+    overflowText.style.height = "";
+  } else {
+    overflowText.style.visibility = "hidden";
+    overflowText.style.height = "0px";
+  }
 }
 
 function pageOnResize() {
   zoomOutImage();
   pageOnScrollDo();
+  contentOverflow();
 }
 
 function pageOnScrollDo() {
