@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Блог
+description: "Последние записи в блоге."
 ---
 <h1>Последние записи в блоге:</h1>
 
@@ -8,7 +9,7 @@ title: Блог
   {% for post in site.posts %}
     <li class="blog">
       <h2><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date_to_string }})</h2>
-      <p>{{ post.excerpt }}</p>
+      {{ post.excerpt }}
     </li>
   {% endfor %}
 </ul>

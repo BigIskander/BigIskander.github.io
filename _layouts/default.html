@@ -5,6 +5,9 @@
   <head>
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
+  {% if page.description %}
+  <meta name="description" content="{{ page.description }}">
+  {% endif %}
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <!-- favicon (https://realfavicongenerator.net) -->
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
