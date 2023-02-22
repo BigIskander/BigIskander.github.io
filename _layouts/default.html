@@ -7,6 +7,8 @@
     <title>{{ page.title }}</title>
   {% if page.description %}
   <meta name="description" content="{{ page.description }}">
+  {% else %}
+  <meta name="description" content="{{ page.title }}">
   {% endif %}
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <!-- favicon (https://realfavicongenerator.net) -->
