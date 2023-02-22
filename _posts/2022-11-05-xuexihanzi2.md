@@ -128,7 +128,7 @@ code: "Y"
 
 <img src="/assets/images/posts/2022-11-05-xuexihanzi2/7.webp" width=200 class="zoomable" alt="Снимок с экрана компьютера." />
 
-<img src="/assets/images/posts/2022-11-05-xuexihanzi2/8.webp" height=500 class="zoomable" alt="Снимок с экрана компьютера." />
+<img src="/assets/images/posts/2022-11-05-xuexihanzi2/8.webp" width=400 class="zoomable" alt="Снимок с экрана компьютера." />
 
 2) Далее, в текстовом редакторе создать пустой файл и вставить (ctrl-v) ранее скопированный текст. После чего просто сохранить этот файл, с расширением <b>.txt</b> и в кодировке <b>utf-8</b>.
 
