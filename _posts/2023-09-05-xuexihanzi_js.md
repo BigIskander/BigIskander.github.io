@@ -36,21 +36,21 @@ title: "Программа для запоминания китайских сл
 
 <b><i>Windows:</i></b>
 
-<a href="/assets/fordownload/xuexihanzi_js/xuexihanzi_js Setup 1.0.0.exe">xuexihanzi_js Setup 1.0.0.exe</a>&nbsp;
+<a href="https://github.com/BigIskander/BigIskander.github.io/raw/main/assets/fordownload/xuexihanzi_js/xuexihanzi_js%20Setup%201.0.0.exe?download=">xuexihanzi_js Setup 1.0.0.exe</a>&nbsp;
 <br/>sha256: 380612c4db40e344eda289677a2ddb401cf6b7f77f99e55a629889543d4de750
 
 <b><i>Linux:</i></b>
 
-<a href="/assets/fordownload/xuexihanzi_js/xuexihanzi_js_1.0.0_amd64.deb">xuexihanzi_js_1.0.0_amd64.deb</a>&nbsp;
+<a href="https://github.com/BigIskander/BigIskander.github.io/raw/main/assets/fordownload/xuexihanzi_js/xuexihanzi_js_1.0.0_amd64.deb?download=">xuexihanzi_js_1.0.0_amd64.deb</a>&nbsp;
 <br/>sha256: bbdebcd4e709450d097cccdbc83e6aeaa28837b203d6ba2aea2e7969fde0c494
 
-<a href="/assets/fordownload/xuexihanzi_js/xuexihanzi_js_1.0.0_arm64.deb">xuexihanzi_js_1.0.0_arm64.deb</a>&nbsp;
+<a href="https://github.com/BigIskander/BigIskander.github.io/raw/main/assets/fordownload/xuexihanzi_js/xuexihanzi_js_1.0.0_arm64.deb?download=">xuexihanzi_js_1.0.0_arm64.deb</a>&nbsp;
 <br/>sha256: 67378137fb48795cebc46d52df6e8d192b96f2757077ce2b3b3ea38239df7dec
 
-<a href="/assets/fordownload/xuexihanzi_js/xuexihanzi_js-1.0.0.AppImage">xuexihanzi_js-1.0.0.AppImage</a>&nbsp;
+<a href="https://github.com/BigIskander/BigIskander.github.io/raw/main/assets/fordownload/xuexihanzi_js/xuexihanzi_js-1.0.0.AppImage?download=">xuexihanzi_js-1.0.0.AppImage</a>&nbsp;
 <br/>sha256: 162c8e015c8e4652735e1c9d1a6013b5c3d5e46bc2ca4f9192f6f638bf904aa5
 
-<a href="/assets/fordownload/xuexihanzi_js/xuexihanzi_js-1.0.0-arm64.AppImage">xuexihanzi_js-1.0.0-arm64.AppImage</a>&nbsp;
+<a href="https://github.com/BigIskander/BigIskander.github.io/raw/main/assets/fordownload/xuexihanzi_js/xuexihanzi_js-1.0.0-arm64.AppImage?download=">xuexihanzi_js-1.0.0-arm64.AppImage</a>&nbsp;
 <br/>sha256: f5a28c08ebbb0e2058e4ff340a8c6d41a40ec9c1945897899eb50ac9d3337062
 
 Программу писал для личного пользования. Но, надеюсь, для Вас эта программа тоже окажется полезной. Удачи в изучении китайского языка.
