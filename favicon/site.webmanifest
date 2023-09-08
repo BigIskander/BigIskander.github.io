@@ -1,19 +1,3 @@
-{
-    "name": "",
-    "short_name": "",
-    "icons": [
-        {
-            "src": "/favicon/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/favicon/android-chrome-256x256.png",
-            "sizes": "256x256",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
-    "display": "standalone"
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:5a5261dc79fd242693f9bdb2cfcc372bf287d6a0a382d6218c46e255da865690
+size 442
