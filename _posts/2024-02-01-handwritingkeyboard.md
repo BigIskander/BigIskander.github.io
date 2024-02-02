@@ -23,21 +23,21 @@ title: "Рукописная клавиатура для Linux"
 
 Версия использующая Google API:
 
-<img src="/assets/images/posts/2024-02-01-handwritingkeyboard/1.png" class="zoomable" style="height:300px;">
+<img src="/assets/images/posts/2024-02-01-handwritingkeyboard/1.png" class="zoomable" style="max-height:300px;">
 
-<img src="/assets/images/posts/2024-02-01-handwritingkeyboard/2.png" class="zoomable" style="height:300px;">
+<img src="/assets/images/posts/2024-02-01-handwritingkeyboard/2.png" class="zoomable" style="max-height:300px;">
 
-<img src="/assets/images/posts/2024-02-01-handwritingkeyboard/3.png" class="zoomable" style="height:300px;">
+<img src="/assets/images/posts/2024-02-01-handwritingkeyboard/3.png" class="zoomable" style="max-height:300px;">
 
 Версия испльзующая tesseract-ocr:
 
-<img src="/assets/images/posts/2024-02-01-handwritingkeyboard/4.png" class="zoomable" style="height:300px;">
+<img src="/assets/images/posts/2024-02-01-handwritingkeyboard/4.png" class="zoomable" style="max-height:300px;">
 
-<img src="/assets/images/posts/2024-02-01-handwritingkeyboard/5.png" class="zoomable" style="height:300px;">
+<img src="/assets/images/posts/2024-02-01-handwritingkeyboard/5.png" class="zoomable" style="max-height:300px;">
 
-<img src="/assets/images/posts/2024-02-01-handwritingkeyboard/6.png" class="zoomable" style="height:300px;">
+<img src="/assets/images/posts/2024-02-01-handwritingkeyboard/6.png" class="zoomable" style="max-height:300px;">
 
-<img src="/assets/images/posts/2024-02-01-handwritingkeyboard/7.png" class="zoomable" style="height:300px;">
+<img src="/assets/images/posts/2024-02-01-handwritingkeyboard/7.png" class="zoomable" style="max-height:300px;">
 
 <h2>Станица проекта на Github:</h2>
 
