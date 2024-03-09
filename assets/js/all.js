@@ -43,9 +43,9 @@ function pageOnScrollDo() {
   //to top button
   body = document.querySelector("body");
   toTopButton = document.querySelector(".to_top");
-  if((body.scrollHeight > window.innerHeight) && (pageYOffset > 20)) {
+  if((body.scrollHeight > window.innerHeight) && (window.scrollY > 20)) {
     contentPosition = document.querySelector(".content").getBoundingClientRect();
-    toTopButton.style.top = (pageYOffset + window.innerHeight - toTopButton.offsetHeight) + "px";
+    toTopButton.style.top = (window.scrollY + window.innerHeight - toTopButton.offsetHeight) + "px";
     toTopButton.style.left = (contentPosition.right + 10) + "px";
     toTopButton.style.visibility = "visible";
   } else {
@@ -133,13 +133,14 @@ function zoomInImage(image) {
         ? window.innerHeight * 0.05 : (window.innerHeight - zoomedImageHeight) / 2;
     leftAdjust = zoomedImageWidth >= (window.innerWidth * 0.9)
         ? window.innerWidth * 0.05 : (window.innerWidth - zoomedImageWidth) / 2;
-    zoomedImage.style.height = zoomedImageHeight;
-    zoomedImage.style.width = zoomedImageWidth;
+    zoomedImage.style.height = zoomedImageHeight + "px";
+    zoomedImage.style.width = zoomedImageWidth + "px";
     zoomedImage.style.top = topAdjust + "px";
     zoomedImage.style.left = leftAdjust + "px";
-    zoomedImage.parentElement.style.top = pageYOffset + "px";
-    zoomedImage.parentElement.style.left = pageXOffset + "px";
+    zoomedImage.parentElement.style.top = window.scrollY + "px";
+    zoomedImage.parentElement.style.left = window.scrollX + "px";
     zoomedImage.parentElement.style.height = window.innerHeight + "px";
+    zoomedImage.parentElement.style.width = window.innerWidth + "px";
     zoomedImage.style.visibility = "visible";
     zoomedImage.parentElement.style.visibility = "visible";
     zoomed=true;
