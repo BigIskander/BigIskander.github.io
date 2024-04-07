@@ -258,3 +258,10 @@ PRE, code {
 .code_lines_show {
 	visibility: visible;
 }
+
+/* xuexihanzi_js page */
+.images_row {
+	display:flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
