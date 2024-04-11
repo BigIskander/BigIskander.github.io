@@ -2,6 +2,11 @@
 if(sessionStorage) {
     var theme = undefined;
     if(sessionStorage) theme = sessionStorage.getItem("theme")
+    if(!theme) {
+        if(window.matchMedia) {
+            if(window.matchMedia('(prefers-color-scheme: dark)').matches) theme = 'dark'
+        }
+    }
     if(!theme || theme == "light") {
         document.body.className = ''
         if(sessionStorage) sessionStorage.setItem("theme", "light")
