@@ -102,7 +102,18 @@ function addZoomToImages() {
 function zoomInImage(image) {
     zoomOutImage();
     zoomedImage = document.querySelector(".image_zoom");
-    zoomedImage.setAttribute("src", image.getAttribute("src"));
+    zoomedImagePreload = document.querySelector(".image_zoom_preload");
+    // show load spinner
+    spinner = document.getElementById("loadingSpinner")
+    spinner.style.visibility = "visible"
+    spinner.style.top = (window.scrollY + window.innerHeight/2) + "px"
+    // if larger image should load
+    if(image.currentSrc && image.currentSrc!=image.src) {
+      zoomedImagePreload.src = image.currentSrc
+    } else {
+      zoomedImage.src = image.src
+    }
+    // calculate image position
     if(image.naturalHeight > (window.innerHeight * 0.9)
         || image.naturalWidth > (window.innerWidth * 0.9))
     {
@@ -133,30 +144,60 @@ function zoomInImage(image) {
         ? window.innerHeight * 0.05 : (window.innerHeight - zoomedImageHeight) / 2;
     leftAdjust = zoomedImageWidth >= (window.innerWidth * 0.9)
         ? window.innerWidth * 0.05 : (window.innerWidth - zoomedImageWidth) / 2;
+    // set images position
     zoomedImage.style.height = zoomedImageHeight + "px";
     zoomedImage.style.width = zoomedImageWidth + "px";
     zoomedImage.style.top = topAdjust + "px";
     zoomedImage.style.left = leftAdjust + "px";
+    zoomedImagePreload.style.height = zoomedImageHeight + "px";
+    zoomedImagePreload.style.width = zoomedImageWidth + "px";
+    zoomedImagePreload.style.top = topAdjust + "px";
+    zoomedImagePreload.style.left = leftAdjust + "px";
+    // set parent element position
     zoomedImage.parentElement.style.top = window.scrollY + "px";
     zoomedImage.parentElement.style.left = window.scrollX + "px";
     zoomedImage.parentElement.style.height = window.innerHeight + "px";
     zoomedImage.parentElement.style.width = window.innerWidth + "px";
-    zoomedImage.style.visibility = "visible";
+    // show image
+    if(image.currentSrc && image.currentSrc!=image.src) {
+      zoomedImagePreload.style.visibility = "visible";
+      zoomedImagePreload.onload= () => { 
+        zoomedImage.src=image.src
+        zoomedImage.onload = () => {
+          zoomedImage.style.visibility = "visible"
+          zoomedImagePreload.style.visibility = "hidden"
+          spinner.style.visibility = "hidden"
+        }
+      }
+    } else {
+      zoomedImage.style.visibility = "visible"
+      zoomedImage.onload = () => {    
+        spinner.style.visibility = "hidden"
+      }
+    }
     zoomedImage.parentElement.style.visibility = "visible";
     zoomed=true;
+    // zoom out event listener
     setTimeout(() => {
       zoomedImage.addEventListener("click", zoomOutImage)
+      zoomedImagePreload.addEventListener("click", zoomOutImage)
     }, 100);
 }
 
 function zoomOutImage() {
     if(zoomed) {
+      spinner = document.getElementById("loadingSpinner")
+      spinner.style.visibility = "hidden"
       zoomedImage = document.querySelector(".image_zoom");
+      zoomedImagePreload = document.querySelector(".image_zoom_preload");
       zoomedImage.setAttribute("src", "");
+      zoomedImagePreload.setAttribute("src", "");
       zoomedImage.style.visibility = "hidden";
+      zoomedImagePreload.style.visibility = "hidden";
       zoomedImage.parentElement.style.visibility = "hidden";
       zoomed=false;
       zoomedImage.removeEventListener("click", zoomOutImage);
+      zoomedImagePreload.removeEventListener("click", zoomOutImage);
     }
 }
 
