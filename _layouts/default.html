@@ -62,14 +62,14 @@
   <!-- https://prismjs.com -->
   <!-- for code highlight -->
   <link href="/assets/css/prism.css" rel="stylesheet" />
-  <script src="/assets/js/prism.js"></script>
-  <script src="/assets/js/show_hide_code.js"></script>
+  <script src="/assets/js/prism.js" defer></script>
+  <script src="/assets/js/show_hide_code.js" defer></script>
   {% endif %}
   {% if page.formula=="Y" %}
   <!-- https://www.mathjax.org -->
   <!-- scripts for formulas demonstration -->
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
+  <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
   {% endif %}
   <link rel="stylesheet" href="/assets/css/styles.css">
   </head>
