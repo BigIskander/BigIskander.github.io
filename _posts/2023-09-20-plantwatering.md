@@ -108,16 +108,25 @@ eng_v: "/2023/09/30/plantwatering.eng.html"
 Для того, чтобы определить, как долго должен быть включен насос, чтобы налить требуемое количество воды, я сначала измерил какой объем воды насос перекачивает за 10 секунд. Затем, на основе этого, высчитал количество секунд за которое насос перельет требуемый объем воды. И далее, запрограммировал микроконтроллер так, что когда требуется полив, насос включается на нужное количество секунд и затем выключается.
 
 <h2>Фотографии устройства:</h2>
-<img src="/assets/images/posts/2023-09-20-plantwatering/IMG_20230326_100836.jpg" class="zoomable" style="width:calc(max(300px,25%))" id="image1" alt="Снимок устройства.">
-<img src="/assets/images/posts/2023-09-20-plantwatering/IMG_20230326_100901.jpg" class="zoomable"
-style="width:calc(max(300px,25%))" id="image2" alt="Снимок устройства.">
-<img src="/assets/images/posts/2023-09-20-plantwatering/IMG_20230326_101018.jpg" class="zoomable" style="width:calc(max(300px,25%))" id="image3" alt="Снимок устройства.">
-<img src="/assets/images/posts/2023-09-20-plantwatering/IMG_20230401_112216.jpg" class="zoomable" style="width:calc(max(300px,25%))" id="image4" alt="Снимок устройства.">
-<img src="/assets/images/posts/2023-09-20-plantwatering/IMG_20230612_072729.jpg" class="zoomable" style="width:calc(max(300px,25%))" id="image5" alt="Снимок устройства.">
+<img src="/assets/images/posts/2023-09-20-plantwatering/IMG_20230326_100836.jpg" 
+    srcset="/assets/images/posts/2023-09-20-plantwatering/small/IMG_20230326_100836.jpg 300w"
+    class="zoomable" style="width:calc(max(300px,25%))" id="image1" alt="Снимок устройства.">
+<img src="/assets/images/posts/2023-09-20-plantwatering/IMG_20230326_100901.jpg" 
+    srcset="/assets/images/posts/2023-09-20-plantwatering/small/IMG_20230326_100901.jpg 300w"
+    class="zoomable" style="width:calc(max(300px,25%))" id="image2" alt="Снимок устройства.">
+<img src="/assets/images/posts/2023-09-20-plantwatering/IMG_20230326_101018.jpg" 
+    srcset="/assets/images/posts/2023-09-20-plantwatering/small/IMG_20230326_101018.jpg 300w"
+    class="zoomable" style="width:calc(max(300px,25%))" id="image3" alt="Снимок устройства.">
+<img src="/assets/images/posts/2023-09-20-plantwatering/IMG_20230401_112216.jpg" 
+    srcset="/assets/images/posts/2023-09-20-plantwatering/small/IMG_20230401_112216.jpg 300w"
+    class="zoomable" style="width:calc(max(300px,25%))" id="image4" alt="Снимок устройства.">
+<img src="/assets/images/posts/2023-09-20-plantwatering/IMG_20230612_072729.jpg"
+    srcset="/assets/images/posts/2023-09-20-plantwatering/small/IMG_20230612_072729.jpg 300w"
+    class="zoomable" style="width:calc(max(300px,25%))" id="image5" alt="Снимок устройства.">
 
 <p>
 Видео демонстрация работы устройства (полив растения):<br/>
-<video style="width:calc(min(100%,1280px))" preload="auto" controls>
+<video style="width:calc(min(100%,1280px))" preload="metadata" controls>
     <source src="/assets/images/posts/2023-09-20-plantwatering/VID_20230604_092944.mp4" type='video/mp4'/>
     Your browser does not support the video tag.
 </video>
