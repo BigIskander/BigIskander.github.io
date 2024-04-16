@@ -24,15 +24,15 @@ Then the data from log file was processed and displayed in easier to understand 
 
 Below is the graphs of soil moisture [Влажность почвы] and voltage levels (on the battery) [Напряжение]. The graphs build based on observations for the time period of 3 months (2327 observations). Small red squares [Полив] denominates time points when the plant was automatically watered by the device.
 
-<img src="/assets/images/posts/2023-09-20-plantwatering/moisture.png" class="zoomable" style="width:calc(max(1753px,100%))" id="image1" alt="График валжности почвы за 3 месяца.">
+<img src="/assets/images/posts/2023-09-20-plantwatering/moisture.png" class="zoomable" style="width:calc(max(1753px,100%))" id="image1" alt="Soil moisture level plot for the period of 3 months.">
 
-<img src="/assets/images/posts/2023-09-20-plantwatering/voltage.png" class="zoomable" style="width:calc(max(1752px,100%))" id="image1" alt="График напряжения за 3 месяца.">
+<img src="/assets/images/posts/2023-09-20-plantwatering/voltage.png" class="zoomable" style="width:calc(max(1752px,100%))" id="image1" alt="Voltage level plot for the period of 3 months.">
 
 For better clarity, below is the graphs built based on observation period of 1 week.
 
-<img src="/assets/images/posts/2023-09-20-plantwatering/moisture2.png" class="zoomable" style="width:calc(max(1753px,100%))" id="image1" alt="График валжности почвы за неделю.">
+<img src="/assets/images/posts/2023-09-20-plantwatering/moisture2.png" class="zoomable" style="width:calc(max(1753px,100%))" id="image1" alt="Soil moisture level plot for the period of one week.">
 
-<img src="/assets/images/posts/2023-09-20-plantwatering/voltage2.png" class="zoomable" style="width:calc(max(1752px,100%))" id="image1" alt="График напряжения за неделю.">
+<img src="/assets/images/posts/2023-09-20-plantwatering/voltage2.png" class="zoomable" style="width:calc(max(1752px,100%))" id="image1" alt="Voltage level plot for the period of 3 months.">
 
 On the graphs you can see how soil moisture and battery voltage changes depending from the time of day. In hot days, after watering the plant, soil moisture rised pretty slowly. For that reason some days the device watered the plant twice with time break of 1 hour.
 
@@ -109,12 +109,21 @@ The amount of water to pour for one watering was decidend depending on volume of
 In order to determine how long the pump needs to be on to pour necessary amount of water, at first I measured the amout of water which pump pumps in time period of 10 second. Then based on that I calculated how much secons pump needs in order to pour necessary omount of water and programmed microcontroller so that when watering will be need the pump will be turned on for set amount of secons and then turned off.
 
 <h2>Photos of the device:</h2>
-<img src="/assets/images/posts/2023-09-20-plantwatering/IMG_20230326_100836.jpg" class="zoomable" style="width:calc(max(300px,25%))" id="image1" alt="Снимок устройства.">
-<img src="/assets/images/posts/2023-09-20-plantwatering/IMG_20230326_100901.jpg" class="zoomable"
-style="width:calc(max(300px,25%))" id="image2" alt="Снимок устройства.">
-<img src="/assets/images/posts/2023-09-20-plantwatering/IMG_20230326_101018.jpg" class="zoomable" style="width:calc(max(300px,25%))" id="image3" alt="Снимок устройства.">
-<img src="/assets/images/posts/2023-09-20-plantwatering/IMG_20230401_112216.jpg" class="zoomable" style="width:calc(max(300px,25%))" id="image4" alt="Снимок устройства.">
-<img src="/assets/images/posts/2023-09-20-plantwatering/IMG_20230612_072729.jpg" class="zoomable" style="width:calc(max(300px,25%))" id="image5" alt="Снимок устройства.">
+<img src="/assets/images/posts/2023-09-20-plantwatering/medium/IMG_20230326_100836.jpg" 
+    srcset="/assets/images/posts/2023-09-20-plantwatering/small/IMG_20230326_100836.jpg 300w"
+    class="zoomable" style="width:calc(max(300px,25%))" id="image1" alt="Photo of the divice.">
+<img src="/assets/images/posts/2023-09-20-plantwatering/medium/IMG_20230326_100901.jpg" 
+    srcset="/assets/images/posts/2023-09-20-plantwatering/small/IMG_20230326_100901.jpg 300w"
+    class="zoomable" style="width:calc(max(300px,25%))" id="image2" alt="Photo of the divice.">
+<img src="/assets/images/posts/2023-09-20-plantwatering/medium/IMG_20230326_101018.jpg" 
+    srcset="/assets/images/posts/2023-09-20-plantwatering/small/IMG_20230326_101018.jpg 300w"
+    class="zoomable" style="width:calc(max(300px,25%))" id="image3" alt="Photo of the divice.">
+<img src="/assets/images/posts/2023-09-20-plantwatering/medium/IMG_20230401_112216.jpg" 
+    srcset="/assets/images/posts/2023-09-20-plantwatering/small/IMG_20230401_112216.jpg 300w"
+    class="zoomable" style="width:calc(max(300px,25%))" id="image4" alt="Photo of the divice.">
+<img src="/assets/images/posts/2023-09-20-plantwatering/medium/IMG_20230612_072729.jpg"
+    srcset="/assets/images/posts/2023-09-20-plantwatering/small/IMG_20230612_072729.jpg 300w"
+    class="zoomable" style="width:calc(max(300px,25%))" id="image5" alt="Photo of the divice.">
 
 <p>
 Video demonstration of device working (watering the plant):<br/>
