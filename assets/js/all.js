@@ -105,7 +105,8 @@ function zoomInImage(image) {
     zoomedImagePreload = document.querySelector(".image_zoom_preload");
     // show load spinner
     spinner = document.getElementById("loadingSpinner")
-    spinner.style.top = (window.scrollY + window.innerHeight/2) + "px"
+    spinner.style.top = (window.scrollY + window.innerHeight/2 - 20) + "px"
+    spinner.style.left = (window.innerWidth/2 - 20) + "px"
     // if larger image should load
     if(image.currentSrc && image.currentSrc!=image.src) {
       zoomedImagePreload.src = image.currentSrc
