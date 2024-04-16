@@ -105,13 +105,14 @@ function zoomInImage(image) {
     zoomedImagePreload = document.querySelector(".image_zoom_preload");
     // show load spinner
     spinner = document.getElementById("loadingSpinner")
-    spinner.style.visibility = "visible"
     spinner.style.top = (window.scrollY + window.innerHeight/2) + "px"
     // if larger image should load
     if(image.currentSrc && image.currentSrc!=image.src) {
       zoomedImagePreload.src = image.currentSrc
+      if(!zoomedImagePreload.complete) spinner.style.visibility = "visible"
     } else {
       zoomedImage.src = image.src
+      if(!zoomedImage.complete) spinner.style.visibility = "visible"
     }
     // calculate image position
     if(image.naturalHeight > (window.innerHeight * 0.9)
@@ -163,6 +164,7 @@ function zoomInImage(image) {
       zoomedImagePreload.style.visibility = "visible";
       zoomedImagePreload.onload= () => { 
         zoomedImage.src=image.src
+        if(!zoomedImage.complete) spinner.style.visibility = "visible"
         zoomedImage.onload = () => {
           zoomedImage.style.visibility = "visible"
           zoomedImagePreload.style.visibility = "hidden"
