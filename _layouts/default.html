@@ -99,7 +99,8 @@
   <div class="image_zoom_div">
     <img class="image_zoom_preload" />
     <img class="image_zoom" />
-    <div class="zoom_me_out">Нажмите на изображение чтобы уменьшить.</div>
+    <div class="zoom_me_out">{% if page.rus_v %}Click on image to zoom out.{% else %}Нажмите на изображение чтобы уменьшить.{% endif %}</div>
+    <a target="_blank" class="image_zoom_open_url">{% if page.rus_v %}Open image in new tab.{% else %}Открыть изображение в новой вкладке.{% endif %}</a></div>
   </div>
   <!-- https://tobiasahlin.com/spinkit/ //-->
   <div class="sk-fading-circle" id="loadingSpinner">

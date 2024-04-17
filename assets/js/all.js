@@ -103,6 +103,8 @@ function zoomInImage(image) {
     zoomOutImage();
     zoomedImage = document.querySelector(".image_zoom");
     zoomedImagePreload = document.querySelector(".image_zoom_preload");
+    zoomedImageLink = document.querySelector(".image_zoom_open_url");
+    zoomedImageLink.setAttribute("href", image.src);
     // show load spinner
     spinner = document.getElementById("loadingSpinner")
     spinner.style.top = (window.scrollY + window.innerHeight/2 - 20) + "px"
@@ -189,6 +191,8 @@ function zoomInImage(image) {
 
 function zoomOutImage() {
     if(zoomed) {
+      zoomedImageLink = document.querySelector(".image_zoom_open_url");
+      zoomedImageLink.removeAttribute("href");
       spinner = document.getElementById("loadingSpinner")
       spinner.style.visibility = "hidden"
       zoomedImage = document.querySelector(".image_zoom");
