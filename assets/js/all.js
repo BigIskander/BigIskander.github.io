@@ -173,10 +173,19 @@ function zoomInImage(image) {
           zoomedImagePreload.style.visibility = "hidden"
           spinner.style.visibility = "hidden"
         }
+        zoomedImage.onerror = () => {
+          spinner.style.visibility = "hidden"
+        }
+      }
+      zoomedImagePreload.onerror = () => {
+        spinner.style.visibility = "hidden"
       }
     } else {
       zoomedImage.style.visibility = "visible"
       zoomedImage.onload = () => {    
+        spinner.style.visibility = "hidden"
+      }
+      zoomedImage.onerror = () => {
         spinner.style.visibility = "hidden"
       }
     }
