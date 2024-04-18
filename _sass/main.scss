@@ -202,7 +202,7 @@ H1 {
 H2 {
 	font-size: 1.3em;
 }
-H1, H2, P, IMG, LI, .images_row {
+H1, H2, P, IMG, LI, .images_row, .qr_block {
 	text-align: justify;
 	margin-left: 2%;
 	margin-right: 2%;
@@ -214,10 +214,10 @@ H1, H2, P, IMG, LI, .images_row {
   margin-right: 0%;
 }
 
-@media (min-width: 800px) {
-	.qr_block {
-		display: flex;
-	}
+.qr_block {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 }
 
 @media (max-width: 800px) {
@@ -229,9 +229,6 @@ H1, H2, P, IMG, LI, .images_row {
   .main_content_child {
     transform: rotateX(180deg);
   }
-	.qr_block	{
-		display: inline;
-	}
 }
 
 img
