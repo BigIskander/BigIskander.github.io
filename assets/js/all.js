@@ -11,7 +11,10 @@ function pageOnLoad() {
 function whilePageLoading() {
   if(document.readyState != 'complete') {
     overflowText = document.getElementById("content_overflow");
-    overflowText.innerHTML = "<b>Страница загружается...</b>";
+    if(isPageInEnglish)
+      overflowText.innerHTML = "<b>Page is loading...</b>";
+    else
+      overflowText.innerHTML = "<b>Страница загружается...</b>";
     overflowText.style.visibility = "visible";
     overflowText.style.height = "";
   }
@@ -24,7 +27,10 @@ function contentOverflow()
   element = document.querySelector(".main_content");
   overflowText = document.getElementById("content_overflow");
   if(element.scrollWidth > element.clientWidth * 1.02) {
-    overflowText.innerHTML = "Часть содержимого не уместилась по ширине, потяните (прокрутите) страницу влево чтобы увидеть.";
+    if(isPageInEnglish)
+      overflowText.innerHTML = "Part of the content does not fit by width, in order to see please drag (scroll) page to the left.";
+    else
+      overflowText.innerHTML = "Часть содержимого не уместилась по ширине, потяните (прокрутите) страницу влево чтобы увидеть.";
     overflowText.style.visibility = "visible";
   } else {
     overflowText.innerHTML = "";
@@ -86,10 +92,17 @@ function addZoomToImages() {
             imageName = image.getAttribute("name");
             if(imageName) {
               nameElement = image.nextSibling;
-              nameElement.innerHTML = nameElement.innerHTML
+              if(isPageInEnglish)
+                nameElement.innerHTML = nameElement.innerHTML
+                              + "<br />Click on image to zoom.";
+              else
+                nameElement.innerHTML = nameElement.innerHTML
                               + "<br />Нажмите на изображение чтобы увеличить.";
             } else {
-              addTextUnderImage(image, "Нажмите на изображение чтобы увеличить.");
+              if(isPageInEnglish)
+                addTextUnderImage(image, "Click on image to zoom.");
+              else
+                addTextUnderImage(image, "Нажмите на изображение чтобы увеличить.");
             }
           }
         });
@@ -222,10 +235,16 @@ function show_hide_element(elementID){
   emText=element.parentElement.querySelector("em");
   if(element.className!="code_lines_hide"){
     className="code_lines_hide"
-    text="показать"
+    if(isPageInEnglish)
+      text="show"
+    else
+      text="показать"
   } else {
     className="code_lines_show"
-    text="скрыть"
+    if(isPageInEnglish)
+      text="hide"
+    else
+      text="скрыть"
   }
   element.className=className;
   emText.innerHTML=text;
