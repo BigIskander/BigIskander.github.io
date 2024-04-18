@@ -109,21 +109,33 @@ The amount of water to pour for one watering was decidend depending on volume of
 In order to determine how long the pump needs to be on to pour necessary amount of water, at first I measured the amout of water which pump pumps in time period of 10 second. Then based on that I calculated how much secons pump needs in order to pour necessary omount of water and programmed microcontroller so that when watering will be need the pump will be turned on for set amount of secons and then turned off.
 
 <h2>Photos of the device:</h2>
-<img src="/assets/images/posts/2023-09-20-plantwatering/medium/IMG_20230326_100836.jpg" 
-    srcset="/assets/images/posts/2023-09-20-plantwatering/small/IMG_20230326_100836.jpg 300w"
-    class="zoomable" style="width:calc(max(300px,25%))" id="image1" alt="Photo of the divice.">
-<img src="/assets/images/posts/2023-09-20-plantwatering/medium/IMG_20230326_100901.jpg" 
-    srcset="/assets/images/posts/2023-09-20-plantwatering/small/IMG_20230326_100901.jpg 300w"
-    class="zoomable" style="width:calc(max(300px,25%))" id="image2" alt="Photo of the divice.">
-<img src="/assets/images/posts/2023-09-20-plantwatering/medium/IMG_20230326_101018.jpg" 
-    srcset="/assets/images/posts/2023-09-20-plantwatering/small/IMG_20230326_101018.jpg 300w"
-    class="zoomable" style="width:calc(max(300px,25%))" id="image3" alt="Photo of the divice.">
-<img src="/assets/images/posts/2023-09-20-plantwatering/medium/IMG_20230401_112216.jpg" 
-    srcset="/assets/images/posts/2023-09-20-plantwatering/small/IMG_20230401_112216.jpg 300w"
-    class="zoomable" style="width:calc(max(300px,25%))" id="image4" alt="Photo of the divice.">
-<img src="/assets/images/posts/2023-09-20-plantwatering/medium/IMG_20230612_072729.jpg"
-    srcset="/assets/images/posts/2023-09-20-plantwatering/small/IMG_20230612_072729.jpg 300w"
-    class="zoomable" style="width:calc(max(300px,25%))" id="image5" alt="Photo of the divice.">
+<div style="display:flex; flex-direction:row; flex-wrap: wrap;">
+    <div>
+        <img src="/assets/images/posts/2023-09-20-plantwatering/medium/IMG_20230326_100836.jpg" 
+            srcset="/assets/images/posts/2023-09-20-plantwatering/small/IMG_20230326_100836.jpg 300w"
+            class="zoomable" style="width:300px" id="image1" alt="Photo of the divice.">
+    </div>
+    <div>
+        <img src="/assets/images/posts/2023-09-20-plantwatering/medium/IMG_20230326_100901.jpg" 
+            srcset="/assets/images/posts/2023-09-20-plantwatering/small/IMG_20230326_100901.jpg 300w"
+            class="zoomable" style="width:300px" id="image2" alt="Photo of the divice.">
+    </div>
+    <div>
+        <img src="/assets/images/posts/2023-09-20-plantwatering/medium/IMG_20230326_101018.jpg" 
+            srcset="/assets/images/posts/2023-09-20-plantwatering/small/IMG_20230326_101018.jpg 300w"
+            class="zoomable" style="width:300px" id="image3" alt="Photo of the divice.">
+    </div>
+    <div>
+        <img src="/assets/images/posts/2023-09-20-plantwatering/medium/IMG_20230401_112216.jpg" 
+            srcset="/assets/images/posts/2023-09-20-plantwatering/small/IMG_20230401_112216.jpg 300w"
+            class="zoomable" style="width:300px" id="image4" alt="Photo of the divice.">
+    </div>
+    <div>
+        <img src="/assets/images/posts/2023-09-20-plantwatering/medium/IMG_20230612_072729.jpg"
+            srcset="/assets/images/posts/2023-09-20-plantwatering/small/IMG_20230612_072729.jpg 300w"
+            class="zoomable" style="width:300px" id="image5" alt="Photo of the divice.">
+    </div>
+</div>
 
 <p>
 Video demonstration of device working (watering the plant):<br/>
