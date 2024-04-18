@@ -138,6 +138,10 @@ a:hover {
   max-width: 98%;
 }
 
+.dark .zoom_me {
+	background-color: rgba(150, 150, 150, 0.2);
+}
+
 .zoom_me_out {
   font-size: 0.8em;
   text-align: center;
@@ -198,7 +202,7 @@ H1 {
 H2 {
 	font-size: 1.3em;
 }
-H1, H2, P, IMG, LI {
+H1, H2, P, IMG, LI, .images_row {
 	text-align: justify;
 	margin-left: 2%;
 	margin-right: 2%;

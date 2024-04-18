@@ -94,13 +94,13 @@ function addZoomToImages() {
               nameElement = image.nextSibling;
               if(isPageInEnglish)
                 nameElement.innerHTML = nameElement.innerHTML
-                              + "<br />Click on image to zoom.";
+                              + "<br />Click on image to zoom in.";
               else
                 nameElement.innerHTML = nameElement.innerHTML
                               + "<br />Нажмите на изображение чтобы увеличить.";
             } else {
               if(isPageInEnglish)
-                addTextUnderImage(image, "Click on image to zoom.");
+                addTextUnderImage(image, "Click on image to zoom in.");
               else
                 addTextUnderImage(image, "Нажмите на изображение чтобы увеличить.");
             }

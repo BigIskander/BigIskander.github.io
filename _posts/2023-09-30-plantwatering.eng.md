@@ -109,7 +109,7 @@ The amount of water to pour for one watering was decidend depending on volume of
 In order to determine how long the pump needs to be on to pour necessary amount of water, at first I measured the amout of water which pump pumps in time period of 10 second. Then based on that I calculated how much secons pump needs in order to pour necessary omount of water and programmed microcontroller so that when watering will be need the pump will be turned on for set amount of secons and then turned off.
 
 <h2>Photos of the device:</h2>
-<div style="display:flex; flex-direction:row; flex-wrap: wrap;">
+<div class="images_row">
     <div>
         <img src="/assets/images/posts/2023-09-20-plantwatering/medium/IMG_20230326_100836.jpg" 
             srcset="/assets/images/posts/2023-09-20-plantwatering/small/IMG_20230326_100836.jpg 300w"
