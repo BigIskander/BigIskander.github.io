@@ -41,16 +41,32 @@ v1.0.0
 
 <b>Интерфейс программы.</b>
 
-<p class="images_row">
-<img src="/assets/images/posts/2023-09-05-xuexihanzi_js/0.png" style="width:min(90%, 300px); margin-top: 5px;" class="zoomable">
-<img src="/assets/images/posts/2023-09-05-xuexihanzi_js/1.png" style="width:min(90%, 300px); margin-top: 5px;" class="zoomable">
-<img src="/assets/images/posts/2023-09-05-xuexihanzi_js/2.png" style="width:min(90%, 300px); margin-top: 5px;" class="zoomable">
-<img src="/assets/images/posts/2023-09-05-xuexihanzi_js/3.png" style="width:min(90%, 300px); margin-top: 5px;" class="zoomable">
-<img src="/assets/images/posts/2023-09-05-xuexihanzi_js/4.png" style="width:min(90%, 300px); margin-top: 5px;" class="zoomable">
-<img src="/assets/images/posts/2023-09-05-xuexihanzi_js/5.png" style="width:min(90%, 300px); margin-top: 5px;" class="zoomable">
-<img src="/assets/images/posts/2023-09-05-xuexihanzi_js/6.png" style="width:min(90%, 300px); margin-top: 5px;" class="zoomable">
-<img src="/assets/images/posts/2023-09-05-xuexihanzi_js/7.png" style="width:min(90%, 300px); margin-top: 5px;" class="zoomable">
-</p>
+<div class="images_row">
+    <div>
+        <img src="/assets/images/posts/2023-09-05-xuexihanzi_js/0.png" style="width:300px; margin-top: 5px;" class="zoomable">
+    </div>
+    <div>
+        <img src="/assets/images/posts/2023-09-05-xuexihanzi_js/1.png" style="width:300px; margin-top: 5px;" class="zoomable">
+    </div>
+    <div>
+        <img src="/assets/images/posts/2023-09-05-xuexihanzi_js/2.png" style="width:300px; margin-top: 5px;" class="zoomable">
+    </div>
+    <div>
+        <img src="/assets/images/posts/2023-09-05-xuexihanzi_js/3.png" style="width:300px; margin-top: 5px;" class="zoomable">
+    </div>
+    <div>
+        <img src="/assets/images/posts/2023-09-05-xuexihanzi_js/4.png" style="width:300px; margin-top: 5px;" class="zoomable">
+    </div>
+    <div>
+        <img src="/assets/images/posts/2023-09-05-xuexihanzi_js/5.png" style="width:300px; margin-top: 5px;" class="zoomable">
+    </div>
+    <div>
+        <img src="/assets/images/posts/2023-09-05-xuexihanzi_js/6.png" style="width:300px; margin-top: 5px;" class="zoomable">
+    </div>
+    <div>
+        <img src="/assets/images/posts/2023-09-05-xuexihanzi_js/7.png" style="width:300px; margin-top: 5px;" class="zoomable">
+    </div>
+</div>
 
 На данный момент программа доступна для операционных систем Windows, macOS и Linux.
 
