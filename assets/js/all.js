@@ -171,7 +171,6 @@ function zoomOutImage() {
 		zoomedImagePreload.removeAttribute("src");
 		zoomedImage.removeAttribute("src");
 		zoomedImageLink.removeAttribute("href");
-		document.body.style.removeProperty("overflow");
 		imageZoomDiv.style.removeProperty("top");
 		imageZoomDiv.style.removeProperty("left");
     imageZoomDiv.style.removeProperty("width");
