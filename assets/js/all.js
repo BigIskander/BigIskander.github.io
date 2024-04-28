@@ -123,6 +123,8 @@ function zoomInImage(image) {
 	//
 	imageZoomDiv.style.top = window.scrollY + "px";
 	imageZoomDiv.style.left = window.scrollX + "px";
+  imageZoomDiv.style.width = window.innerWidth + "px";
+  imageZoomDiv.style.height = window.innerHeight + "px";
 	imageZoomDiv.style.visibility = "visible";
 	zoomed = true;
 	isImagePreload = false;
@@ -172,6 +174,8 @@ function zoomOutImage() {
 		document.body.style.removeProperty("overflow");
 		imageZoomDiv.style.removeProperty("top");
 		imageZoomDiv.style.removeProperty("left");
+    imageZoomDiv.style.removeProperty("width");
+    imageZoomDiv.style.removeProperty("height");
 		zoomed = false;
 	}
 }
