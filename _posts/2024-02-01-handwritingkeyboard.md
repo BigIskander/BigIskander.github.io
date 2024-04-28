@@ -1,4 +1,6 @@
 ---
+redirect_from: 
+    - /test/
 layout: post
 title: "Рукописная клавиатура для Linux"
 ---
