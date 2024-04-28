@@ -169,6 +169,8 @@ a:hover {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
 	margin: 0px;
 	max-width: 90%;
 	max-height: 90%;
@@ -181,6 +183,8 @@ a:hover {
 	left: 50%;
 	transform: translate(-50%);
 	-webkit-transform: translate(-50%);
+	-moz-transform: translate(-50%);
+	-o-transform: translate(-50%);
 	background-color: #2b2a2a;
 	color: #FFFFFF;
 	padding: 5px;
@@ -216,6 +220,8 @@ a:hover {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
 	visibility: hidden;
 }
 
@@ -248,9 +254,15 @@ H1, H2, P, IMG, LI, .images_row, .qr_block {
     overflow:scroll;
     overflow-y: auto;
     transform: rotateX(180deg);
+	-webkit-transform: rotateX(180deg);
+	-moz-transform: rotateX(180deg);
+	-o-transform: rotateX(180deg);
   }
   .main_content_child {
     transform: rotateX(180deg);
+	-webkit-transform: rotateX(180deg);
+	-moz-transform: rotateX(180deg);
+	-o-transform: rotateX(180deg);
   }
 }
 
