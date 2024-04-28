@@ -39,13 +39,13 @@ function contentOverflow()
 }
 
 function pageOnResize() {
-  // zoomOutImage();
+  zoomOutImage();
   pageOnScrollDo();
   contentOverflow();
 }
 
 function pageOnScrollDo() {
-  // zoomOutImage();
+  zoomOutImage();
   //to top button
   body = document.querySelector("body");
   toTopButton = document.querySelector(".to_top");
@@ -152,7 +152,6 @@ function zoomInImage(image) {
 	setTimeout(function() {
 		if(!isImagePreload) loadingSpinner.style.visibility = "visible";
 	}, 200);
-  document.documentElement.style.setProperty("--overflow", "hidden");
 }
 
 function zoomOutImage() {
@@ -173,7 +172,6 @@ function zoomOutImage() {
 		document.body.style.removeProperty("overflow");
 		imageZoomDiv.style.removeProperty("top");
 		imageZoomDiv.style.removeProperty("left");
-    document.documentElement.style.setProperty("--overflow", "auto");
 		zoomed = false;
 	}
 }
