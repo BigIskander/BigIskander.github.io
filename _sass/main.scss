@@ -1,3 +1,7 @@
+body {
+	overflow-x: hidden;
+}
+
 .content {
 	background-color: #FFFFFF;
 	border-color: lightgrey;
@@ -145,7 +149,7 @@ a:hover {
 .zoom_me_out {
 	position: absolute;
 	top: 0px;
-	right: 0px;
+	right: 20px;
 	background-color: #2b2a2a;
 	color: #FFFFFF;
 	padding: 5px;
@@ -203,7 +207,6 @@ a:hover {
 }
 
 .image_zoom_div {
-	background-color: rgba(127, 127, 127, .5);
 	position: absolute;
 	top: 0;
 	left: 0;
