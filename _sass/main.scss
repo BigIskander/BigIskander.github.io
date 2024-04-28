@@ -1,3 +1,11 @@
+:root {
+	--overflow: auto;
+}
+
+:root {
+	overflow: var(--overflow);
+}
+
 .content {
 	background-color: #FFFFFF;
 	border-color: lightgrey;

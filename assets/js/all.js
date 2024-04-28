@@ -152,7 +152,7 @@ function zoomInImage(image) {
 	setTimeout(function() {
 		if(!isImagePreload) loadingSpinner.style.visibility = "visible";
 	}, 200);
-	document.body.style.overflow = "hidden";
+  document.documentElement.style.setProperty("--overflow", "hidden");
 }
 
 function zoomOutImage() {
@@ -173,6 +173,7 @@ function zoomOutImage() {
 		document.body.style.removeProperty("overflow");
 		imageZoomDiv.style.removeProperty("top");
 		imageZoomDiv.style.removeProperty("left");
+    document.documentElement.style.setProperty("--overflow", "auto");
 		zoomed = false;
 	}
 }
