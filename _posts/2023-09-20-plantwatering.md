@@ -76,7 +76,7 @@ eng_v: "/2023/09/30/plantwatering.eng.html"
 </ul>
 
 
-<img src="/assets/images/posts/2023-09-20-plantwatering/CircuitDiagram.png" class="zoomable" style="width:calc(max(300px,80%))" id="image0" />
+<img src="/assets/images/posts/2023-09-20-plantwatering/CircuitDiagram.png" alt="Электрическая схема устройства." class="zoomable" style="width:calc(max(300px,80%))" id="image0" />
 
 <h2>Рекомендации по сборке устройства и прошивке микроконтроллера.</h2>
 

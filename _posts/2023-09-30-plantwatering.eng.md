@@ -77,7 +77,7 @@ Electronic components:
 <li>+ prototyping board and wires with diameter 24 AWG</li>
 </ul>
 
-<img src="/assets/images/posts/2023-09-20-plantwatering/CircuitDiagram.png" class="zoomable" style="width:calc(max(300px,80%))" id="image0" />
+<img src="/assets/images/posts/2023-09-20-plantwatering/CircuitDiagram.png" alt="Circuit diagram of the device." class="zoomable" style="width:calc(max(300px,80%))" id="image0" />
 
 <h2>Recommendations on how to build the device and write programm in to microcontroller.</h2>
 
