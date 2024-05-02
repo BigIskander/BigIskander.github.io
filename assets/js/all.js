@@ -20,8 +20,6 @@ function whilePageLoading() {
   }
 }
 
-setTimeout(whilePageLoading, 100);
-
 function contentOverflow()
 {
   element = document.querySelector(".main_content");
@@ -70,7 +68,7 @@ function addTextUnderImage(image, text) {
 
 function addZoomToImages() {
     content = document.querySelector(".content");
-    images = content.querySelectorAll("img");
+    var images = content.querySelectorAll("img");
     images.forEach(image => {
       imageName = image.getAttribute("name");
       if(imageName) {
@@ -140,6 +138,7 @@ function zoomInImage(image) {
 	}
 	zoomedImagePreload.onload = function() {
 		zoomedImage.src = image.src;
+    if(image.alt) zoomedImage.alt = image.alt;
 		zoomedImagePreload.style.visibility = "visible";
 	}
 	zoomedImagePreload.onerror = function() {
@@ -148,8 +147,10 @@ function zoomInImage(image) {
 	}
 	if(image.currentSrc && image.currentSrc!=image.src) {
 		zoomedImagePreload.src = image.currentSrc;
+    if(image.alt) zoomedImagePreload.alt = image.alt;
 	} else {
 		zoomedImage.src = image.src;
+    if(image.alt) zoomedImage.alt = image.alt;
 	}
 	setTimeout(function() {
 		if(!isImagePreload) loadingSpinner.style.visibility = "visible";
@@ -169,7 +170,9 @@ function zoomOutImage() {
 		zoomedImagePreload.style.visibility = "hidden";
 		zoomedImage.style.visibility = "hidden";
 		zoomedImagePreload.removeAttribute("src");
+    zoomedImagePreload.removeAttribute("alt");
 		zoomedImage.removeAttribute("src");
+    zoomedImage.removeAttribute("alt");
 		zoomedImageLink.removeAttribute("href");
 		imageZoomDiv.style.removeProperty("top");
 		imageZoomDiv.style.removeProperty("left");

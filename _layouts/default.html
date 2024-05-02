@@ -80,6 +80,12 @@
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
   <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
   {% endif %}
+  {% if page.gallery=="Y" %}
+  <!-- https://github.com/BigIskander/photo_gallery -->
+  <!-- script of photogallery -->
+  <link rel="stylesheet" href="/assets/css/gallery.css">
+  <script src="/assets/js/gallery.js"></script>
+  {% endif %}
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/css/loading.css">
   </head>
@@ -126,5 +132,6 @@
       <div class="sk-circle12 sk-circle"></div>
     </div>
   </div>
+  <script>setTimeout(whilePageLoading, 100);</script>
   </body>
 </html>

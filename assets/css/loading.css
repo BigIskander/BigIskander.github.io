@@ -1,11 +1,16 @@
 /* https://tobiasahlin.com/spinkit/ */
 .sk-fading-circle {
-visibility: hidden;
 width: 40px;
 height: 40px;
 position: relative;
-top: 50%;
-left: 50%;
+}
+
+/* hide when unnecessary */
+.sk-fading-circle_hide {
+visibility: hidden;
+width: 0px;
+height: 0px;
+overflow: clip;
 }
 
 .sk-fading-circle .sk-circle {

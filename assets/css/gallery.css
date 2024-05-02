@@ -1,0 +1,251 @@
+/* source: https://github.com/BigIskander/photo_gallery */
+/* MIT License */
+/* Copyright (c) 2024 Iskander Sultanov */
+
+.gallery_wrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.gallery_and_text {
+    margin: 2%;
+    max-width: 850px;
+    min-width: 650px;
+}
+
+.gallery {
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.gallery img {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.gallery_large {
+    border-width: 1px;
+    border-style: solid;
+    border-color: grey;
+}
+
+.dark .gallery_large {
+    border-color: lightgrey;
+}
+
+.gallery_large_hide {
+    visibility: hidden;
+    overflow: clip;
+    width: 0px;
+    height: 0px;
+}
+
+.gallery_back {
+    margin: 5px;
+}
+
+.gallery_back_link {
+    /* color: black; */
+}
+
+.dark .gallery_back_link {
+    /* color: white; */
+}
+
+.gallery_large_container_wrap {
+    display: flex; 
+    align-items: center; 
+    height: 650px; 
+    width: 650px;
+}
+
+.gallery_large_container {
+    display: flex;
+    justify-content: center;
+    width: 100%; 
+}
+
+.gallery_large_image {
+    max-width: 640px; 
+    max-height: 640px; 
+    margin: 5px;
+}
+
+.gallery_large_image_hide {
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+}
+
+.gallery_miniatures_wrap {
+    overflow-y: auto; 
+    overflow-x: auto;
+    border-width: 1px;
+    border-style: solid;
+    border-color: grey;
+}
+
+.dark .gallery_miniatures_wrap {
+    border-color: lightgray;
+}
+
+.gallery_miniatures {
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 700px;
+}
+
+.gallery_miniatures_side {
+    width: 180px;
+    height: 700px;
+}
+
+.gallery_miniature_wrap {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    margin: 2px;
+    width: 160px;
+    height: 160px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(166, 166, 166, 0.503);
+    background-color: rgba(218, 218, 218, 0.217);
+    cursor: pointer;
+    padding: 0px;
+}
+
+.gallery_miniature_wrap_selected {
+    border-color: black;
+    border-width: 2px;
+}
+
+.dark .gallery_miniature_wrap_selected {
+    border-color: white;
+}
+
+.gallery_miniature_wrap:hover {
+    border-color: black;
+}
+
+.dark .gallery_miniature_wrap:hover {
+    border-color: white;
+}
+
+.gallery_miniature {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.gallery_miniature_image {
+    margin: 0px;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.gallery_bottom_text_wrap {
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    max-width: 850px;
+    min-width: 650px;
+}
+
+.gallery_bottom_text {
+    margin: 0px;
+    width: 100%;
+}
+
+@media (max-width: 1136px) {
+    .gallery {
+        flex-wrap: wrap;
+    }
+
+    .gallery_miniatures_side {
+        width: 650px;
+        height: 180px;
+        flex-direction: column;
+    }
+
+    .gallery_bottom_text_large {
+        margin: 0px;
+        width: 650px;
+    }
+}
+
+@media (max-width: 850px), (max-height: 750px), (max-width: 1136px) and (max-height: 925px) {
+    .gallery {
+        flex-wrap: nowrap;
+    }
+
+    .gallery_and_text {
+        max-width: 442px;
+        min-width: 325px; 
+    }
+
+    .gallery_large_container_wrap {
+        height: 325px; 
+        width: 325px;
+    }
+
+    .gallery_large_image {
+        max-width: 320px; 
+        max-height: 320px; 
+    }
+
+    .gallery_miniatures {
+        flex-direction: row;
+        height: 350px;
+    }
+    
+    .gallery_miniatures_side {
+        width: 90px;
+        height: 350px;
+    }
+
+    .gallery_miniature_wrap {
+        width: 80px;
+        height: 80px;
+    }
+
+    .gallery_miniature_image {
+        max-width: 75px;
+        max-height: 75px;
+    }
+
+    .gallery_bottom_text_wrap {
+        max-width: 442px;
+        min-width: 325px;
+    }
+    
+    .gallery_bottom_text {
+        margin: 0px;
+        width: 100%;
+    }
+
+    @media (max-width: 596px) {
+        .gallery {
+            flex-wrap: wrap;
+        }
+        
+        .gallery_miniatures_side {
+            width: 325px;
+            height: 90px;
+            flex-direction: column;
+        }
+
+        .gallery_bottom_text_large {
+            margin: 0px;
+            width: 325px;
+        }
+    }
+}
