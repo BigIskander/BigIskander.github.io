@@ -1,7 +1,11 @@
 ---
 ---
 <!DOCTYPE html>
-<html xmlns:og="http://ogp.me/ns#">
+{% if page.rus_v %}
+<html xmlns:og="http://ogp.me/ns#" lang="en">
+{% else %}
+<html xmlns:og="http://ogp.me/ns#" lang="ru">
+{% endif %}
   <head>
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
@@ -91,17 +95,17 @@
   </head>
   <body onload="pageOnLoad()" >
   <script src="/assets/js/switch_theme.js"></script>
-  <a onclick="switch_theme()" href="JavaScript:void(0);" class="swich_theme_link">Переключить тему.</a>
+  <a onclick="switch_theme()" href="JavaScript:void(0);" class="swich_theme_link" lang="ru">Переключить тему.</a>
 	<div class="content">
     <div class="header">
     </div>
 	{% include navigation.html %}
   <div class="main_content">
-  <div class="main_content_child">
+  <main class="main_content_child">
   <noscript><p><b>JavaScript отключен или не поддерживается, страница может отображаться не правильно.</b></p></noscript>
   <div id="content_overflow" class="content_overflow"></div>
   {{ content }}
-  </div>
+  </main>
   </div>
   <div class="footer">
   </div>
