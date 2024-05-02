@@ -84,11 +84,11 @@ body {
 }
 
 a {
-  text-decoration: none;
+	text-decoration: underline;
 }
 
 a:hover {
-  text-decoration: underline;
+	text-decoration: underline double;
 }
 
 .menu {
@@ -107,7 +107,7 @@ a:hover {
 	margin-right: 0px;
 	height: 30px;
 	padding: 5px;
-	text-decoration: none;
+	text-decoration: underline;
 	font-size: 1.2em;
 	background-color: #cde0f0;
 	color: #400000;
@@ -118,7 +118,7 @@ a:hover {
 }
 
 .menu_link:hover, .menu_link_selected:hover {
-	text-decoration: underline;
+	text-decoration: underline double;
 }
 
 .menu_link_selected {
@@ -294,17 +294,17 @@ PRE, code {
 
 .code a:link {
   color: #000000;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 .code a:visited {
   color: #000000;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 .code a:hover {
 	color: #000000;
-	text-decoration: underline;
+	text-decoration: underline double;
 }
 
 .code_header {
