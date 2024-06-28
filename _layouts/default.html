@@ -9,137 +9,137 @@
   <head>
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
-  {% if page.description %}
-  <meta name="description" content="{{ page.description }}">
-  {% else %}
-  <meta name="description" content="{{ page.title }}">
-  {% endif %}
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <!-- favicon (https://realfavicongenerator.net) -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/favicon/site.webmanifest">
-  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="shortcut icon" href="/favicon/favicon.ico">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-config" content="/favicon/browserconfig.xml">
-  <meta name="theme-color" content="#ffffff">
-  <!-- favicon end -->
-  <!-- viewport tag for mobile view -->
-  <meta name="viewport" content="width=device-width, initial-scale=0.8">
-  <!-- social media sharing optimization OG meta tags -->
-  <meta property="og:title" content="{{ page.title }}"/>
-  {% if page.description %}<meta property="og:description" content="{{ page.description }}"/>{% endif %}
-  <meta property="og:image" content="{{ site.url }}{% if page.image %}{{ page.image }}{% else %}/favicon/android-chrome-256x256.png{% endif %}"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content= "{{ site.url }}{{ page.url }}" />
-  <!-- end social media... -->
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1SRVHMPS1J"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    {% if page.description %}
+      <meta name="description" content="{{ page.description }}">
+    {% else %}
+      <meta name="description" content="{{ page.title }}">
+    {% endif %}
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- favicon (https://realfavicongenerator.net) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!-- favicon end -->
+    <!-- viewport tag for mobile view -->
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <!-- social media sharing optimization OG meta tags -->
+    <meta property="og:title" content="{{ page.title }}"/>
+    {% if page.description %}<meta property="og:description" content="{{ page.description }}"/>{% endif %}
+    <meta property="og:image" content="{{ site.url }}{% if page.image %}{{ page.image }}{% else %}/favicon/android-chrome-256x256.png{% endif %}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content= "{{ site.url }}{{ page.url }}" />
+    <!-- end social media... -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1SRVHMPS1J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    gtag('config', 'G-1SRVHMPS1J');
-  </script>
-  <!-- Google tag END -->
-  <!-- Yandex.Metrika counter -->
-  <script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+      gtag('config', 'G-1SRVHMPS1J');
+    </script>
+    <!-- Google tag END -->
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-   ym(91962991, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-   </script>
-   <noscript><div><img src="https://mc.yandex.ru/watch/91962991" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-   <!-- /Yandex.Metrika counter -->
-  {% if page.rus_v %}
-  <script type="text/javascript"> 
-   var isPageInEnglish=true;
-  </script>
-  {% else %}
-  <script type="text/javascript"> 
-   var isPageInEnglish=false;
-  </script>
-  {% endif %}
-  <script src="/assets/js/all.js"></script>
-  {% if page.code=="Y" %}
-  <!-- https://prismjs.com -->
-  <!-- for code highlight -->
-  <link href="/assets/css/prism.css" rel="stylesheet" />
-  <script src="/assets/js/prism.js" defer></script>
-  <script src="/assets/js/show_hide_code.js" defer></script>
-  {% endif %}
-  {% if page.formula=="Y" %}
-  <!-- https://www.mathjax.org -->
-  <!-- scripts for formulas demonstration -->
-  <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
-  {% endif %}
-  {% if page.gallery=="Y" %}
-  <!-- https://github.com/BigIskander/photo_gallery -->
-  <!-- script of photogallery -->
-  <link rel="stylesheet" href="/assets/css/gallery.css">
-  <script src="/assets/js/gallery.js"></script>
-  {% endif %}
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <link rel="stylesheet" href="/assets/css/loading.css">
+    ym(91962991, "init", {
+          clickmap:true,
+          trackLinks:true,
+          accurateTrackBounce:true
+    });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/91962991" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+    {% if page.rus_v %}
+      <script type="text/javascript"> 
+        var isPageInEnglish=true;
+      </script>
+    {% else %}
+      <script type="text/javascript"> 
+        var isPageInEnglish=false;
+      </script>
+    {% endif %}
+    <script src="/assets/js/all.js"></script>
+    {% if page.code=="Y" %}
+      <!-- https://prismjs.com -->
+      <!-- for code highlight -->
+      <link href="/assets/css/prism.css" rel="stylesheet" />
+      <script src="/assets/js/prism.js" defer></script>
+      <script src="/assets/js/show_hide_code.js" defer></script>
+    {% endif %}
+    {% if page.formula=="Y" %}
+      <!-- https://www.mathjax.org -->
+      <!-- scripts for formulas demonstration -->
+      <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+    {% endif %}
+    {% if page.gallery=="Y" %}
+      <!-- https://github.com/BigIskander/photo_gallery -->
+      <!-- script of photogallery -->
+      <link rel="stylesheet" href="/assets/css/gallery.css">
+      <script src="/assets/js/gallery.js"></script>
+    {% endif %}
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/loading.css">
   </head>
   <body onload="pageOnLoad()" >
-  <script src="/assets/js/switch_theme.js"></script>
-  <a onclick="switch_theme()" href="JavaScript:void(0);" class="swich_theme_link" lang="ru">Переключить тему.</a>
-	<div class="content">
-    <div class="header">
+    <script src="/assets/js/switch_theme.js"></script>
+    <a onclick="switch_theme()" href="JavaScript:void(0);" class="swich_theme_link" lang="ru">Переключить тему.</a>
+    <div class="content">
+      <div class="header">
+      </div>
+      {% include navigation.html %}
+      <div class="main_content">
+        <main class="main_content_child">
+          <noscript><p><b>JavaScript отключен или не поддерживается, страница может отображаться не правильно.</b></p></noscript>
+          <div id="content_overflow" class="content_overflow"></div>
+            {{ content }}
+        </main>
+      </div>
+      <div class="footer">
+      </div>
     </div>
-	{% include navigation.html %}
-  <div class="main_content">
-  <main class="main_content_child">
-  <noscript><p><b>JavaScript отключен или не поддерживается, страница может отображаться не правильно.</b></p></noscript>
-  <div id="content_overflow" class="content_overflow"></div>
-  {{ content }}
-  </main>
-  </div>
-  <div class="footer">
-  </div>
-	</div>
-  <div class="to_top">
-    <a href="JavaScript:scroll(0,0);" >
-      <img src="/assets/images/top.png" width="50" alt="На верх!" />
-    </a>
-  </div>
-  <div class="image_zoom_div">
-    <a href="JavaScript:void(0);" onclick="zoomOutImage()" class="zoom_me_out">{% if page.rus_v %}Close.{% else %}Закрыть.{% endif %}</a>
-    <img class="image_zoom_preload" />
-    <img class="image_zoom" />
-    <a target="_blank" class="image_zoom_open_url">{% if page.rus_v %}Open image in new tab.{% else %}Открыть изображение в новой вкладке.{% endif %}</a>
-    <!-- https://tobiasahlin.com/spinkit/ //-->
-    <div class="sk-fading-circle image_loading_spinner">
-      <div class="sk-circle1 sk-circle"></div>
-      <div class="sk-circle2 sk-circle"></div>
-      <div class="sk-circle3 sk-circle"></div>
-      <div class="sk-circle4 sk-circle"></div>
-      <div class="sk-circle5 sk-circle"></div>
-      <div class="sk-circle6 sk-circle"></div>
-      <div class="sk-circle7 sk-circle"></div>
-      <div class="sk-circle8 sk-circle"></div>
-      <div class="sk-circle9 sk-circle"></div>
-      <div class="sk-circle10 sk-circle"></div>
-      <div class="sk-circle11 sk-circle"></div>
-      <div class="sk-circle12 sk-circle"></div>
+    <div class="to_top">
+      <a href="JavaScript:scroll(0,0);" >
+        <img src="/assets/images/top.png" width="50" alt="На верх!" />
+      </a>
     </div>
-  </div>
-  <script>
-    setTimeout(whilePageLoading, 100);
-    toTopSetMarginLeft();
-    window.addEventListener("resize", pageOnResize);
-    document.addEventListener("scroll", pageOnScrollDo);
-  </script>
+    <div class="image_zoom_div">
+      <a href="JavaScript:void(0);" onclick="zoomOutImage()" class="zoom_me_out">{% if page.rus_v %}Close.{% else %}Закрыть.{% endif %}</a>
+      <img class="image_zoom_preload" />
+      <img class="image_zoom" />
+      <a target="_blank" class="image_zoom_open_url">{% if page.rus_v %}Open image in new tab.{% else %}Открыть изображение в новой вкладке.{% endif %}</a>
+      <!-- https://tobiasahlin.com/spinkit/ //-->
+      <div class="sk-fading-circle image_loading_spinner">
+        <div class="sk-circle1 sk-circle"></div>
+        <div class="sk-circle2 sk-circle"></div>
+        <div class="sk-circle3 sk-circle"></div>
+        <div class="sk-circle4 sk-circle"></div>
+        <div class="sk-circle5 sk-circle"></div>
+        <div class="sk-circle6 sk-circle"></div>
+        <div class="sk-circle7 sk-circle"></div>
+        <div class="sk-circle8 sk-circle"></div>
+        <div class="sk-circle9 sk-circle"></div>
+        <div class="sk-circle10 sk-circle"></div>
+        <div class="sk-circle11 sk-circle"></div>
+        <div class="sk-circle12 sk-circle"></div>
+      </div>
+    </div>
+    <script>
+      setTimeout(whilePageLoading, 100);
+      toTopSetMarginLeft();
+      window.addEventListener("resize", pageOnResize);
+      document.addEventListener("scroll", pageOnScrollDo);
+    </script>
   </body>
 </html>
