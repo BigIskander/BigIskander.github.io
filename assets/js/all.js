@@ -2,8 +2,6 @@ var zoomed = false;
 var over = false;
 
 function pageOnLoad() {
-  document.addEventListener("scroll", pageOnScrollDo);
-  window.addEventListener("resize", pageOnResize);
   addZoomToImages();
   contentOverflow();
 }
@@ -37,9 +35,15 @@ function contentOverflow()
 }
 
 function pageOnResize() {
+  toTopSetMarginLeft();
   zoomOutImage();
   pageOnScrollDo();
   contentOverflow();
+}
+
+function toTopSetMarginLeft() {
+  document.querySelector(".to_top").style.marginLeft = 
+    (document.querySelector(".content").getBoundingClientRect().right) + "px";
 }
 
 function pageOnScrollDo() {
@@ -48,9 +52,6 @@ function pageOnScrollDo() {
   body = document.querySelector("body");
   toTopButton = document.querySelector(".to_top");
   if((body.scrollHeight > window.innerHeight) && (window.scrollY > 20)) {
-    contentPosition = document.querySelector(".content").getBoundingClientRect();
-    toTopButton.style.top = (window.scrollY + window.innerHeight - toTopButton.offsetHeight) + "px";
-    toTopButton.style.left = (contentPosition.right + 10) + "px";
     toTopButton.style.visibility = "visible";
   } else {
     toTopButton.style.visibility = "hidden";

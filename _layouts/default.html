@@ -111,7 +111,7 @@
 	</div>
   <div class="to_top">
     <a href="JavaScript:scroll(0,0);" >
-    <img src="/assets/images/top.png" width="50" alt="На верх!" />
+      <img src="/assets/images/top.png" width="50" alt="На верх!" />
     </a>
   </div>
   <div class="image_zoom_div">
@@ -135,6 +135,11 @@
       <div class="sk-circle12 sk-circle"></div>
     </div>
   </div>
-  <script>setTimeout(whilePageLoading, 100);</script>
+  <script>
+    setTimeout(whilePageLoading, 100);
+    toTopSetMarginLeft();
+    window.addEventListener("resize", pageOnResize);
+    document.addEventListener("scroll", pageOnScrollDo);
+  </script>
   </body>
 </html>
