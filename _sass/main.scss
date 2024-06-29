@@ -68,7 +68,7 @@ body {
 	background-size: cover;
 }
 
-.content_overflow {
+.content_overflow, .failed_to_load {
   margin-left: 2%;
   margin-right: 2%;
   font-size: 0.8em;
@@ -76,6 +76,11 @@ body {
   background-color: rgba(150, 150, 150, .1);
   line-height: 1.25;
   max-width: 98%;
+}
+
+.failed_to_load {
+	color: red;
+	font-weight: bold;
 }
 
 .footer {

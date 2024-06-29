@@ -1,6 +1,12 @@
 var zoomed = false;
 var over = false;
 
+function failedToLoadMessage(message = "") {
+  const failedToLoadTag = document.getElementById("failed_to_load");
+  failedToLoadTag.innerText = message;
+  failedToLoadTag.style.visibility = "visible";
+}
+
 function pageOnLoad() {
   addZoomToImages();
   contentOverflow();
