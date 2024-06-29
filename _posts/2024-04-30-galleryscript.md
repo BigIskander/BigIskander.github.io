@@ -18,4 +18,6 @@ gallery: "Y"
 <script src="/assets/images/posts/2024-galleryscript/images_list.js"></script>
 <script>galleryCreate("gallery", images, "Фотографии Казани 2008 год.", zoomInImage);</script>
 
+<div class="zoom_me_gallery">Нажмите на изображение чтобы увеличить.</div>
+
 Для тех, кто хотел бы встроить подобную фотогалерею на свой сайт: исходный код и более подробное описание скрипта фотогалереи доступны по <a href="https://github.com/BigIskander/photo_gallery" target="_blank">этой ссылке</a>.
