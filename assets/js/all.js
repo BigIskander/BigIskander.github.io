@@ -9,33 +9,6 @@ function failedToLoadMessage(message = "") {
 
 function pageOnLoad() {
   contentOverflow();
-  // add zoom in suggestions if no mouse available
-  if(window.matchMedia) {
-    if(window.matchMedia("(hover: none)").matches) {
-      var images = content.querySelectorAll("img.zoomable");
-      images.forEach(image => {
-        if(isZoomable(image)) {
-          imageName = image.getAttribute("name");
-          if(imageName) {
-            nameElement = image.nextSibling;
-            if(isPageInEnglish)
-              nameElement.innerHTML = nameElement.innerHTML
-                            + "<br />Click on image to zoom in.";
-            else
-              nameElement.innerHTML = nameElement.innerHTML
-                            + "<br />Нажмите на изображение чтобы увеличить.";
-          } else {
-            if(isPageInEnglish)
-              addTextUnderImage(image, "Click on image to zoom in.", true);
-            else
-            {
-              addTextUnderImage(image, "Нажмите на изображение чтобы увеличить.", true);
-            }
-          }
-        }
-      });
-    }
-  }
 }
 
 function whilePageLoading() {
@@ -114,6 +87,7 @@ function resizeTextUnderImages() {
 }
 
 function isZoomable(image) {
+  if(window.matchMedia) if(window.matchMedia("(hover: none)").matches) return true;
   if(image.srcset) return true;
   if(image.naturalWidth > image.width || image.naturalHeight > image.height) return true;
   return false;
@@ -121,7 +95,7 @@ function isZoomable(image) {
 
 function addZoomToImages() {
   content = document.querySelector(".content");
-  var images = content.querySelectorAll("img");
+  var images = content.querySelectorAll("img.zoomable");
   images.forEach(image => {
     addZoomToImage(image);
   });
@@ -137,13 +111,14 @@ function isNotImage(image) {
 
 function addZoomToImage(image) {
   if(isNotImage(image)) image = this;
+  if(isPageInEnglish) underImageText = '<div class="zoom_me_hide">Click on image to zoom in.</div>';
+  else underImageText = '<div class="zoom_me_hide">Нажмите на изображение чтобы увеличить.</div>';
   imageName = image.getAttribute("name");
-  if(imageName) {
-    addTextUnderImage(image, "<b>" + imageName + "</b>");
-    if(!image.complete) image.addEventListener("load", () => {
-      image.nextSibling.style.width = image.offsetWidth + "px";
-    });
-  }
+  if(imageName) underImageText = "<div><b>" + imageName + "</b></div>" + underImageText;
+  addTextUnderImage(image, underImageText);
+  if(!image.complete) image.addEventListener("load", () => {
+    image.nextSibling.style.width = image.offsetWidth + "px";
+  });
   if(image.classList.contains("zoomable")) {
     image.addEventListener("click", zoomInImage);
     image.addEventListener("mouseover", cursorIfZoomable);
@@ -239,18 +214,18 @@ function zoomOutImage() {
 function show_hide_element(elementID){
   element=document.getElementById(elementID);
   emText=element.parentElement.querySelector("em");
-  if(element.className!="code_lines_hide"){
-    className="code_lines_hide"
+  if(element.className!="code_lines_hide") {
+    className="code_lines_hide";
     if(isPageInEnglish)
-      text="show"
+      text="show";
     else
-      text="показать"
+      text="показать";
   } else {
-    className="code_lines_show"
+    className="code_lines_show";
     if(isPageInEnglish)
-      text="hide"
+      text="hide";
     else
-      text="скрыть"
+      text="скрыть";
   }
   element.className=className;
   emText.innerHTML=text;
