@@ -85,6 +85,12 @@ function resizeTextUnderImages() {
   });
 }
 
+function isZoomable(image) {
+  if(image.srcset) return true;
+  if(image.naturalWidth > image.width || image.naturalHeight > image.height) return true;
+  return false;
+}
+
 function addZoomToImages() {
     content = document.querySelector(".content");
     var images = content.querySelectorAll("img");
@@ -150,7 +156,7 @@ function addZoomToImage(image) {
 function cursorIfZoomable(image) {
   if(isNotImage(image)) image = this;
   if(!image.complete) return;
-  if(!image.srcset && !(image.naturalWidth > image.width || image.naturalHeight > image.height)) {
+  if(!isZoomable(image)) {
     image.style.cursor = "default";
   } else {
     image.style.cursor = "zoom-in";
@@ -161,7 +167,7 @@ function zoomInImage(image) {
 	zoomOutImage();
   if(isNotImage(image)) image = this;
   if(!image.complete) return;
-  if(!image.srcset && !(image.naturalWidth > image.width || image.naturalHeight > image.height)) return;
+  if(!isZoomable(image)) return;
   //
 	imageZoomDiv = document.querySelector(".image_zoom_div");
 	zoomedImage = imageZoomDiv.querySelector(".image_zoom");
