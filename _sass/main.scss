@@ -131,7 +131,6 @@ a:hover {
 }
 
 .content img.zoomable {
-  cursor: zoom-in;
   text-align: center;
 }
 
@@ -151,6 +150,11 @@ a:hover {
 	background-color: rgba(150, 150, 150, 0.2);
 }
 
+.zoom_me_hide {
+	visibility: hidden;
+	line-height: 0.0;
+}
+
 .zoom_me_gallery {
 	visibility: hidden;
 	margin-bottom: 0px;
@@ -158,6 +162,10 @@ a:hover {
 }
 
 @media (hover: none) {
+	.zoom_me_hide {
+		visibility: visible;
+		line-height: 1.25;
+	}
 	.zoom_me_gallery {
 		visibility: visible;
 		margin-bottom: 10px;

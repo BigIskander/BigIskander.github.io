@@ -8,7 +8,6 @@ function failedToLoadMessage(message = "") {
 }
 
 function pageOnLoad() {
-  addZoomToImages();
   contentOverflow();
 }
 
@@ -44,6 +43,7 @@ function pageOnResize() {
   toTopSetMarginLeft();
   zoomOutImage();
   pageOnScrollDo();
+  resizeTextUnderImages();
   contentOverflow();
 }
 
@@ -64,61 +64,105 @@ function pageOnScrollDo() {
   }
 }
 
-function addTextUnderImage(image, text) {
-  imgagePosition = image.getBoundingClientRect();
+function addTextUnderImage(image, text, hide = false) {
   zoomTextDiv = document.createElement("div");
   zoomTextDiv.innerHTML = text;
-  zoomTextDiv.className = "zoom_me";
-  zoomTextDiv.style.width = image.offsetWidth + "px";
+  if(hide) zoomTextDiv.className = "zoom_me zoom_me_hide";
+  else zoomTextDiv.className = "zoom_me";
+  if(image.offsetWidth != 0) zoomTextDiv.style.width = image.offsetWidth + "px";
   image.insertAdjacentElement('afterend', zoomTextDiv)
+}
+
+function resizeTextUnderImages() {
+  var images = content.querySelectorAll("img.zoomable");
+  images.forEach(image => {
+    zoomTextDiv = image.nextSibling;
+    if(zoomTextDiv) {
+      if(zoomTextDiv.classList.contains("zoom_me")) {
+        if(image.offsetWidth != 0) zoomTextDiv.style.width = image.offsetWidth + "px";
+      }
+    }
+  });
 }
 
 function addZoomToImages() {
     content = document.querySelector(".content");
     var images = content.querySelectorAll("img");
     images.forEach(image => {
-      imageName = image.getAttribute("name");
-      if(imageName) {
-          addTextUnderImage(image, "<b>" + imageName + "</b>");
-      }
+      addZoomToImage(image);
     });
-    images = content.querySelectorAll("img.zoomable");
-    images.forEach(image => {
-      if(image.naturalWidth > image.width || image.naturalHeight > image.height) {
-        image.setAttribute("onclick", "zoomInImage(this)");
-      } else {
-        image.className="";
-      }
+    // rewrite this part later
+    // try {
+    //   if(window.matchMedia("(hover: none)").matches) {
+    //     images = content.querySelectorAll("img.zoomable");
+    //     images.forEach(image => {
+    //       if(true) { //image.naturalWidth > image.width || image.naturalHeight > image.height
+    //         console.log(image);
+    //         imageName = image.getAttribute("name");
+    //         if(imageName) {
+    //           nameElement = image.nextSibling;
+    //           if(isPageInEnglish)
+    //             nameElement.innerHTML = nameElement.innerHTML
+    //                           + "<br />Click on image to zoom in.";
+    //           else
+    //             nameElement.innerHTML = nameElement.innerHTML
+    //                           + "<br />Нажмите на изображение чтобы увеличить.";
+    //         } else {
+    //           if(isPageInEnglish)
+    //             addTextUnderImage(image, "Click on image to zoom in.", true);
+    //           else
+    //           {
+    //             addTextUnderImage(image, "Нажмите на изображение чтобы увеличить.", true);
+    //           }
+                
+    //         }
+    //       }
+    //     });
+    //   }
+    // } catch (error) {
+    //   console.error(error);
+    // }
+}
+
+function isNotImage(image) {
+  if(image) {
+    if(image.nodeName == "IMG")
+      return false;
+  }
+  return true;
+}
+
+function addZoomToImage(image) {
+  if(isNotImage(image)) image = this;
+  imageName = image.getAttribute("name");
+  if(imageName) {
+    addTextUnderImage(image, "<b>" + imageName + "</b>");
+    if(!image.complete) image.addEventListener("load", () => {
+      image.nextSibling.style.width = image.offsetWidth + "px";
     });
-    try {
-      if(window.matchMedia("(hover: none)").matches) {
-        images.forEach(image => {
-          if(image.naturalWidth > image.width || image.naturalHeight > image.height) {
-            imageName = image.getAttribute("name");
-            if(imageName) {
-              nameElement = image.nextSibling;
-              if(isPageInEnglish)
-                nameElement.innerHTML = nameElement.innerHTML
-                              + "<br />Click on image to zoom in.";
-              else
-                nameElement.innerHTML = nameElement.innerHTML
-                              + "<br />Нажмите на изображение чтобы увеличить.";
-            } else {
-              if(isPageInEnglish)
-                addTextUnderImage(image, "Click on image to zoom in.");
-              else
-                addTextUnderImage(image, "Нажмите на изображение чтобы увеличить.");
-            }
-          }
-        });
-      }
-    } catch (error) {
-      console.error(error);
-    }
+  }
+  if(image.classList.contains("zoomable")) {
+    image.addEventListener("click", zoomInImage);
+    image.addEventListener("mouseover", cursorIfZoomable);
+  }
+}
+
+function cursorIfZoomable(image) {
+  if(isNotImage(image)) image = this;
+  if(!image.complete) return;
+  if(!image.srcset && !(image.naturalWidth > image.width || image.naturalHeight > image.height)) {
+    image.style.cursor = "default";
+  } else {
+    image.style.cursor = "zoom-in";
+  }
 }
 
 function zoomInImage(image) {
 	zoomOutImage();
+  if(isNotImage(image)) image = this;
+  if(!image.complete) return;
+  if(!image.srcset && !(image.naturalWidth > image.width || image.naturalHeight > image.height)) return;
+  //
 	imageZoomDiv = document.querySelector(".image_zoom_div");
 	zoomedImage = imageZoomDiv.querySelector(".image_zoom");
 	zoomedImagePreload = imageZoomDiv.querySelector(".image_zoom_preload");
