@@ -111,14 +111,16 @@ function isNotImage(image) {
 
 function addZoomToImage(image) {
   if(isNotImage(image)) image = this;
-  if(isPageInEnglish) underImageText = '<div class="zoom_me_hide">Click on image to zoom in.</div>';
-  else underImageText = '<div class="zoom_me_hide">Нажмите на изображение чтобы увеличить.</div>';
+  if(isPageInEnglish) underImageText = '<div class="zoom_me_hide zoom_me_hide_loading">Click on image to zoom in.</div>';
+  else underImageText = '<div class="zoom_me_hide zoom_me_hide_loading">Нажмите на изображение чтобы увеличить.</div>';
   imageName = image.getAttribute("name");
   if(imageName) underImageText = "<div><b>" + imageName + "</b></div>" + underImageText;
   addTextUnderImage(image, underImageText);
   if(!image.complete) image.addEventListener("load", () => {
     image.nextSibling.style.width = image.offsetWidth + "px";
-  });
+    image.nextSibling.querySelector(".zoom_me_hide").className = "zoom_me_hide";
+  }); else 
+    image.nextSibling.querySelector(".zoom_me_hide").className = "zoom_me_hide";
   if(image.classList.contains("zoomable")) {
     image.addEventListener("click", zoomInImage);
     image.addEventListener("mouseover", cursorIfZoomable);

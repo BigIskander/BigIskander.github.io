@@ -155,6 +155,11 @@ a:hover {
 	line-height: 0.0;
 }
 
+.zoom_me_hide_loading {
+	visibility: hidden;
+	line-height: 0.0;
+}
+
 .zoom_me_gallery {
 	visibility: hidden;
 	margin-bottom: 0px;
@@ -165,6 +170,10 @@ a:hover {
 	.zoom_me_hide {
 		visibility: visible;
 		line-height: 1.25;
+	}
+	.zoom_me_hide_loading {
+		visibility: hidden;
+		line-height: 0.0;
 	}
 	.zoom_me_gallery {
 		visibility: visible;
