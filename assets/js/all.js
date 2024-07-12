@@ -105,9 +105,10 @@ function resizeTextUnderImages() {
   images.forEach(image => {
     zoomTextDiv = image.nextSibling;
     if(zoomTextDiv) {
-      if(zoomTextDiv.classList.contains("zoom_me")) {
-        if(image.offsetWidth != 0) zoomTextDiv.style.width = image.offsetWidth + "px";
-      }
+      if(zoomTextDiv.classList)
+        if(zoomTextDiv.classList.contains("zoom_me")) {
+          if(image.offsetWidth != 0) zoomTextDiv.style.width = image.offsetWidth + "px";
+        }
     }
   });
 }
