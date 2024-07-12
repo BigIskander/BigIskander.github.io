@@ -12,7 +12,7 @@ function pageOnLoad() {
   // add zoom in suggestions if no mouse available
   if(window.matchMedia) {
     if(window.matchMedia("(hover: none)").matches) {
-      images = content.querySelectorAll("img.zoomable");
+      var images = content.querySelectorAll("img.zoomable");
       images.forEach(image => {
         if(isZoomable(image)) {
           imageName = image.getAttribute("name");
