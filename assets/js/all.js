@@ -9,13 +9,12 @@ function failedToLoadMessage(message = "") {
 
 function pageOnLoad() {
   contentOverflow();
-  // rewrite this part later
-  try {
+  // add zoom in suggestions if no mouse available
+  if(window.matchMedia) {
     if(window.matchMedia("(hover: none)").matches) {
       images = content.querySelectorAll("img.zoomable");
       images.forEach(image => {
         if(isZoomable(image)) {
-          console.log(image);
           imageName = image.getAttribute("name");
           if(imageName) {
             nameElement = image.nextSibling;
@@ -32,13 +31,10 @@ function pageOnLoad() {
             {
               addTextUnderImage(image, "Нажмите на изображение чтобы увеличить.", true);
             }
-              
           }
         }
       });
     }
-  } catch (error) {
-    console.error(error);
   }
 }
 
