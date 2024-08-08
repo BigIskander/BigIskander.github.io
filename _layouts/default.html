@@ -98,7 +98,11 @@
   </head>
   <body onload="pageOnLoad()" >
     <script src="/assets/js/switch_theme.js"></script>
-    <a onclick="switch_theme()" href="JavaScript:void(0);" class="swich_theme_link" lang="ru">Переключить тему.</a>
+    {% if page.rus_v %}
+      <a onclick="switch_theme()" href="JavaScript:void(0);" class="swich_theme_link" lang="en">Switch theme.</a>
+    {% else %}
+      <a onclick="switch_theme()" href="JavaScript:void(0);" class="swich_theme_link" lang="ru">Переключить тему.</a>
+    {% endif %}
     <div class="content">
       <div class="header">
       </div>
