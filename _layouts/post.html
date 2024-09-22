@@ -4,9 +4,9 @@ layout: default
 <h1>{{ page.title }}</h1>
 <p>{{ page.date | date_to_string }}</p>
 
-{% if page.eng_v %}<p><a href="{{ page.eng_v }}" target="_blank">In English</a></p>{% endif %}
-{% if page.rus_v %}<p><a href="{{ page.rus_v }}" target="_blank">На Русском</a>
-<br />[<i><b>This is the translation of my <a href="{{ page.rus_v }}" target="_blank">original post</a>. 
+{% if page.eng_v %}<p><a href="{{ page.eng_v }}" target="_blank" rel="opener">In English</a></p>{% endif %}
+{% if page.rus_v %}<p><a href="{{ page.rus_v }}" target="_blank" rel="opener">На Русском</a>
+<br />[<i><b>This is the translation of my <a href="{{ page.rus_v }}" target="_blank" rel="opener">original post</a>. 
     Please excuse me for any grammatical errors. English is not my native language.</b></i>]</p>
 {% endif %}
 
