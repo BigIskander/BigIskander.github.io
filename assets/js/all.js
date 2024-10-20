@@ -233,3 +233,11 @@ function show_hide_element(elementID){
   emText.innerHTML=text;
 }
 
+function adjust_internal_licks() {
+  var links = document.querySelectorAll("a");
+  links.forEach(link => {
+    if(link.host == window.location.host && link.target == "_blank") {
+      if(link.rel != "opener") link.rel = "opener";
+    }
+  });
+}
