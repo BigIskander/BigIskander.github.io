@@ -289,20 +289,20 @@ H1, H2, P, IMG, LI, .images_row, .qr_block {
 }
 
 @media (max-width: 800px) {
-  .main_content {
+	.main_content {
 		overflow:scroll;
 		overflow-y: auto;
 		transform: rotateX(180deg);
 		-webkit-transform: rotateX(180deg);
 		-moz-transform: rotateX(180deg);
 		-o-transform: rotateX(180deg);
-  }
-  .main_content_child {
+	}
+	.main_content_child {
 		transform: rotateX(180deg);
 		-webkit-transform: rotateX(180deg);
 		-moz-transform: rotateX(180deg);
 		-o-transform: rotateX(180deg);
-  }
+	}
 }
 
 img
