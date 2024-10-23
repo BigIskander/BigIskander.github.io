@@ -13,11 +13,11 @@ function pageOnLoad() {
 
 function whilePageLoading() {
 	if(document.readyState != 'complete') {
-	overflowText = document.getElementById("content_overflow");
-	if(isPageInEnglish)
-		overflowText.innerHTML = "<b>Page is loading...</b>";
-	else
-		overflowText.innerHTML = "<b>Страница загружается...</b>";
+		overflowText = document.getElementById("content_overflow");
+		if(isPageInEnglish)
+			overflowText.innerHTML = "<b>Page is loading...</b>";
+		else
+			overflowText.innerHTML = "<b>Страница загружается...</b>";
 		overflowText.style.visibility = "visible";
 		overflowText.style.height = "";
 	}
@@ -28,10 +28,10 @@ function contentOverflow()
 	element = document.querySelector(".main_content");
 	overflowText = document.getElementById("content_overflow");
 	if(element.scrollWidth > element.clientWidth * 1.02) {
-	if(isPageInEnglish)
-		overflowText.innerHTML = "Part of the content does not fit by width, in order to see please drag (scroll) page to the left.";
-	else
-		overflowText.innerHTML = "Часть содержимого не уместилась по ширине, потяните (прокрутите) страницу влево чтобы увидеть.";
+		if(isPageInEnglish)
+			overflowText.innerHTML = "Part of the content does not fit by width, in order to see please drag (scroll) page to the left.";
+		else
+			overflowText.innerHTML = "Часть содержимого не уместилась по ширине, потяните (прокрутите) страницу влево чтобы увидеть.";
 		overflowText.style.visibility = "visible";
 	} else {
 		overflowText.innerHTML = "";
