@@ -4,7 +4,7 @@
 
 function galleryCreate(id, images, name="", zoomInFunction = undefined) {
     //create gallery
-    var backText = "Назад к списку фото.";
+    var backText = isPageInEnglish ? "Back to list of photos." : "Назад к списку фото."; //modified here, add English text
     var galleryWrap = document.getElementById(id);
     galleryWrap.className = "gallery_wrap";
     var galleryAndText = galleryWrap.appendChild(document.createElement("div"));
