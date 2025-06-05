@@ -270,14 +270,17 @@ H1 {
 H2 {
 	font-size: 1.3em;
 }
-H1, H2, P, IMG, LI, .images_row, .qr_block {
+H3 {
+	font-size: 1.1em;
+}
+H1, H2, H3, P, IMG, LI, .images_row, .qr_block {
 	text-align: justify;
 	margin-left: 2%;
 	margin-right: 2%;
 	line-height: 1.25;
 }
 
-.blog H2, .blog  P {
+.blog H2, .blog H3, .blog  P {
 	margin-left: 0%;
 	margin-right: 0%;
 }
