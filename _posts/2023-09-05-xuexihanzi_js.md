@@ -9,37 +9,9 @@ title: "Программа для запоминания китайских сл
 
 Эту версию программы написал на языке программирования JavaScript с применением фреймворков NUXT 3 и Electron. Программа запакована с помощью инструмента Electron-builder. Предыдущие версии  программы были написаны на языке программирования Python (старые версии доступны по ссылкам: <a href="/2022/11/05/xuexihanzi2.html" target="_blank" rel="opener" >версия 2</a> и <a href="/2022/09/28/xuexihanzi.html" target="_blank" rel="opener" >версия 1</a>).
 
-v1.0.0
+<a href="#download_links">Ссылки на скачивание программы.</a>
 
-Изменения по сравнению с предыдущей версией (написанной на Python):
-<ol>
-<li>Изменены интерфейс и управление программой. Сделал программу более интуитивной и понятной в использовании.</li>
-<li>Улучшил алгоритмы выполнения упражнений. Теперь программа учитывает, какие слова лучше запомнились какие нет.</li>
-<li>Добавил новое упражнение <b>Карточки</b>.</li>
-<li>Добавил возможность повторения ранее изученных слов.</li>
-<li>Добавил функцию озвучки текста.</li>
-<li>Добавил панель рукописного ввода.</li>
-<li>Сделал удобное управление списками слов внутри самой программы.</li>
-<li>При редактировани отдельного слова программа может подсказать варианты перевода китайских слов (на английский) и pinyin.</li>
-<li>Добавил инструкцию по использованию программы внутри самой программы (в раздел о программе).</li>
-<li>Добавил в программу основные слова из учебника <b>Кондрашевский</b> (первые 40 упражнений) и список слов <b>HSK 4</b>.</li>
-</ol>
-
-<b>Update (7 april 2024):</b> v1.1.0
-
-Изменения по сравнению с предыдущей версией (v1.0.0):
-
-<ol>
-<li>Добавил версию для macOS.</li>
-<li>Добавил опцию изучать 25 слов за 1 раз.</li>
-<li>Добавил возможность менять размер элементов интерфейса в настройках программы.</li>
-<li>Добавил темную тему оформления.</li>
-<li>Добавил контекстное меню к полям для ввода текста.</li>
-<li>Добавил поддержку tesseract-ocr.</li>
-<li>Исправил некоторые ошибки в работе программы, которые встречались в предыдущей версии.</li>
-</ol>
-
-<b>Интерфейс программы.</b>
+<h3>Интерфейс программы.</h3>
 
 <div class="images_row">
     <div>
@@ -68,6 +40,53 @@ v1.0.0
     </div>
 </div>
 
+<h3>Улучшения и дополнения, изменения по сравнению с предыдущими версими программы.</h3>
+
+v1.0.0
+
+Изменения по сравнению с предыдущей версией (написанной на Python):
+<ol>
+<li>Изменены интерфейс и управление программой. Сделал программу более интуитивной и понятной в использовании.</li>
+<li>Улучшил алгоритмы выполнения упражнений. Теперь программа учитывает, какие слова лучше запомнились какие нет.</li>
+<li>Добавил новое упражнение <b>Карточки</b>.</li>
+<li>Добавил возможность повторения ранее изученных слов.</li>
+<li>Добавил функцию озвучки текста.</li>
+<li>Добавил панель рукописного ввода.</li>
+<li>Сделал удобное управление списками слов внутри самой программы.</li>
+<li>При редактировани отдельного слова программа может подсказать варианты перевода китайских слов (на английский) и pinyin.</li>
+<li>Добавил инструкцию по использованию программы внутри самой программы (в раздел о программе).</li>
+<li>Добавил в программу основные слова из учебника <b>Кондрашевский</b> (первые 40 упражнений) и список слов <b>HSK 4</b>.</li>
+</ol>
+
+<b><i>Update (7 april 2024):</i></b> v1.1.0
+
+Изменения по сравнению с предыдущей версией (v1.0.0):
+
+<ol>
+<li>Добавил версию для macOS.</li>
+<li>Добавил опцию изучать 25 слов за 1 раз.</li>
+<li>Добавил возможность менять размер элементов интерфейса в настройках программы.</li>
+<li>Добавил темную тему оформления.</li>
+<li>Добавил контекстное меню к полям для ввода текста.</li>
+<li>Добавил поддержку tesseract-ocr.</li>
+<li>Исправил некоторые ошибки в работе программы, которые встречались в предыдущей версии.</li>
+</ol>
+
+<b><i>Update (5 june 2025):</i></b> v1.2.0
+
+Изменения по сравнению с предыдущей версией (v1.1.0):
+
+<ol>
+<li>Добавил функцию автокорректировки черт при рукописном вводе иероглифов. Подробнее об этой функции можно почитать <a href="https://bigiskander.github.io/2025/06/02/strokeautocorrect.html" target="_blank">по этой ссылке</a>.</li>
+<li>Добавил поддержку Paddle OCR.</li>
+<li>Убрал ограничение на минимальный размер окна программы.</li>
+<li>Добавил сочетание клавиш, для показа подсказки в упрежнении на ввод.</li>
+<li>Добавил опцию, завершать работу программы когда все окна закрыты в macOS.</li>
+<li>Исправил некоторые ошибки в работе программы, которые встречались в предыдущей версии.</li>
+</ol>
+
+<h3>Примечания.</h3>
+
 На данный момент программа доступна для операционных систем Windows, macOS и Linux.
 
 Примечания: 
@@ -81,43 +100,92 @@ v1.0.0
 </li>
 </ul>
 
-<b>Программа предоставляется бесплатно, как есть, без каких либо гарантий.</b> <br/>
-<b>Скачать программу:</b>
+<h3 id="download_links">Ссылки на скачивание программы:</h3>
 
-v1.1.0
+<b><i>Программа предоставляется бесплатно, как есть, без каких либо гарантий.</i></b>
 
-<b><i>Windows:</i></b>
+<p>v1.2.0</p>
 
-<a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.1.0/xuexihanzi_js.Setup.1.1.0_ia32.exe">xuexihanzi_js.Setup.1.1.0_ia32.exe</a>&nbsp;
-<br/>sha256: 2e9b128d74e443e20264a5f3b3af55cca49c2b34149db38a5aceaa9ce6748505
+<p><b><i>Windows:</i></b></p>
 
-<a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.1.0/xuexihanzi_js.Setup.1.1.0_x64.exe">xuexihanzi_js.Setup.1.1.0_x64.exe</a>&nbsp;
-<br/>sha256: 0aa2a6c9655c535ea14f701748a184c39a6809431e3bcd4cca7575789078938a
+<a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.2.0/xuexihanzi_js.Setup.1.2.0_ia32.exe">xuexihanzi_js.Setup.1.2.0_ia32.exe</a>&nbsp;
+<br/>sha256: 91ba901056dc086c10d869813406e05dde6f4a98b706236996061085be119fbb
 
-<a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.1.0/xuexihanzi_js.Setup.1.1.0_arm64.exe">xuexihanzi_js.Setup.1.1.0_arm64.exe</a>&nbsp;
-<br/>sha256: 4ebe0b16251bdd3a2830846d7539aad4b7620ccb0917239ad918be3861b13d53
+<a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.2.0/xuexihanzi_js.Setup.1.2.0_x64.exe">xuexihanzi_js.Setup.1.2.0_x64.exe</a>&nbsp;
+<br/>sha256: 269a4b8b2d02091c76bf799e54cdc65cb3db592fa9bfebabb25d2140f275dda0
 
-<b><i>macOS:</i></b>
+<a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.2.0/xuexihanzi_js.Setup.1.2.0_arm64.exe">xuexihanzi_js.Setup.1.2.0_arm64.exe</a>&nbsp;
+<br/>sha256: 0797d6795778ea48ac11dc075f2bee058db811212376226bf410d62e5cf46b36
 
-<a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.1.0/xuexihanzi_js-1.1.0.dmg">xuexihanzi_js-1.1.0.dmg</a>&nbsp;
-<br/>sha256: e4fe03f477ed1885335e2aed7d0cbe41c5af1c70d1b7d2c60b7b4b2a11856064
+<p><b><i>macOS:</i></b></p>
 
-<a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.1.0/xuexihanzi_js-1.1.0-arm64.dmg">xuexihanzi_js-1.1.0-arm64.dmg</a>&nbsp;
-<br/>sha256: 50074961f23fe50eb1e9910bac9d4773b1c9272f6f2b72b3102ec1c6084cbaa4
+<a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.2.0/xuexihanzi_js-1.2.0.dmg">xuexihanzi_js-1.2.0.dmg</a>&nbsp;
+<br/>sha256: 13ec6f47ded771189b7412536908594149c0c48cfaeb71d4145e4b339740b1cf
 
-<b><i>Linux:</i></b>
+<a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.2.0/xuexihanzi_js-1.2.0-arm64.dmg">xuexihanzi_js-1.2.0-arm64.dmg</a>&nbsp;
+<br/>sha256: b94bf2b523c11105f0e75f7dc987d4c91a3c29cbc8a9f5804f4c9e573fab8310
 
-<a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.1.0/xuexihanzi_js_1.1.0_amd64.deb">xuexihanzi_js_1.1.0_amd64.deb</a>&nbsp;
-<br/>sha256: 268a7c558e93a2d3a095ea288f105d4d55d0de3444b636505c2707a03ed6ee53
+<p><b><i>Linux:</i></b></p>
 
-<a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.1.0/xuexihanzi_js-1.1.0.AppImage">xuexihanzi_js-1.1.0.AppImage</a>&nbsp;
-<br/>sha256: 7a49de033fef8e5adfdaba3ecad4fcfd94ed7ee95e558a0fb8a1900ee6927ffb
+<a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.2.0/xuexihanzi_js_1.2.0_amd64.deb">xuexihanzi_js_1.2.0_amd64.deb</a>&nbsp;
+<br/>sha256: 155201a1eb8f0f5bd8ad945920a5984882b60aa46e90e8a57f42d9dd050f0083
 
-<a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.1.0/xuexihanzi_js-1.1.0-armv7l.AppImage">xuexihanzi_js-1.1.0-armv7l.AppImage</a>&nbsp;
-<br/>sha256: 6712a8f3d4da2f46aa1a9f43ceacd08b6a647e6171e32c3b64089d81fc75ab96
+<a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.2.0/xuexihanzi_js_1.2.0_arm64.deb">xuexihanzi_js_1.2.0_arm64.deb</a>&nbsp;
+<br/>sha256: cbd3545e8609298b8c69edc223d8ef7073445a0cb587ad89b97c226fc89b209b
 
-<a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.1.0/xuexihanzi_js-1.1.0-arm64.AppImage">xuexihanzi_js-1.1.0-arm64.AppImage</a>&nbsp;
-<br/>sha256: 0c2b9b93cad85076ee98ad65f167f0ea9e6fa88626f6812a7fa6c91d929e0cc1
+<a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.2.0/xuexihanzi_js_1.2.0_armv7l.deb">xuexihanzi_js_1.2.0_armv7l.deb</a>&nbsp;
+<br/>sha256: 86d6b0458846c35bb601d98d828862ac9e4191af7a6328b3956bd9e69c3117fa
+
+<a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.2.0/xuexihanzi_js-1.2.0.AppImage">xuexihanzi_js-1.2.0.AppImage</a>&nbsp;
+<br/>sha256: 24b44938c5add1753e9f11ba1317b1b46ff1d4a83f8a9a88aa12ddc237b30454
+
+<a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.2.0/xuexihanzi_js-1.2.0-arm64.AppImage">xuexihanzi_js-1.2.0-arm64.AppImage</a>&nbsp;
+<br/>sha256: 33f1e0a5c897712f4b5a4a8ff4e6d64437f9c5269ce3053355b3cfca6a34d8ca
+
+<a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.2.0/xuexihanzi_js-1.2.0-armv7l.AppImage">xuexihanzi_js-1.2.0-armv7l.AppImage</a>&nbsp;
+<br/>sha256: 6ebe5e42810211cae74cd0ab1f79dbcd974de54677ea8eef110f2cb430597a45
+
+<div style="border-color: grey; border-width: 0px; border-top-width: 1px; border-bottom-width: 1px; border-style: solid;">
+
+<p>v1.1.0 (<a href="JavaScript:void(0);" onclick="show_hide_element('ver_1_1')"><em>показать</em></a>)</p>
+
+<div id="ver_1_1" class="code_lines_hide" style="overflow: clip;">
+
+<p><b><i>Windows:</i></b></p>
+
+<p><a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.1.0/xuexihanzi_js.Setup.1.1.0_ia32.exe">xuexihanzi_js.Setup.1.1.0_ia32.exe</a>&nbsp;
+<br/>sha256: 2e9b128d74e443e20264a5f3b3af55cca49c2b34149db38a5aceaa9ce6748505</p>
+
+<p><a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.1.0/xuexihanzi_js.Setup.1.1.0_x64.exe">xuexihanzi_js.Setup.1.1.0_x64.exe</a>&nbsp;
+<br/>sha256: 0aa2a6c9655c535ea14f701748a184c39a6809431e3bcd4cca7575789078938a</p>
+
+<p><a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.1.0/xuexihanzi_js.Setup.1.1.0_arm64.exe">xuexihanzi_js.Setup.1.1.0_arm64.exe</a>&nbsp;
+<br/>sha256: 4ebe0b16251bdd3a2830846d7539aad4b7620ccb0917239ad918be3861b13d53</p>
+
+<p><b><i>macOS:</i></b></p>
+
+<p><a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.1.0/xuexihanzi_js-1.1.0.dmg">xuexihanzi_js-1.1.0.dmg</a>&nbsp;
+<br/>sha256: e4fe03f477ed1885335e2aed7d0cbe41c5af1c70d1b7d2c60b7b4b2a11856064</p>
+
+<p><a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.1.0/xuexihanzi_js-1.1.0-arm64.dmg">xuexihanzi_js-1.1.0-arm64.dmg</a>&nbsp;
+<br/>sha256: 50074961f23fe50eb1e9910bac9d4773b1c9272f6f2b72b3102ec1c6084cbaa4</p>
+
+<p><b><i>Linux:</i></b></p>
+
+<p><a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.1.0/xuexihanzi_js_1.1.0_amd64.deb">xuexihanzi_js_1.1.0_amd64.deb</a>&nbsp;
+<br/>sha256: 268a7c558e93a2d3a095ea288f105d4d55d0de3444b636505c2707a03ed6ee53</p>
+
+<p><a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.1.0/xuexihanzi_js-1.1.0.AppImage">xuexihanzi_js-1.1.0.AppImage</a>&nbsp;
+<br/>sha256: 7a49de033fef8e5adfdaba3ecad4fcfd94ed7ee95e558a0fb8a1900ee6927ffb</p>
+
+<p><a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.1.0/xuexihanzi_js-1.1.0-armv7l.AppImage">xuexihanzi_js-1.1.0-armv7l.AppImage</a>&nbsp;
+<br/>sha256: 6712a8f3d4da2f46aa1a9f43ceacd08b6a647e6171e32c3b64089d81fc75ab96</p>
+
+<p><a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.1.0/xuexihanzi_js-1.1.0-arm64.AppImage">xuexihanzi_js-1.1.0-arm64.AppImage</a>&nbsp;
+<br/>sha256: 0c2b9b93cad85076ee98ad65f167f0ea9e6fa88626f6812a7fa6c91d929e0cc1</p>
+
+</div>
+</div>
 
 <div style="border-color: grey; border-width: 0px; border-top-width: 1px; border-bottom-width: 1px; border-style: solid;">
 
