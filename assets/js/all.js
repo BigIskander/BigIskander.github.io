@@ -57,7 +57,7 @@ function toTopSetMarginLeft() {
 
 function contentTableSetMarginLeft() {
 	if(isContentTable) {
-		document.querySelector(".content_table").style.left = ( 
+		document.getElementById("content_table").style.left = ( 
 			document.querySelector(".content").getBoundingClientRect().right - 
 			document.getElementById("content_table_left").getBoundingClientRect().width +
 			5
@@ -68,19 +68,24 @@ function contentTableSetMarginLeft() {
 function showHideContentTable() {
 	if(isContentTable) {
 		el = document.getElementById("content_table_left");
+		el2 = document.getElementById("content_table");
 		emText = document.getElementById("content_table_right").querySelector("em");
 		if(el.className == "content_table_left_hide") {
 			el.className = "content_table_left";
+			el2.className = "content_table";
 			if(isPageInEnglish)
 				emText.innerText = "hide";
 			else
 				emText.innerText = "скрыть";
+			contentTableSetMarginLeft();
 		} else {
 			el.className = "content_table_left_hide";
+			el2.className = "content_table_collapse";
 			if(isPageInEnglish)
 				emText.innerText = "show";
 			else
 				emText.innerText = "показать";
+			contentTableSetMarginLeft();
 		}
 	}
 }
@@ -99,7 +104,7 @@ function addContentTable(links) {
 	}
 	isContentTable = true;
 	contentTableSetMarginLeft();
-	document.querySelector(".content_table").style.visibility = "visible";
+	document.getElementById("content_table").style.visibility = "visible";
 }
 
 function pageOnScrollDo() {

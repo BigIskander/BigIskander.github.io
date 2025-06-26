@@ -392,6 +392,14 @@ PRE, code {
 	left: 0px;
 	width: 80%;
 	max-width: 500px;
+	visibility: visible;
+}
+
+.content_table_collapse {
+	position: fixed;
+	float: left;
+	top: 5px;
+	left: 0px;
 	visibility: hidden;
 }
 
@@ -438,9 +446,7 @@ PRE, code {
 }
 
 .content_table_left_hide {
-	visibility: hidden;
-	// width: 0px;
-	// height: 0px;
+	display: none;
 }
 
 .dark .content_table_left {
