@@ -57,8 +57,11 @@ function toTopSetMarginLeft() {
 
 function contentTableSetMarginLeft() {
 	if(isContentTable) {
-		document.querySelector(".content_table").style.right = (window.innerWidth - 
-			document.querySelector(".content").getBoundingClientRect().right - 5) + "px";
+		document.querySelector(".content_table").style.left = ( 
+			document.querySelector(".content").getBoundingClientRect().right - 
+			document.getElementById("content_table_left").getBoundingClientRect().width +
+			5
+		) + "px";
 	}
 }
 

@@ -387,9 +387,9 @@ PRE, code {
 
 .content_table {
 	position: fixed;
-	float: right;
+	float: left;
 	top: 5px;
-	right: 0px;
+	left: 0px;
 	width: 80%;
 	max-width: 500px;
 	visibility: hidden;
@@ -439,8 +439,8 @@ PRE, code {
 
 .content_table_left_hide {
 	visibility: hidden;
-	width: 0px;
-	height: 0px;
+	// width: 0px;
+	// height: 0px;
 }
 
 .dark .content_table_left {
