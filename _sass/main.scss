@@ -314,7 +314,7 @@ img
 }
 
 .to_top {
-	position: sticky;
+	position: fixed;
 	float: left;
 	bottom: 0px;
 	margin-left: 0px;
@@ -383,4 +383,68 @@ PRE, code {
 .dark .swich_theme_link {
 	background-color: rgba(57, 57, 57, 0.8); 
 	color: white; 
+}
+
+.content_table {
+	position: fixed;
+	float: right;
+	top: 5px;
+	right: 0px;
+	width: 80%;
+	max-width: 500px;
+	visibility: hidden;
+}
+
+.content_table_right {
+	white-space: nowrap;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	height: 30px; 
+	padding: 5px;
+	border-radius: 5px;
+	transform-origin: top left;
+	transform: translateX(100%) rotate(90deg) translateY(-100%); 
+	background-color: rgba(57, 57, 57, 0.8); 
+	color: white;
+}
+
+.dark .content_table_right {
+	background-color: rgba(57, 57, 57, 0.8); 
+	color: white;
+}
+
+.content_table_left {
+	background-color: white;
+	color: black;
+	border-width: 2px;
+	border-radius: 5px;
+	border-color: black;
+	border-style: solid;
+	height: 100%;
+	max-height: 500px;
+	display: block;
+	padding: 5px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+.content_table_left ul {
+	padding: 0px;
+	margin: 0px;
+	margin-top: 5px;
+	margin-left: 10px;
+	margin-bottom: 5px;
+}
+
+.content_table_left_hide {
+	visibility: hidden;
+	width: 0px;
+	height: 0px;
+}
+
+.dark .content_table_left {
+	background-color: black;
+	color: white;
+	border-color: white;
 }

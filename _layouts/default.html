@@ -97,6 +97,7 @@
     <link rel="stylesheet" href="/assets/css/loading.css">
   </head>
   <body onload="pageOnLoad()" >
+    <div id="top_of_content"></div>
     <script src="/assets/js/switch_theme.js"></script>
     {% if page.rus_v %}
       <a onclick="switch_theme()" href="JavaScript:void(0);" class="swich_theme_link" lang="en">Switch theme.</a>
@@ -117,6 +118,16 @@
       </div>
       <div class="footer">
       </div>
+    </div>
+    <div class="content_table">
+      <div class="content_table_left_hide" id="content_table_left">
+          {% if page.rus_v %}Content{% else %}Содержание{% endif %}
+          (<a href="JavaScript:void(0);" onclick="showHideContentTable()">{% if page.rus_v %}hide{% else %}скрыть{% endif %}</a>):
+        <ul></ul>
+      </div>
+      <a id="content_table_right" class="content_table_right" 
+        href="JavaScript:void(0);" onclick="showHideContentTable()">{% if page.rus_v %}Content{% else %}Содержание{% endif %} 
+        (<em>{% if page.rus_v %}show{% else %}показать{% endif %}</em>).</a>
     </div>
     <div class="to_top">
       <a href="JavaScript:scroll(0,0);" >
@@ -147,6 +158,7 @@
     <script>
       setTimeout(whilePageLoading, 100);
       toTopSetMarginLeft();
+      if(links.length > 0) addContentTable(links);
       adjust_internal_licks();
       addZoomToImages();
       window.addEventListener("resize", pageOnResize);

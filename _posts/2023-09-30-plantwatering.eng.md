@@ -8,7 +8,7 @@ This is the device I build myself by using electronic components. This is my hob
 If you interested, I published all project files in github repository: 
 <a href="https://github.com/BigIskander/PlantWatering/tree/main" target="_blank">https://github.com/BigIskander/PlantWatering/tree/main</a>
 
-<h2>Collecting data and monitoring soil moisture.</h2>
+<h2 id="about_data_callection">Collecting data and monitoring soil moisture.</h2>
 
 After I build the device, I collected data during the perion of three months. All this time device worked autonomously (i.e. without using external power source). Accumulator slightly charged from sollar pannel during day time and slightly discharged during night time.
 
@@ -20,7 +20,7 @@ The data was collected this way: 1) device once an hour via WiFi sent data to MQ
 
 Then the data from log file was processed and displayed in easier to understand fomat (like graphs).
 
-<h2>Observation results.</h2>
+<h2 id="data_callection_results">Observation results.</h2>
 
 Below is the graphs of soil moisture [Влажность почвы] and voltage levels (on the battery) [Напряжение]. The graphs build based on observations for the time period of 3 months (2327 observations). Small red squares [Полив] denominates time points when the plant was automatically watered by the device.
 
@@ -38,7 +38,7 @@ On the graphs you can see how soil moisture and battery voltage changes dependin
 
 
 
-<h2>About MQTT server.</h2>
+<h2 id="about_mqtt_server">About MQTT server.</h2>
 
 MQTT server was used to collect the data from the device. MQTT is the protocol used to send the data between smart devices. For this project I used MQTT server provided by service <a href="https://www.wqtt.ru" target="_blank">https://www.wqtt.ru</a>. If you want, you can use any similar service or set up your own local MQTT server (in case you have appropriate scills).
 
@@ -60,7 +60,7 @@ In order to use this script (and to collect data) you need to write MQTT server 
 
 To watch messages from MQTT server in real time I used MQTT Explorer program <a href="http://mqtt-explorer.com" target="_blank">http://mqtt-explorer.com</a>. Unfortunatelly this program can't export data and to save (collected data), i.e. the data is only available inside the program until you close it.
 
-<h2>Circuit diagram.</h2>
+<h2 id="electric_scheme">Circuit diagram.</h2>
 Electronic components:
 <ul>
 <li>U1 - Wemos D1 mini (microcontroller)</li>
@@ -79,7 +79,7 @@ Electronic components:
 
 <img src="/assets/images/posts/2023-09-20-plantwatering/CircuitDiagram.png" alt="Circuit diagram of the device." class="zoomable" style="width:calc(max(300px,80%))" id="image0" />
 
-<h2>Recommendations on how to build the device and write programm in to microcontroller.</h2>
+<h2 id="microcontroller_recomendations">Recommendations on how to build the device and write programm in to microcontroller.</h2>
 
 For more comfort (while building the device) it is better to prepare well lit place, it is necessary to better see small details, because some components quite small in size. I would recommend to use soldering iron with adjustable temperature and good solder, because electronic components can get broke if you overheat them while soldering.
 
@@ -90,7 +90,7 @@ To write the program in to the mictocontroller I used Arduino IDE (<a href="http
 Programm for the microcontroller:
 <br/> <a href="https://github.com/BigIskander/PlantWatering/tree/main/PlantWatering" target="_blank">https://github.com/BigIskander/PlantWatering/tree/main/PlantWatering</a>
 
-<h2>Some technical details.</h2>
+<h2 id="some_tech_details">Some technical details.</h2>
 
 Most electronic components was bought from these internet stores: <a href="https://amperka.ru" target="_blank">https://amperka.ru</a> , <a href="https://mcustore.ru" target="_blank">https://mcustore.ru</a> and <a href="https://aliexpress.ru" target="_blank">https://aliexpress.ru</a>. Flexible tube for watering was bought from <a href="https://www.ozon.ru" target="_blank">https://www.ozon.ru</a>. Some part I already had at home.
 
@@ -108,7 +108,7 @@ The amount of water to pour for one watering was decidend depending on volume of
 
 In order to determine how long the pump needs to be on to pour necessary amount of water, at first I measured the amout of water which pump pumps in time period of 10 second. Then based on that I calculated how much secons pump needs in order to pour necessary omount of water and programmed microcontroller so that when watering will be need the pump will be turned on for set amount of secons and then turned off.
 
-<h2>Photos of the device:</h2>
+<h2 id="device_photo">Photos of the device:</h2>
 <div class="images_row">
     <div>
         <img src="/assets/images/posts/2023-09-20-plantwatering/medium/IMG_20230326_100836.jpg" 
@@ -137,7 +137,7 @@ In order to determine how long the pump needs to be on to pour necessary amount 
     </div>
 </div>
 
-<p>
+<p id="video_demo">
 Video demonstration of device working (watering the plant):<br/>
 <video style="width:calc(min(100%,1280px))" preload="auto" controls>
     <source src="/assets/images/posts/2023-09-20-plantwatering/VID_20230604_092944.mp4" type='video/mp4'/>
@@ -145,3 +145,18 @@ Video demonstration of device working (watering the plant):<br/>
 </video>
 </p>
 
+
+<script>
+    links = [
+        "Beginning.", "#top_of_content",
+        "Collecting data and monitoring soil moisture.", "#about_data_callection",
+        "Observation results.", "#data_callection_results",
+        "About MQTT server.", "#about_mqtt_server",
+        "Circuit diagram.", "#electric_scheme",
+        "Recommendations on how to build the device and write programm in to microcontroller.", "#microcontroller_recomendations",
+        "Some technical details.", "#some_tech_details",
+        "Photos of the device.", "#device_photo",
+        "Video demonstration of device working (watering the plant).",
+        "#video_demo"
+    ];
+</script>

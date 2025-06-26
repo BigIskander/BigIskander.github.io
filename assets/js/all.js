@@ -1,5 +1,7 @@
 var zoomed = false;
 var over = false;
+var isContentTable = false;
+var links = [];
 
 function failedToLoadMessage(message = "") {
 	const failedToLoadTag = document.getElementById("failed_to_load");
@@ -41,6 +43,7 @@ function contentOverflow()
 
 function pageOnResize() {
 	toTopSetMarginLeft();
+	if(isContentTable) contentTableSetMarginLeft();
 	zoomOutImage();
 	pageOnScrollDo();
 	resizeTextUnderImages();
@@ -50,6 +53,50 @@ function pageOnResize() {
 function toTopSetMarginLeft() {
 	document.querySelector(".to_top").style.marginLeft = 
 		(document.querySelector(".content").getBoundingClientRect().right) + "px";
+}
+
+function contentTableSetMarginLeft() {
+	if(isContentTable) {
+		document.querySelector(".content_table").style.right = (window.innerWidth - 
+			document.querySelector(".content").getBoundingClientRect().right - 5) + "px";
+	}
+}
+
+function showHideContentTable() {
+	if(isContentTable) {
+		el = document.getElementById("content_table_left");
+		emText = document.getElementById("content_table_right").querySelector("em");
+		if(el.className == "content_table_left_hide") {
+			el.className = "content_table_left";
+			if(isPageInEnglish)
+				emText.innerText = "hide";
+			else
+				emText.innerText = "скрыть";
+		} else {
+			el.className = "content_table_left_hide";
+			if(isPageInEnglish)
+				emText.innerText = "show";
+			else
+				emText.innerText = "показать";
+		}
+	}
+}
+
+function addContentTable(links) {
+	el = document.getElementById("content_table_left").querySelector("ul");
+	numOfLinks = Math.floor(links.length / 2);
+	for(var i = 0; i < numOfLinks; i = i + 1) {
+		newEl = document.createElement("li");
+		newLink = document.createElement("a");
+		newLink.onclick = "showHideContentTable()";
+		newLink.href = links[i * 2 + 1];
+		newLink.innerText = links[i * 2];
+		newEl.appendChild(newLink);
+		el.appendChild(newEl);
+	}
+	isContentTable = true;
+	contentTableSetMarginLeft();
+	document.querySelector(".content_table").style.visibility = "visible";
 }
 
 function pageOnScrollDo() {
