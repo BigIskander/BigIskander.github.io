@@ -100,9 +100,9 @@
     <div id="top_of_content"></div>
     <script src="/assets/js/switch_theme.js"></script>
     {% if page.rus_v %}
-      <a href="JavaScript:switch_theme();" class="swich_theme_link" lang="en">Switch theme.</a>
+      <span onclick="switch_theme()" class="swich_theme_link" lang="en">Switch theme.</span>
     {% else %}
-      <a href="JavaScript:switch_theme();" class="swich_theme_link" lang="ru">Переключить тему.</a>
+      <span onclick="switch_theme()" class="swich_theme_link" lang="ru">Переключить тему.</span>
     {% endif %}
     <div class="content">
       <div class="header">

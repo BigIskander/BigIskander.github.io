@@ -378,6 +378,12 @@ PRE, code {
 	height: 30px; 
 	padding: 5px;
 	border-radius: 5px;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.swich_theme_link:hover {
+	text-decoration: underline double;
 }
 
 .dark .swich_theme_link {
