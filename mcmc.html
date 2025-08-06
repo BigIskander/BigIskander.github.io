@@ -55,7 +55,7 @@ date: "2022-12-03"
 предыдущие периоды (годы).</p>
 <div class="code">
 <div class="code_header">
-  <a onclick="show_hide('code_1')" href="javascript:void(0);">Код в R (<em>показать</em>):</a>
+  <span class="link_span" onclick="show_hide('code_1')">Код в R (<em>показать</em>):</span>
 </div>
 <div id="code_1" class="code_lines_hide">
 <pre><code class="language-R line-numbers">#estimate linear regressions
@@ -95,7 +95,7 @@ cf8 &lt;- coef(m8)</code></pre>
 </p>
 <div class="code">
   <div class="code_header">
-    <a onclick="show_hide('code_2')" href="javascript:void(0);">Код в R (<em>показать</em>):</a>
+    <span class="link_span" onclick="show_hide('code_2')">Код в R (<em>показать</em>):</span>
   </div>
   <div id="code_2" class="code_lines_hide">
 <pre><code class="language-R line-numbers">#primary estimations
@@ -125,7 +125,7 @@ st_h &lt;- sqrt(var(hh))</code></pre>
 </p>
 <div class="code">
   <div class="code_header">
-    <a onclick="show_hide('code_3')" href="javascript:void(0);">Код в R (<em>показать</em>):</a>
+    <span class="link_span" onclick="show_hide('code_3')">Код в R (<em>показать</em>):</span>
   </div>
 <div id="code_3" class="code_lines_hide">
 <pre><code class="language-R line-numbers">#calc the distribution params
@@ -157,7 +157,7 @@ for(i in 1:ll)
 </p>
 <div class="code">
   <div class="code_header">
-    <a onclick="show_hide('code_4')" href="javascript:void(0);">Код в R (<em>показать</em>):</a>
+    <span class="link_span" onclick="show_hide('code_4')">Код в R (<em>показать</em>):</span>
   </div>
 <div id="code_4" class="code_lines_hide">
 <pre><code class="language-R line-numbers">#get X and Y
@@ -192,7 +192,7 @@ for(i in 2:ncol(data)) th_sim[i-1] &lt;- rbind(mean(data[,i]))</code></pre>
 </p><p>
 <div class="code">
 <div class="code_header">
-    <a onclick="show_hide('code_5')" href="javascript:void(0);">Код в R (<em>показать</em>):</a>
+    <span class="link_span" onclick="show_hide('code_5')">Код в R (<em>показать</em>):</span>
   </div>
 <div id="code_5" class="code_lines_hide">
 <pre><code class="language-R line-numbers">#preliminary estimation 1
@@ -221,7 +221,7 @@ stdp &lt;- 1/sqrt(C)</code></pre>
 </p>
 <div class="code">
 <div class="code_header">
-  <a onclick="show_hide('code_7')" href="javascript:void(0);">Код в R (<em>показать</em>):</a>
+  <span class="link_span" onclick="show_hide('code_7')">Код в R (<em>показать</em>):</span>
 </div>
 <div id="code_7" class="code_lines_hide">
 <pre><code  class="language-R line-numbers">#preliminary estimation 2
@@ -255,7 +255,7 @@ prevp &lt;- aposterior(b, sig_sq, b_TH, alpha, beta, stdp, Y, pY)</code></pre>
 </p>
 <div class="code">
 <div class="code_header">
-  <a onclick="show_hide('code_8')" href="javascript:void(0);">Код в R (<em>показать</em>):</a>
+  <span class="link_span" onclick="show_hide('code_8')">Код в R (<em>показать</em>):</span>
 </div>
 <div id="code_8" class="code_lines_hide">
 <pre><code  class="language-R line-numbers">#mcmc algorithm main cycle
@@ -281,7 +281,7 @@ while(i&lt;=iter)
 <p><b>Функция mcmc, полностью:</b></p>
 <div class="code">
 <div class="code_header">
-  <a onclick="show_hide('code_9')" href="javascript:void(0);">Код в R (<em>показать</em>):</a>
+  <span class="link_span" onclick="show_hide('code_9')">Код в R (<em>показать</em>):</span>
 </div>
 <div id="code_9" class="code_lines_hide">
 <pre><code  class="language-R line-numbers">#mcmc simulation
@@ -338,7 +338,7 @@ mcmc &lt;- function(iter, X, Y, b_TH, alpha, beta, h, L)
   случайным образом генерирующая вектор чисел из нормального распределения.</p>
 <div class="code">
 <div class="code_header">
-  <a onclick="show_hide('code_10')" href="javascript:void(0);">Код в R (<em>показать</em>):</a>
+  <span class="link_span" onclick="show_hide('code_10')">Код в R (<em>показать</em>):</span>
 </div>
 <div id="code_10" class="code_lines_hide">
 <pre><code  class="language-R line-numbers">#generate new varibles
@@ -368,7 +368,7 @@ propose &lt;- function(b, st)
 </p>
 <div class="code">
 <div class="code_header">
-  <a onclick="show_hide('code_11')" href="javascript:void(0);">Код в R (<em>показать</em>):</a>
+  <span class="link_span" onclick="show_hide('code_11')">Код в R (<em>показать</em>):</span>
 </div>
 <div id="code_11" class="code_lines_hide">
 <pre><code  class="language-R line-numbers">#aprior likelyhood
@@ -398,7 +398,7 @@ aposterior &lt;- function(b, sig_sq, b_TH, alpha, beta, stdp, Y, pY)
 <p><b><i>Код программы полностью (<a href="https://github.com/BigIskander/mcmc" target="_blank">скачать</a>).</i></b></p>
 <div class="code">
 <div class="code_header">
-  <a onclick="show_hide('code_12')" href="javascript:void(0);">Код в R (<em>показать</em>):</a>
+  <span class="link_span" onclick="show_hide('code_12')">Код в R (<em>показать</em>):</span>
 </div>
 <div id="code_12" class="code_lines_hide">
 <pre data-src="https://github.com/BigIskander/mcmc" data-download-link><code  class="language-R line-numbers">#Metropolis-Hastings MCMC algorithm implementation

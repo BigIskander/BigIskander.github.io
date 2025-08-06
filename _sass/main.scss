@@ -7,16 +7,16 @@ body {
 	border-color: lightgrey;
 }
 
-a, .gallery_back_link {
+a, .gallery_back_link, .link_span_color {
 	color: #000099;
 }
 
-.link_span {
+.link_span, .link_span_color {
 	cursor: pointer;
 	text-decoration: underline;
 }
 
-.link_span:hover {
+.link_span:hover, .link_span_color:hover {
 	text-decoration: underline double;
 }
 
@@ -35,7 +35,7 @@ a, .gallery_back_link {
 	color: white;
 }
 
-.dark a, .dark .gallery_back_link {
+.dark a, .dark .gallery_back_link, .dark .link_span_color {
 	color: violet;
 }
 

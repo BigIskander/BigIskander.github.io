@@ -158,7 +158,7 @@ v1.0.0
 
 <div style="border-color: grey; border-width: 0px; border-top-width: 1px; border-bottom-width: 1px; border-style: solid;">
 
-<p>v1.2.0 (<a href="JavaScript:void(0);" onclick="show_hide_element('ver_1_2')"><em>показать</em></a>)</p>
+<p>v1.2.0 (<span class="link_span_color" onclick="show_hide_element('ver_1_2')"><em>показать</em></span>)</p>
 
 <div id="ver_1_2" class="code_lines_hide" style="overflow: clip;">
 
@@ -206,7 +206,7 @@ v1.0.0
 
 <div style="border-color: grey; border-width: 0px; border-top-width: 1px; border-bottom-width: 1px; border-style: solid;">
 
-<p>v1.1.0 (<a href="JavaScript:void(0);" onclick="show_hide_element('ver_1_1')"><em>показать</em></a>)</p>
+<p>v1.1.0 (<span class="link_span_color" onclick="show_hide_element('ver_1_1')"><em>показать</em></span>)</p>
 
 <div id="ver_1_1" class="code_lines_hide" style="overflow: clip;">
 
@@ -248,7 +248,7 @@ v1.0.0
 
 <div style="border-color: grey; border-width: 0px; border-top-width: 1px; border-bottom-width: 1px; border-style: solid;">
 
-<p>v1.0.0 (<a href="JavaScript:void(0);" onclick="show_hide_element('ver_1_0')"><em>показать</em></a>)</p>
+<p>v1.0.0 (<span class="link_span_color" onclick="show_hide_element('ver_1_0')"><em>показать</em></span>)</p>
 
 <div id="ver_1_0" class="code_lines_hide" style="overflow: clip;">
 
