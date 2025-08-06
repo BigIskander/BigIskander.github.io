@@ -7,7 +7,7 @@ body {
 	border-color: lightgrey;
 }
 
-a {
+a, .gallery_back_link {
 	color: #000099;
 }
 
@@ -35,7 +35,7 @@ a {
 	color: white;
 }
 
-.dark a {
+.dark a, .dark .gallery_back_link {
 	color: violet;
 }
 
