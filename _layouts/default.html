@@ -157,6 +157,7 @@
       setTimeout(whilePageLoading, 100);
       toTopSetMarginLeft();
       if(links.length > 0) addContentTable(links);
+      add_tabindex_to_click_spans();
       adjust_internal_licks();
       addZoomToImages();
       window.addEventListener("resize", pageOnResize);

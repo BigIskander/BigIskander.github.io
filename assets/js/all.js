@@ -296,3 +296,13 @@ function adjust_internal_licks() {
 		}
 	});
 }
+
+function add_tabindex_to_click_spans() {
+	var spans = document.querySelectorAll("span.link_span, span.link_span_color, .swich_theme_link, .to_top img");
+	spans.forEach(span => {
+		span.tabIndex = "0";
+		span.addEventListener("keypress", function(event) {
+            if(event.key == 'Enter') this.click();
+        });
+	});
+}
