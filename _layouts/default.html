@@ -122,20 +122,18 @@
     <div class="content_table_collapse" id="content_table">
       <div class="content_table_left_hide" id="content_table_left">
           {% if page.rus_v %}Content{% else %}Содержание{% endif %}
-          (<a href="JavaScript:void(0);" onclick="showHideContentTable()">{% if page.rus_v %}hide{% else %}скрыть{% endif %}</a>):
+          (<span class="link_span" onclick="showHideContentTable()">{% if page.rus_v %}hide{% else %}скрыть{% endif %}</span>):
         <ul></ul>
       </div>
-      <a id="content_table_right" class="content_table_right" 
-        href="JavaScript:void(0);" onclick="showHideContentTable()">{% if page.rus_v %}Content{% else %}Содержание{% endif %} 
-        (<em>{% if page.rus_v %}show{% else %}показать{% endif %}</em>).</a>
+      <span id="content_table_right" class="link_span content_table_right" 
+        onclick="showHideContentTable()">{% if page.rus_v %}Content{% else %}Содержание{% endif %} 
+        (<em>{% if page.rus_v %}show{% else %}показать{% endif %}</em>).</span>
     </div>
     <div class="to_top">
-      <a href="JavaScript:scroll(0,0);" >
-        <img src="/assets/images/top.png" width="50" alt="На верх!" />
-      </a>
+      <img onclick="window.scroll(0,0)" src="/assets/images/top.png" width="50" alt="На верх!" />
     </div>
     <div class="image_zoom_div">
-      <a href="JavaScript:void(0);" onclick="zoomOutImage()" class="zoom_me_out">{% if page.rus_v %}Close.{% else %}Закрыть.{% endif %}</a>
+      <span onclick="zoomOutImage()" class="link_span zoom_me_out">{% if page.rus_v %}Close.{% else %}Закрыть.{% endif %}</span>
       <img class="image_zoom_preload" />
       <img class="image_zoom" />
       <a target="_blank" class="image_zoom_open_url">{% if page.rus_v %}Open image in new tab.{% else %}Открыть изображение в новой вкладке.{% endif %}</a>

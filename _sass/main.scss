@@ -11,6 +11,15 @@ a {
 	color: #000099;
 }
 
+.link_span {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.link_span:hover {
+	text-decoration: underline double;
+}
+
 .image_zoom_div {
 	background-color: rgba(127, 127, 127, .5);
 }
@@ -319,6 +328,7 @@ img
 	bottom: 0px;
 	margin-left: 0px;
 	visibility: hidden;
+	cursor: pointer;
 }
 
 PRE, code {
