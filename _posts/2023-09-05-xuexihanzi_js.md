@@ -109,6 +109,16 @@ v1.0.0
 <li>Исправил некоторые ошибки в работе программы, которые встречались в предыдущей версии.</li>
 </ol>
 
+<b><i>Update (7 november 2025):</i></b> v1.3.1
+
+Изменения по сравнению с предыдущей версией (v1.3.0):
+
+<ol>
+<li>Добавил кнопку "BackSpace" в панели рукописного ввода.</li>
+<li>В настройках панели рукописного ввода добавил опцию "Возвращать фокус полю ввода текста".</li>
+<li>Исправил некоторые неточности в интерфейсе программы.</li>
+</ol>
+
 <h3 id="some_remarks">Примечания.</h3>
 
 На данный момент программа доступна для операционных систем Windows, macOS и Linux.
@@ -128,7 +138,52 @@ v1.0.0
 
 <b><i>Программа предоставляется бесплатно, как есть, без каких либо гарантий.</i></b>
 
-<p>v1.3.0</p>
+<p>v1.3.1</p>
+
+<p><b><i>Windows:</i></b></p>
+
+<p><a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.3.1/xuexihanzi_js.Setup.1.3.1_ia32.exe">xuexihanzi_js.Setup.1.3.1_ia32.exe</a>&nbsp;
+<br/>sha256: 3a1d5da674adfb26739e9793e85d742b9dd3a4df0514fe2204cf808101fa9bd5</p>
+
+<p><a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.3.1/xuexihanzi_js.Setup.1.3.1_x64.exe">xuexihanzi_js.Setup.1.3.1_x64.exe</a>&nbsp;
+<br/>sha256: e50d7e143d2d33e2e73ffe85864bef5da1cc168168441379e825d3725989f0d8</p>
+
+<p><a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.3.1/xuexihanzi_js.Setup.1.3.1_arm64.exe">xuexihanzi_js.Setup.1.3.1_arm64.exe</a>&nbsp;
+<br/>sha256: 152f97d95dd4dd356fafc98bf98f60bc6dfa4d5cf388d42133b91cd11581e33b</p>
+
+<p><b><i>macOS:</i></b></p>
+
+<p><a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.3.1/xuexihanzi_js-1.3.1.dmg">xuexihanzi_js-1.3.1.dmg</a>&nbsp;
+<br/>sha256: 820bfca9f1062f40a21d00c0d8039028a53b13932e5d585e017fb7a6de5f5d59</p>
+
+<p><a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.3.1/xuexihanzi_js-1.3.1-arm64.dmg">xuexihanzi_js-1.3.1-arm64.dmg</a>&nbsp;
+<br/>sha256: 75ac9314c9de0b51436e8c4446f6a5a125532fc210fc3fcf00379b9693fa95dc</p>
+
+<p><b><i>Linux:</i></b></p>
+
+<p><a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.3.1/xuexihanzi_js_1.3.1_amd64.deb">xuexihanzi_js_1.3.1_amd64.deb</a>&nbsp;
+<br/>sha256: 5f2e2811575fb954a1e30e69921543528c7dfb3a99a2363e43834c7ccbf99391</p>
+
+<p><a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.3.1/xuexihanzi_js_1.3.1_arm64.deb">xuexihanzi_js_1.3.1_arm64.deb</a>&nbsp;
+<br/>sha256: 76a0516872949a6d5bb5cfd30e8e289b93c955b30ad5d07285cc944c94174d96</p>
+
+<p><a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.3.1/xuexihanzi_js_1.3.1_armv7l.deb">xuexihanzi_js_1.3.1_armv7l.deb</a>&nbsp;
+<br/>sha256: c6dadb1a34c4fc0ba4d5db0adc9271d16aa47ed9405d99e0505761be30e3a054</p>
+
+<p><a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.3.1/xuexihanzi_js-1.3.1.AppImage">xuexihanzi_js-1.3.1.AppImage</a>&nbsp;
+<br/>sha256: 40a29f152709155fb11c9eea04221eb3c48ba1e3fff6ad7d06988bcce6de67d7</p>
+
+<p><a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.3.1/xuexihanzi_js-1.3.1-arm64.AppImage">xuexihanzi_js-1.3.1-arm64.AppImage</a>&nbsp;
+<br/>sha256: 40a4d9238ef6b9cbc4dd06cbd8987f87ad30c4a08fefa97b9dcddef02dc5eb5b</p>
+
+<p><a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.3.1/xuexihanzi_js-1.3.1-armv7l.AppImage">xuexihanzi_js-1.3.1-armv7l.AppImage</a>&nbsp;
+<br/>sha256: 2f10d5aaebceeb6e511eb00fef833002ed2c076177db0a150b400d4508cb0232</p>
+
+<div style="border-color: grey; border-width: 0px; border-top-width: 1px; border-bottom-width: 1px; border-style: solid;">
+
+<p>v1.3.0 (<span class="link_span_color" onclick="show_hide_element('ver_1_3_0')"><em>показать</em></span>)</p>
+
+<div id="ver_1_3_0" class="code_lines_hide" style="overflow: clip;">
 
 <p><b><i>Windows:</i></b></p>
 
@@ -168,6 +223,9 @@ v1.0.0
 
 <p><a href="https://github.com/BigIskander/xuexihanzi_js_release/releases/download/v1.3.0/xuexihanzi_js-1.3.0-armv7l.AppImage">xuexihanzi_js-1.3.0-armv7l.AppImage</a>&nbsp;
 <br/>sha256: 68fd9716ae4bee7fc84a1e0523ace79715027fb6a8d83e7c38013744b774aaec</p>
+
+</div>
+</div>
 
 <div style="border-color: grey; border-width: 0px; border-top-width: 1px; border-bottom-width: 1px; border-style: solid;">
 
