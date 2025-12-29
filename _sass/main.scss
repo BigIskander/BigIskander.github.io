@@ -471,3 +471,14 @@ PRE, code {
 	color: white;
 	border-color: white;
 }
+
+.snow {
+	width: 100vw; 
+	height: 100vh; 
+	position: fixed; 
+	/* image source: http://4put.ru/pics/s_55_10/max_3076672/ */
+	background: url(/assets/images/3076672.gif); 
+	z-index: -1; 
+	left: 0px; 
+	top: 0px;
+}
