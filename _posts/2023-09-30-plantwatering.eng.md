@@ -145,6 +145,25 @@ Video demonstration of device working (watering the plant):<br/>
 </video>
 </p>
 
+<h2 id="update_jul_2026">
+Update 24 jul 2026:
+</h2>
+
+After 2 years soil moisture sensor broked, because of corrosion.
+
+I replaced soil moisture sensor to a new one, and changed program in microcontroller: disabled data collection function and just used this device as automatic plant watering device (without collecting data).
+
+Old soil moisture sensor:
+
+<img src="/assets/images/posts/2023-09-20-plantwatering/update_jul_2026/old_moisture_sensor.jpg" alt="Old soil moisture sensor." class="zoomable" style="width:calc(max(100px,30%))" id="image6" />
+
+New soil moisture sensor:
+
+<img src="/assets/images/posts/2023-09-20-plantwatering/update_jul_2026/new_moisture_sensor.jpeg" alt="New soil moisture sensor." class="zoomable" style="width:calc(max(100px,30%))" id="image7" />
+
+I made this device 3 years ago and it's still working.
+
+<img src="/assets/images/posts/2023-09-20-plantwatering/update_jul_2026/the_device_and_plant.jpg" alt="Device and plant in one photo." class="zoomable" style="width:calc(max(720px,80%))" id="image8" />
 
 <script>
     links = [
@@ -157,6 +176,7 @@ Video demonstration of device working (watering the plant):<br/>
         "Some technical details.", "#some_tech_details",
         "Photos of the device.", "#device_photo",
         "Video demonstration of device working (watering the plant).",
-        "#video_demo"
+        "#video_demo",
+        "Update 24 jul 2026", "#update_jul_2026"
     ];
 </script>
