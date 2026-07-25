@@ -144,6 +144,25 @@ eng_v: "/2023/09/30/plantwatering.eng.html"
 </video>
 </p>
 
+<h2 id="update_jul_2026">
+Update 24 jul 2026:
+</h2>
+
+Спустя 2 года сломался датчик влажности почвы из за корозии.
+
+Я заменил датчик влажности почвы на новый, поменял программу на микроконтроллере: отключил функцию сбора данных и стал использовать только как устройство для автоматического полива растения (без сбора данных).
+
+Старый датчик влажности почвы:
+
+<img src="/assets/images/posts/2023-09-20-plantwatering/update_jul_2026/old_moisture_sensor.jpg" alt="Старый датчик влажности почвы." class="zoomable" style="width:calc(max(100px,30%))" id="image6" />
+
+Новый датчик влажности почвы:
+
+<img src="/assets/images/posts/2023-09-20-plantwatering/update_jul_2026/new_moisture_sensor.jpeg" alt="Новый датчик влажности почвы." class="zoomable" style="width:calc(max(100px,30%))" id="image7" />
+
+С тех пор, как я собрал устройство, прошло уже 3 года и оно все еще продолжает работать.
+
+<img src="/assets/images/posts/2023-09-20-plantwatering/update_jul_2026/the_device_and_plant.jpg" alt="Устройство и растение на одном фото." class="zoomable" style="width:calc(max(720px,80%))" id="image8" />
 
 <script>
     links = [
@@ -156,6 +175,7 @@ eng_v: "/2023/09/30/plantwatering.eng.html"
         "Некоторые технические подробности.", "#some_tech_details",
         "Фотографии устройства.", "#device_photo",
         "Видео демонстрация работы устройства (полив растения).",
-        "#video_demo"
+        "#video_demo",
+        "Update 24 jul 2026", "#update_jul_2026"
     ];
 </script>
