@@ -149,5 +149,8 @@
       window.addEventListener("resize", pageOnResize);
       document.addEventListener("scroll", pageOnScrollDo);
     </script>
+    {% if page.buttom_script %}
+      <script src="{{ page.buttom_script }}"></script>
+    {% endif %}
   </body>
 </html>
